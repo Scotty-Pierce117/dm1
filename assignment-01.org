@@ -7,6 +7,13 @@
 
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-01-10 Thu 16:29]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
 * Exercises
 ** TODO CRC
 #+begin_note
@@ -20,7 +27,7 @@
   (This is a \ldquo{}free association\rdquo exercise --- there is no right answer.)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I destert.
 #+end_info
 ** TODO DGZ
 #+begin_note
@@ -32,7 +39,7 @@
   AD GS AD WY TE SEA S BG T AD WETER PGS AVE WGS
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This stanza belongs to Robert Lewis Stevenson
 #+end_info
 * Problems
 ** TODO CHJ
