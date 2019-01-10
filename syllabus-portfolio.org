@@ -1,82 +1,192 @@
 #+TITLE:CS 237 Syllabus and Portfolio@@html:<br>@@ Winter 2019
 #+LANGUAGE: en
-#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t ':t
 #+OPTIONS: html-postamble:nil
-#+STARTUP: showeverything
-#+SETUPFILE: theme-bigblow.setup
-This course is about *Mathematics for computer science.* 
+#+STARTUP: showeverything entitiespretty
 
-It introduces the mathematical topics needed to provide a solid theoretical 
-foundation for your career and continued learning in computer science. 
+* What\rsquo{}s It All About?
+  This course is about *mathematics for computer science.* 
 
-The following topics will be covered:
+  It introduces the mathematical topics needed to provide a solid theoretical 
+  foundation for your career and continued learning in computer science. 
 
-+ Sets and Logic
-+ Functions and Relations
-+ Compbinatorics and Probability
-+ Number Theory and Practice
-+ Trees and Graphs
-+ Languages and Grammars
+  The following topics will be covered:
 
-In other words, it's a blast!
+  + Sets and Logic
+  + Functions and Relations
+  + Combinatorics and Probability
+  + Number Theory and Practice
+  + Trees and Graphs
+  + Languages and Grammars
+
+  In other words, it\rsquo{}s a blast!
 
 * Objectives
-+ Master the basic terminology and operations of sets and logic, functions and relations, combinatorics and probability, number theory and practice, trees and graphs, and languages and grammars.
++ Master the basic terminology and operations of sets and logic, functions and
+  relations, combinatorics and probability, number theory and practice, trees
+  and graphs, and languages and grammars.
 + Demonstrate logical reasoning as you solve interesting problems.
-+ Learn basic functional programming through using, reading, and writing Erlang code.
-+ Interpret the meaning of mathematical statements in the context of applications in Computer Science.
++ Interpret the meaning of mathematical statements in the context of
+  applications in computer science.
 + Think like a mathematician by making good connections.
++ Learn basic functional programming through using, reading, and writing elisp
+  code.
 
 * Prerequisites
-You must have successfully completed CS 165, Object-Oriented Software Development.
++ You must have successfully completed CS 165, Object-Oriented Software Development.
++ You must also have developed an awareness of what logical thinking entails. 
 
 * Requirements
 You are required to
-+ attend class each class period (but then again, why wouldn't you?),
++ attend class each class period (but then again, why wouldn\rsquo{}t you?),
 + read assigned portions of the course materials /before/ the class meeting when they will be discussed,
 + complete weekly preparation assessments, and 
-+ do weekly homework assessments to deepen your understanding of selected topics.
++ do weekly homework assignments to deepen your understanding of selected topics.
 
-
-* Texts
-+ [[https://learnyousomeerlang.com/content/][learn you some Erlang for great good]]
+* Text
 + [[https://rickneff.github.io/metaphors-be-with-you.html][Metaphors Be With You]]
-+ Optional: *Programming Erlang: Software for a concurrent world*. /Joe Armstrong/, Second Edition, 2013, The Pragmatic Bookshelf. (ISBN: 13:978-1-937785-53-6)
 
 * Software
-+ [[https://www.erlang.org/][Erlang/OTP]]
-+ git and Spacemacs (See installation instructions [[https://rickneff.github.io][here]] and search for 'Tools' section)
-
-* Other
-A three ring binder to hold your portfolio
+  (For the first two, see installation instructions [[https://rickneff.github.io][here]] and go to the /Tools/
+  section. For the third, more information will be given later.)
++ git 
++ Spacemacs/Emacs
++ @@latex:\LaTeX{}@@ 
 
 * Behavioral Requirements
 You are required to\dots{}
 + attend class, as assessments will happen in class each day that are not reproducible outside of class.
 + read assigned portions of the course materials /before/ class each Tuesday and Thursday.
 + complete all team and personal assessments to deepen your understanding of selected topics.
++ acquire and maintain a three-ring binder that will hold your portfolio of completed work (see below).
 
 * Course Periodicity
-This course has a weekly period, i.e. you can count on knowing ahead of time what you will be doing each day of each week.
-Each class period consists of two 30 minute sections. 
+This course has a weekly period, i.e., you can count on knowing ahead of time
+what you will be doing each day of each week. Each class period consists of two
+30-minute sections.
 
 On Tuesdays these sections are:
-** Presentation  
-A time where I will add depth information to the preparation material you finished reading *before class*.
-** Class Directed Learning
-You will participate in a class-wide activity that reinforces what you've read and what I've shown you.
+
+ - Presentation :: --- A time where I will add depth information to the preparation
+                   material you finished reading *before class*.
+ - Class Directed Learning :: --- You will participate in a class-wide activity that
+      reinforces what you\rsquo{}ve read and what I\rsquo{}ve shown you.
 
 On Thursdays these sections are:
-** Answer Questions 
-I will answer questions that have been submitted to the slack channel.
-** Class Directed Learning 
-You will participate in a class-wide activity that reinforces what you've read and what I've shown you.
+ - Answer Questions :: --- I will answer questions that have been submitted to the
+      class slack channel (more on which later).
+ - Class Directed Learning :: --- You will participate in a class-wide activity that
+      reinforces what you\rsquo{}ve read and what I\rsquo{}ve shown you.
 
 * Questions
-The questions answered on Thursday are generalized from those you submit via the slack channel on Tuesday Evenings. You must submit any and all unanswered questions on Tuesday evening. Not submitting questions leads to a reduced learning experience. You will have plenty of questions. Submit them! Choose knowledge not ignorance.
++ The questions answered on Thursday are generalized from those you submit via
+  the slack channel on Tuesday Evenings.
++ You must submit any and all unanswered questions on Tuesday evening. Not
+  submitting questions leads to a reduced learning experience.
++ You will have plenty of questions. Submit them! Choose knowledge over ignorance.
 
 * Exercises
-Exercises are smaller experiences that are designed to float uncertainties and questions you have to the surface of your mind. They are designed to be smaller so you can find out what you don't know and then take the steps necessary to know.
+Exercises are smaller experiences that are designed to float uncertainties and
+questions you have to the surface of your mind. They are designed to be smaller
+so you can find out what you don\rsquo{}t know and then take the steps necessary to
+know.
 
 * Problems 
-Problems are weightier experiences that invite you to explore topics in algorithms and complexity, as well as increase your algorithmic problem solving prowess. All involve writing mathematically.
+Problems are weightier experiences that invite you to explore topics in discrete
+mathematics, as well as increase your logical thinking and problem solving
+prowess. All involve writing mathematically.
+
+* Assessment
+Every four weeks you will meet with me in my office. The purpose
+of this meeting is for you to present your portfolio of work to me, make a
+grade-to-date claim, and provide evidence justifying that claim.
+
+Your portfolio *MUST* be a modified version of this file. All entries must
+follow the example format you will find at the end of this document (when it is
+updated). Also, your evidences must be complete and internally consistent. You
+are required to produce the portfolio using Spacemacs, export it as a pdf file,
+and print it. To accmoplish this you will need @@latex:\LaTeX{}@@ installed on
+your machine.
+
+* Late Work
+Late work is accepted /only if/ the reason is extraordinary, and acceptance is
+reached through private and prolonged negotiation. Also, you must come talk to
+me in person in my office --- *NOT* by email, nor any other means of
+communication.
+
+* Grades
+In each of our three personal meetings, you will present your portfolio and a
+letter-based grade-to-date claim. Afterwards I will give you my thoughts on the
+strength of your claim. The last claim that you make, taking into account any
+feedback from me, will be your final grade for the course. All of your claims
+must must be evidence-based. That means you *MUST* bring the evidence with you,
+in your portfolio, that supports your claim.
+
+** Letter-Based
+When making your claim, you are required to use the [[http://www.byui.edu/student-records/grades/grading-system][BYU-Idaho standard]]
+letter-based definition of grades, reproduced below:
+
++ \ldquo{}A\rdquo represents outstanding understanding, application, and integration of
+  subject material and extensive evidence of original thinking, skillful use of
+  concepts, and ability to analyze and solve complex problems. Demonstrates
+  diligent application of Learning Model principles, including initiative in
+  serving other students.
++ \ldquo{}B\rdquo represents considerable/significant understanding, application, and
+  incorporation of the material that would prepare a student to be successful in
+  next level courses, graduate school, or employment. The student participates
+  in the Learning Model as applied in the course.
++ \ldquo{}C\rdquo represents sufficient understanding of subject matter. The student
+  demonstrates minimal initiative to be prepared for class. Sequenced courses
+  could be attempted, but mastering new materials might prove challenging. The
+  student participates only marginally in the Learning Model.
++ \ldquo{}D\rdquo represents poor performance and initiative to learn and understand and
+  apply course materials. Retaking a course or remediation may be necessary to
+  prepare for additional instruction in this subject matter.
++ \ldquo{}F\rdquo represents failure in the course.
+
+#+Begin_Latex
+\pagebreak
+#+End_Latex
+
+Note that the above description of an \ldquo{}A\rdquo implies that you have gone *above and
+beyond*. To claim this grade you *must* have continually done the following
+things throughout the 4-week period and recorded evidence of this behavior in
+your portfolio. These behaviors are:
+  1. teaching and/or helping others in the class but not in your group;
+  2. teaching a Non-CS, Non-CE, Non-EE, Non-SE major about the material in this
+     class to help them with a class they are taking;
+  3. applying what you've learned in this class in another class you are
+     currently taking; and
+  4. doing work not assigned such as exploring mathematics, writing code
+     implementing what you are learning that has not been assigned, etc.
+
+Regarding the first two, quoting Truman Madsen (quoting the Prophet Joseph
+Smith): Now one of the strongest and wisest statements I have ever heard on
+egoism. The question was put to him, \ldquo{}Joseph, is the principle of
+self-aggrandizement wrong? Should we seek our own good?\rdquo Listen to his answer.
+\ldquo{}It is a correct principle and may be indulged upon only one rule or plan ---
+and that is to elevate, benefit, and bless others first. If you will elevate
+others, the very work itself will exalt you. Upon no other plan can a man justly
+and permanently aggrandize himself.\rdquo
+* Harassment
+	Title IX of the Education Amendments of 1972 prohibits sex discrimination
+  against any participant in an education program or activity that receives
+  federal funds, including Federal loans and grants. Title IX also covers
+  student-to-student sexual harassment. If you encounter unlawful sexual
+  harassment or gender based discrimination, please contact the Personnel Office
+  at 496-1130.
+
+* Disability
+  Brigham Young University-Idaho is committed to providing a working and
+  learning atmosphere which reasonably accommodates qualified persons with
+  disabilities. If you have any disability which may impair your ability to
+  complete this course successfully, please contact the Services for Students
+  with Disabilities Office, 496-1158. Reasonable academic accommodations are
+  reviewed for all students who have qualified documented disabilities. Services
+  are coordinated with the student and instructor by this office. If you need
+  assistance or if you feel you have been unlawfully discriminated against on
+  the basis of disability, you may seek resolution through established grievance
+  policy and procedures. You should contact the Personnel Office at 496-1130.
+
+* Other
+  This document may be modified by the instructor at any time without notification.

@@ -1,4 +1,4 @@
-#+TITLE: DM1 Assignment 01.3
+#+TITLE: Assignment 01
 #+LANGUAGE: en
 #+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t d:(not "HINT")
 #+OPTIONS: html-postamble:nil
