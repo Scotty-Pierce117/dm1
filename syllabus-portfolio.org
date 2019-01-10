@@ -1,0 +1,82 @@
+#+TITLE:CS 237 Syllabus and Portfolio@@html:<br>@@ Winter 2019
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything
+#+SETUPFILE: theme-bigblow.setup
+This course is about *Mathematics for computer science.* 
+
+It introduces the mathematical topics needed to provide a solid theoretical 
+foundation for your career and continued learning in computer science. 
+
+The following topics will be covered:
+
++ Sets and Logic
++ Functions and Relations
++ Compbinatorics and Probability
++ Number Theory and Practice
++ Trees and Graphs
++ Languages and Grammars
+
+In other words, it's a blast!
+
+* Objectives
++ Master the basic terminology and operations of sets and logic, functions and relations, combinatorics and probability, number theory and practice, trees and graphs, and languages and grammars.
++ Demonstrate logical reasoning as you solve interesting problems.
++ Learn basic functional programming through using, reading, and writing Erlang code.
++ Interpret the meaning of mathematical statements in the context of applications in Computer Science.
++ Think like a mathematician by making good connections.
+
+* Prerequisites
+You must have successfully completed CS 165, Object-Oriented Software Development.
+
+* Requirements
+You are required to
++ attend class each class period (but then again, why wouldn't you?),
++ read assigned portions of the course materials /before/ the class meeting when they will be discussed,
++ complete weekly preparation assessments, and 
++ do weekly homework assessments to deepen your understanding of selected topics.
+
+
+* Texts
++ [[https://learnyousomeerlang.com/content/][learn you some Erlang for great good]]
++ [[https://rickneff.github.io/metaphors-be-with-you.html][Metaphors Be With You]]
++ Optional: *Programming Erlang: Software for a concurrent world*. /Joe Armstrong/, Second Edition, 2013, The Pragmatic Bookshelf. (ISBN: 13:978-1-937785-53-6)
+
+* Software
++ [[https://www.erlang.org/][Erlang/OTP]]
++ git and Spacemacs (See installation instructions [[https://rickneff.github.io][here]] and search for 'Tools' section)
+
+* Other
+A three ring binder to hold your portfolio
+
+* Behavioral Requirements
+You are required to\dots{}
++ attend class, as assessments will happen in class each day that are not reproducible outside of class.
++ read assigned portions of the course materials /before/ class each Tuesday and Thursday.
++ complete all team and personal assessments to deepen your understanding of selected topics.
+
+* Course Periodicity
+This course has a weekly period, i.e. you can count on knowing ahead of time what you will be doing each day of each week.
+Each class period consists of two 30 minute sections. 
+
+On Tuesdays these sections are:
+** Presentation  
+A time where I will add depth information to the preparation material you finished reading *before class*.
+** Class Directed Learning
+You will participate in a class-wide activity that reinforces what you've read and what I've shown you.
+
+On Thursdays these sections are:
+** Answer Questions 
+I will answer questions that have been submitted to the slack channel.
+** Class Directed Learning 
+You will participate in a class-wide activity that reinforces what you've read and what I've shown you.
+
+* Questions
+The questions answered on Thursday are generalized from those you submit via the slack channel on Tuesday Evenings. You must submit any and all unanswered questions on Tuesday evening. Not submitting questions leads to a reduced learning experience. You will have plenty of questions. Submit them! Choose knowledge not ignorance.
+
+* Exercises
+Exercises are smaller experiences that are designed to float uncertainties and questions you have to the surface of your mind. They are designed to be smaller so you can find out what you don't know and then take the steps necessary to know.
+
+* Problems 
+Problems are weightier experiences that invite you to explore topics in algorithms and complexity, as well as increase your algorithmic problem solving prowess. All involve writing mathematically.
