@@ -27,7 +27,13 @@
   (This is a \ldquo{}free association\rdquo exercise --- there is no right answer.)
 #+end_note
 #+begin_info
-  I destert.
+  From the limited experience that I’ve had with discrete math so far, 
+  the desert represents the hot and cold nature that students experience while 
+  learning discrete math.  Throughout a twenty-four-hour cycle, a desert goes through
+  two main temperature cycles, especially during the non-winter months.  A desert can be
+  blistering hot during the day and freezing cold at night.  The learning process in discrete math can be similar.  
+  At times, the student can feel on fire, loving the class, feeling smart and excelling in
+  the problem solving.  At other time, they are cold.  The progress is slow, the brain is frozen, and they are extremely uncomfortable.  
 #+end_info
 ** TODO DGZ
 #+begin_note
@@ -39,9 +45,14 @@
   AD GS AD WY TE SEA S BG T AD WETER PGS AVE WGS
 #+end_note
 #+begin_info
-  This stanza belongs to Robert Lewis Stevenson
+  Interestingly enough, after looking at two distinct dehydrated words, “WARUS” and “CABBAGES”,
+  I recalled a memory of my grade school years at charter school.  We were required to memorize 
+  multiple poems throughout the school year.  I knew this was from some sort of poem, so I searched
+  “walrus cabbage poem” and bam.  Stanza 65 from Lewis Carroll’s “Alice in Wonderland” which says 
+  “The time has come,” the Walrus said, “To talk of many things: Of shoes—and ships—and sealing-wax
+  Of cabbages—and kings—And why the sea is boiling hot—And whether pigs have wings.”
 #+end_info
-* Problems
+* Problemsi
 ** TODO CHJ
 #+begin_note
   Let $n / 0$ be infinity, for any positive integer /n/.
@@ -51,7 +62,9 @@
   are 3:1, 5:2, 3:1, 2:1, 2:1, 5:2, 1:1, 2:1, 3:2, 2:3, and infinity (3:0).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I was trying to think of words with few syllables, because typically there are multiple vowels when 
+  there are multiple syllables.  Then I searched single-syllable words with the most consonants, and I 
+  found the word “strengths”, which has 8:1 consonant to vowel ratio.
 #+end_info
 ** TODO DZB
 #+begin_note
