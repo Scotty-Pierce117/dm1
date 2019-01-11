@@ -8,10 +8,10 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2019-01-10 Thu 16:29]
+#+CAPTION: Clock summary at [2019-01-10 Thu 17:39]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *0:00* |
+| *Total time* | *1:00* |
 #+END:
 
 * Exercises
@@ -78,7 +78,9 @@
   What is the radius of the outermost circle?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I used excel to compute the circle.  I created a somewhat infinite series based upon
+  the ratio of around 0.82, which I figured out by calculating the first three circle radiuses.
+  I then used that ratio to compute the diameter as the change approached zero, which was around 6.55.
 #+end_info
 * Puzzles
 ** TODO DOK
