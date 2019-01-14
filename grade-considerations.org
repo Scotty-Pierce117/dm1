@@ -5,7 +5,7 @@
 #+STARTUP: showeverything entitiespretty
 #+SETUPFILE: theme-bigblow.setup
 
-* Hints for DM1 Assignment 01.3
+* Hints for Assignment 01
   
   First, a Hint about Hints:
 
@@ -77,7 +77,7 @@
   grade. These assignments consist of reading the book and working the
   exercises, problems and puzzles (EPPs) therein.
 
-  Each dm1-assignment-##.#.org file will have the structure:
+  Each assignment-##.org file will have the structure:
 
   1. Top-level headings for Exercises, Problems, and Puzzles
   2. Second-level headings for each three-letter acronym.
