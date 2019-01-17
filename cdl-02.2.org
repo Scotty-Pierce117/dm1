@@ -43,9 +43,10 @@
 
 * Two Questions For You To Answer
   Q1. What are the ages of the daughters?
+Ages: (A B C) (2 2 9)
   Q2. For the census-taker (or you) to reach a conclusion, the \ldquo{}something more\rdquo
   information is
   - [ ] necessary and sufficient.
   - [ ] necessary but insufficient.
   - [ ] unnecessary but sufficient.
-  - [ ] unnecessary and insufficient.
+  - [\check] unnecessary and insufficient.
