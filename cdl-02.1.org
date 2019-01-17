@@ -1,0 +1,21 @@
+#+TITLE: DM1 Class Directed Learning 02.1
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything
+
+  Your first task is to read [[https://rickneff.github.io/the-problem-of-the-hats.html][this statement of a puzzle]] (that is most likely a
+  problem for you --- NOT an exercise!).
+
+  Then ponder and discuss with your groupmates which of the three choices is
+  the correct one.
+
+  Use good, logical reasoning, and realize that to properly prove that one
+  choice is correct you must also show why the other choices are incorrect.
+
+  Each of you individually answer the survey question when it is made available.
+
+  [[https://www.polleverywhere.com/register?p=7m22m-gtz4&u=SG7x5MFk][Follow this link]] to sign up to participate in this assessment.
+
+  When the poll is active, respond using the Poll Everywhere app on your mobile
+  device, or at this link: https://pollev.com/rickneff737

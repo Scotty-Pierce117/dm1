@@ -144,10 +144,6 @@ letter-based definition of grades, reproduced below:
   prepare for additional instruction in this subject matter.
 + \ldquo{}F\rdquo represents failure in the course.
 
-#+Begin_Latex
-\pagebreak
-#+End_Latex
-
 Note that the above description of an \ldquo{}A\rdquo implies that you have gone *above and
 beyond*. To claim this grade you *must* have continually done the following
 things throughout the 4-week period and recorded evidence of this behavior in
@@ -187,6 +183,188 @@ and permanently aggrandize himself.\rdquo
   assistance or if you feel you have been unlawfully discriminated against on
   the basis of disability, you may seek resolution through established grievance
   policy and procedures. You should contact the Personnel Office at 496-1130.
+
+* Readings
+  These readings are to be completed *prior to* each listed week\rsquo{}s Tuesday class.
+  The listed Exercises/Problems/Puzzles (EPPs) for each week are to be completed
+  *prior to* midnight each Friday. (More details about these EPPs will be
+  available in each week\rsquo{}s course files.)
+
+  | Week | Reading | Exercises/Problems/Puzzles (EPPs)       |
+  |------+---------+-----------------------------------------|
+  |   01 | <ABC    | CRC DGZ CHJ DOK CJF DZB                 |
+  |   02 | ABC     | OQP USV UCA ODS UGX OGR UWM OPZ UOX OTX |
+  |      |         | UOT OIM UIN OJL UCG OIO UIJ OQT UTQ OYU |
+  |      |         | UOH OZD UZM OOY UFZ OKJ UVH OJM ULQ OTD |
+  |      |         | UJU OLH UWY OBW USL OYP UBV OKQ UKF OKL |
+  |      |         | UEZ OYW UEF OUB UQY                     |
+  |   03 | DEF     | TBD WDK TDR WDT TEH WFC TEJ WFK TER WGP |
+  |      |         | TEU WGW TFV WJS TGE WKC THP WKM TIW WNW |
+  |      |         | TKG WOV TME WQW TMZ WRA TNL WRD TNQ WRP |
+  |      |         | TOJ WRU TOL WZO TOU WYH TLI WPI TSD WTM |
+  |      |         | TTV WUZ WZM TUK WVQ TUQ WVU TUW WWD TVL |
+  |      |         | WWR TWN WWS TXG WZG TKH WUE             |
+  |   04 | GHI     | EBQ MGX ECI MHB ECT MKJ EFE MKL EFS MLB |
+  |      |         | EJE MLU EJK MMC EJU MNE EKQ MON         |
+  |   05 | JKL     | QAM REX QCV RFC QCZ RFF QDM RGL QEB RGM |
+  |      |         | QFK RHB QGK RVB QGT RJV QIQ RLH QKA RNC |
+  |      |         | QKT RNM QOS ROP QRQ ROX                 |
+  |   06 | MNO     | FAB ISM FBH ITT FDK IVO FDZ IWC FJH IWK |
+  |      |         | FJY IXT FMD IYJ FOJ IZL FOY VAO FQI VAR |
+  |      |         | FQL VAY FQW VCR FRM VEM FUA VFJ FVF VGU |
+  |      |         | FVH VGX FXI VIB FYR VIW                 |
+  |   07 | PQR     | GMQ JPZ GMY JQA GRZ JYA GXF XAJ GYI XFO |
+  |   08 |         | GYN XGG                                 |
+  |   09 | STU     | LDA SQI LJP SUF LNR YGT LDO YCF LUM YZU |
+  |   10 |         | LTI YDQ LND YTR LGO YIV                 |
+  |   11 | VWX     | HST KDB HTC KPS ABR KWD HRR KEO HMO HIJ |
+  |   12 |         | KLE HAB KOV HBT AGA KNF HJS HAX KHQ HKE |
+  |      |         | KBB HRL AGD HSG KHO ANA HLX KSI HTR KSQ |
+  |      |         | HBE KSC                                 |
+  |   13 | YZ@     | BAO NCO PDQ NTC PTW NTM PMV NES BRZ BRE |
+  |      |         | NGP BRQ PIQ PRK NIO PFA BGT NGI NLR BSP |
+  |      |         | NBO PBI BJO NKY BMI                     |
+
+#+Begin_Latex
+\pagebreak
+#+End_Latex
+
+* Portfolio
+** Course Tracker
+   You are required to track your progress in the course using this table. 
+
+   Note: Currently, you see full credit for week one\rsquo{}s work. (\checkmark means yes. Blank
+   means no.) Update the table for week 2 and all subsequent weeks each class
+   day and week during the semester.
+
+| / |   <> | <>  | <>  | <>  | <>  | <>  | <>  | <>   |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # | Week | CRU | PFP | CDL | SAQ | PAQ | CDL | PPL  |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    1 | \check   | \check   | \check   | \check   | \check   | \check   | 100% |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    2 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    3 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    4 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    5 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    6 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    7 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    8 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |    9 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |   10 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |   11 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |   12 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+| # |   13 |     |     |     |     |     |     |      |
+|---+------+-----+-----+-----+-----+-----+-----+------|
+
+This is an honest and true record of my work for this course.
+
+#+Begin_Latex
+\vspace{1in}
+#+End_Latex
+
+Signature: @@latex:\underline{\makebox[4in]{}}@@
+
+** Acronym Key
+   Course Tracker acronyms and their meanings.
+
+	+ CRU - I Completed the Reading and achieved a level of Understanding *before*
+    the start of Tuesday\rsquo{}s class and recorded questions about the items I didn\rsquo{}t
+    understand.
+	+ PFP - I was present for and attentive to the presentation for this date.
+	+ CDL - I fully participated in the Class Directed Learning for this date.
+	+ SAQ - I submitted /at least 1/ appropriate, Significant, Actual Question I
+    have regarding the information for this week.
+	+ PAQ - I was Present for and Attentive to the Answer Questions presentation
+    for this date.
+	+ PPL - I, individually, correctly completed this Percentage of the Problems
+    and exercises proving this Level of understanding before Friday at Midnight.
+
+* Grade Claims
+
+On the week indicated, bring this updated document to my office and make your claim.
+
+| / | <>         | <>          | <>               | <>             |
+|---+------------+-------------+------------------+----------------|
+| # | Claim Week | Grade Claim | Instructor Grade | Adjusted Grade |
+|---+------------+-------------+------------------+----------------|
+| # | 5          |             |                  |                |
+|---+------------+-------------+------------------+----------------|
+| # | 9          |             |                  |                |
+|---+------------+-------------+------------------+----------------|
+| # | 13 - 14    |             |                  |                |
+|---+------------+-------------+------------------+----------------|
+
+
+#+Begin_Latex
+\pagebreak
+#+End_Latex
+
+* Evidences
+
+  Fill in your evidences here each week to build your portfolio. The number of
+  pieces of evidence are determined by you. However, the more you have the
+  better off you will be.
+
+** Week 1
+*** Some Exercise or Problem
+
+    Solution here
+
+*** Some Other Exercise or Problem
+
+    Solution here
+
+*** Some Problem Requiring Code
+
+#+BEGIN_SRC elisp :results silent
+;; This is just some example code showing you how it can be done.
+;; Put evidence code in source blocks like this one.
+  (defun my-cool-function ()
+    (let (it be)
+      (setq it (+ 1 2) be (* 3 4))
+       (cons it be)))
+#+END_SRC
+
+** Week 2
+#+INCLUDE: ./assignment-02.org
+
+  The INCLUDE directive has a keyword, namely :minlevel --- what do you suppose
+  it does?!
+
+** Week 3
+   [[file:assignment-03.org][Link to Assignment File]] 
+   
+** Week 4
+   [[elisp:(progn%20(forward-line)%20(insert-file%20"assignment-04.org"))][Insert Assignment File]]
+** Week 5
+
+** Week 6
+
+** Week 7
+
+** Week 8
+
+** Week 9
+
+** Week 10
+
+** Week 11
+
+** Week 12
+
+** Week 13
 
 * Other
   This document may be modified by the instructor at any time without notification.
