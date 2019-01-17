@@ -9,15 +9,25 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 * Exercises
-** TODO UCA
+** DONE UCA
+   CLOSED: [2019-01-17 Thu 15:41]
 #+begin_note
   Start your exercise warmup by thinking up three examples and three
   non-examples of propositions. Make them pithy.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Examples:
+  Antarcitca is cold.
+  Every person has a mother.
+  The United States is a country.
+  Non-Examples:
+  Eat this cake.
+  Why do you like the color red?
+  Is dog my favorite food?
+  
 #+end_info
-** TODO ODS
+** DONE ODS
+   CLOSED: [2019-01-17 Thu 15:41]
 #+begin_note
   Which of the following sentences are propositions? For each proposition, give
   its truth value (true or false).
@@ -31,9 +41,17 @@
   8. Simon says jump.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. true.
+  2. false.
+  3. false.
+  4. not a proposition.
+  5. either true or false
+  6. not a proposition
+  7. either true or false
+  8. either true or false
 #+end_info
-** TODO UGX
+** DONE UGX
+   CLOSED: [2019-01-17 Thu 15:41]
 #+begin_note
   Put the proposition \ldquo{} /v/ is a member of the set of English alphabet
   consonants\rdquo in symbolic logic terms, using /C/ as the name of the set of
@@ -44,7 +62,7 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  v ∈ C
 #+end_info
 ** TODO OGR
 #+begin_note
@@ -56,9 +74,13 @@
   4. People can fly or pigs can sing.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. simple (true)
+  2. compound (true)
+  3. compound (true)
+  4. compound (false)
 #+end_info
-** TODO UWM
+** DONE UWM
+   CLOSED: [2019-01-17 Thu 15:41]
 #+begin_note
   Express in English the negation of each of these propositions:
 
@@ -72,9 +94,14 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Two plus two is no equal to four. 
+  2. Two plus one is not less than four.
+  3. Toronto is not the capital of Germany.
+  4. A total eclipse happens frequently.
+  5. The current situation does not require any special measures.
 #+end_info
-** TODO OPZ
+** DONE OPZ
+   CLOSED: [2019-01-17 Thu 15:42]
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -91,9 +118,15 @@
   6. \not (/p/ \lor /q/)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. I did not study.
+  2. I studied or I got an F on the test.
+  3. I studied and I got an F on the test.
+  4. I did not study and I did not get an F on the test.
+  5. I did not study or I got an F on the test. 
+  6. I did not study or get an F on the test.
 #+end_info
-** TODO UOX
+** DONE UOX
+   CLOSED: [2019-01-17 Thu 15:47]
 #+begin_note
   What other special forms besides =if= does elisp have for doing conditionals?
   Why are they called \ldquo{}special\rdquo?
@@ -102,9 +135,11 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The six special forms are: when, unless, cond, not, and, or.  The special cases are marked so
+  not all the cases are evaluated (from gnu online manual).
 #+end_info
-** TODO OTX
+** DONE OTX
+   CLOSED: [2019-01-17 Thu 15:52]
 #+begin_note
   Determine whether these sentences use an inclusive or, or an exclusive or:
   1. A side of fries or chips comes with your sandwich.
@@ -115,13 +150,19 @@
   6. Take it or leave it.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Exclusive.
+  2. Inclusive.
+  3. Inclusive.
+  4. Inclusive. (You can pay with two cards at the store.)
+  5. Exclusive.
+  6. Exclusive.
 #+end_info
-** TODO UOT
+** DONE UOT
+   CLOSED: [2019-01-17 Thu 16:00]
 #+begin_note
   Return to the task of comparing the two expressions:
 
-  1. =p and (q or not r)=
+  1. =p and (q or not r)=`
   2. =(p and q) or not r=
 
   Build a truth table of expression 2 and compare it with the truth table of
@@ -131,17 +172,36 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | ( | p | ∧ | q | ) | ∨ | ¬ | r |
+  |---+---+---+---+---+---+---+---|
+  |   | 0 | 0 | 0 |   | 1 | 1 | 0 |
+  |   | 0 | 0 | 0 |   | 0 | 0 | 1 |
+  |   | 0 | 0 | 1 |   | 1 | 1 | 0 |
+  |   | 0 | 0 | 1 |   | 0 | 0 | 1 |
+  |   | 1 | 0 | 0 |   | 1 | 1 | 0 |
+  |   | 1 | 0 | 0 |   | 0 | 0 | 1 |
+  |   | 1 | 1 | 1 |   | 1 | 1 | 0 |
+  |   | 1 | 1 | 1 |   | 1 | 0 | 1 |
+  
+  They differ in the ∧ column on the 5th character down and ∨ column on the 4th character down.
 #+end_info
-** TODO UIN
+** DONE UIN
+   CLOSED: [2019-01-17 Thu 16:13]
 #+begin_note
   What is the set difference between the set of letters in the English alphabet
   and the set of letters in the Hawaiian alphabet?
 #+end_note
-#+begin_info
-  Your answer goes here.
-#+end_info
-** TODO OJL
+#+BEGIN_SRC emacs-lisp
+;;I will use sets to see the difference.  I googled the Hawaiian alphabet.
+(require 'cl)
+(set-difference '(a b c d e f g h i j k l m n o p q r s t u v w x y z) '(a e i o u h k l m n p w))
+#+END_SRC
+
+#+RESULTS:
+| b | c | d | f | g | j | q | r | s | t | v | x | y | z |
+
+** DONE OJL
+   CLOSED: [2019-01-17 Thu 16:30]
 #+begin_note
   Justify where $p = x \in A, q = x \in B, r = x \in C$:
 
@@ -159,7 +219,8 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  After evaluating column 3 row A, I got the answer 4 \lor 5 \lor 6 \lor 7, which fit perfectly in the region
+  highlighted "A".  I evaluated every other set and got the correct solution.
 #+end_info
 ** TODO UCG
 #+begin_note
