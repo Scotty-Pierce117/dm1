@@ -11,7 +11,7 @@
 #+CAPTION: Clock summary at [2019-01-10 Thu 17:39]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *1:00* |
+| *Total time* | *3:00* |
 #+END:
 
 * Exercises
