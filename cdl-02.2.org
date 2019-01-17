@@ -1,0 +1,51 @@
+#+TITLE: DM1 Class Directed Learning 02.2
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+
+  Your first task is to read the below statement of the problem.
+
+  Then ponder and discuss this problem and its solution with your groupmates.
+
+  Each of you individually answer the survey when it is made available.
+
+  (If for some reason you are not signed up to participate in Poll Everywhere,
+   [[file:cdl-02.1.org][here are instructions for how to do so]].)
+
+* Problem Statement
+#+BEGIN_QUOTE
+  A census-taker knocks on the door and a woman answers the door. She tells the
+  census-taker that she lives in the house with her =nd= daughters.
+
+  \ldquo{}And what are their ages?\rdquo the census-taker asked.
+
+  \ldquo{}I won\rsquo{}t tell you --- but I will tell you that =pa= is the product of their
+  ages\rdquo, replied the woman.
+
+  \ldquo{}That\rsquo{}s not enough information\rdquo, said the census-taker.
+
+  \ldquo{}Okay, the sum of their ages is =sa=\rdquo, said the woman.
+
+  \ldquo{}That\rsquo{}s still not enough information! Please, is there something more you can
+  tell me?\rdquo the census-taker implored.
+
+  \ldquo{}Yes, there is. =sm=\rdquo, revealed the woman.
+#+END_QUOTE
+
+* Variable Values Revealed
+  | Variable | Description           |                          Value |
+  |----------+-----------------------+--------------------------------|
+  | =nd=     | Number of daughters   |                              3 |
+  | =pa=     | Product of their ages |                             36 |
+  | =sa=     | Sum of their ages     |                             13 |
+  | =sm=     | Something more        | My oldest daughter likes cats. |
+
+* Two Questions For You To Answer
+  Q1. What are the ages of the daughters?
+  Q2. For the census-taker (or you) to reach a conclusion, the \ldquo{}something more\rdquo
+  information is
+  - [ ] necessary and sufficient.
+  - [ ] necessary but insufficient.
+  - [ ] unnecessary but sufficient.
+  - [ ] unnecessary and insufficient.

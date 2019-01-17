@@ -343,7 +343,7 @@
 #+END_SRC
 
 #+RESULTS:
-[[file:../img/fig-set-subset-conditional.png]]
+[[file:img/fig-set-subset-conditional.png]]
 
   Make a connection between the logical conditional operator (\rightarrow) and the
   /definition/ of a subset. Refer to the three numbered regions in your answer.
