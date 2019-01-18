@@ -222,7 +222,8 @@
   After evaluating column 3 row A, I got the answer 4 \lor 5 \lor 6 \lor 7, which fit perfectly in the region
   highlighted "A".  I evaluated every other set and got the correct solution.
 #+end_info
-** TODO UCG
+** DONE UCG
+   CLOSED: [2019-01-17 Thu 16:43]
 #+begin_note
   Let set *A* = =[verve vim vigor]=, set *B* = =[butter vinegar pepper vigor]=.
   For each of the following set operations, give its resulting members (as a
@@ -240,9 +241,15 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. C = [verve vim vigor butter vinegar pepper] 
+  2. D = [vigor]
+  3. C(subset) = [verve vim vigor vinegar]
+  4. C(subset) = [vigor butter vinegar pepper]
+  5. C(subset) = [vigor vinegar]
+  6. D(subset) = [] ;; empty
 #+end_info
-** TODO OQT
+** DONE OQT
+   CLOSED: [2019-01-17 Thu 17:14]
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -257,9 +264,13 @@
   4. \not /p/ \rarr \not /q/
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. If I study, I will get and A on the test.
+  2. I didn't study or I didn't get an A on the test.
+  3. If I don't study, then I study or get an A on the test.
+  4. If I don't study, then I don't get an A on the test.
 #+end_info
-** TODO UTQ
+** DONE UTQ
+   CLOSED: [2019-01-17 Thu 17:19]
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -275,7 +286,10 @@
      or you did apply and got accepted.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. p ^ q
+  2. \not p ^ q
+  3. p ^ \not q
+  4. (\not p ^ \not q) v (p ^ q)
 #+end_info
 ** TODO UJU
 #+begin_note
