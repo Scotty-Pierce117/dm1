@@ -10,13 +10,23 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 * Exercises
-** TODO TDR
+** DONE TDR
+   CLOSED: [2019-01-22 Tue 16:29]
 #+begin_note
   Find the =setf= way of doing the equivalent of =fset=.
 #+end_note
 #+begin_info
-  Your answer goes here.
 #+end_info
+#+BEGIN_SRC emacs-lisp
+(setf (symbol-function 'test1) (lambda (n) (+ 1 (* 3 n))))
+(test1 2)
+
+#+END_SRC
+
+#+RESULTS:
+: 7
+
+
 ** TODO WDT
 #+begin_note
   PVP the result of evaluating the following (paying special attention to the
