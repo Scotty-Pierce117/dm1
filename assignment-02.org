@@ -41,7 +41,7 @@
   8. Simon says jump.
 #+end_note
 #+begin_info
-  1. true.
+  1. true. 
   2. false.
   3. false.
   4. not a proposition.
@@ -298,7 +298,22 @@
   2. $p \wedge q \equiv q \wedge p$
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1.
+| p | ∨ | q | = | q | ∨ | p |
+|---+---+---+---+---+---+---|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+  2.
+| p | ∧ | q | = | q | ∧ | p |
+|---+---+---+---+---+---+---|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 | 0 | 0 |
+| 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+  As it can be seen, each is a reverse copy of one another, which makes sense as the values are flipped.
+
 #+end_info
 ** TODO OLH
 #+begin_note
@@ -307,7 +322,29 @@
   2. $(p \wedge q) \wedge r \equiv p \wedge (q \wedge r)$
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1.
+| ( | p | ∨ | q | ) | ∨ | r | ≡ | p | ∨ | ( | q | ∨ | r | ) |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+|   | 0 | 0 | 0 |   | 0 | 0 |   | 0 | 0 |   | 0 | 0 | 0 |   |
+|   | 0 | 0 | 0 |   | 1 | 1 |   | 0 | 1 |   | 0 | 1 | 1 |   |
+|   | 0 | 1 | 1 |   | 1 | 0 |   | 0 | 1 |   | 1 | 1 | 0 |   |
+|   | 0 | 1 | 1 |   | 1 | 1 |   | 0 | 1 |   | 1 | 1 | 1 |   |
+|   | 1 | 1 | 0 |   | 1 | 0 |   | 1 | 1 |   | 0 | 0 | 0 |   |
+|   | 1 | 1 | 0 |   | 1 | 1 |   | 1 | 1 |   | 0 | 1 | 1 |   |
+|   | 1 | 1 | 1 |   | 1 | 0 |   | 1 | 1 |   | 1 | 1 | 0 |   |
+|   | 1 | 1 | 1 |   | 1 | 1 |   | 1 | 1 |   | 1 | 1 | 1 |   |
+  2.
+| ( | p | ∧ | q | ) | ∧ | r | ≡ | p | ∧ | ( | q | ∧ | r | ) |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+|   | 0 | 0 | 0 |   | 0 | 0 |   | 0 | 0 |   | 0 | 0 | 0 |   |
+|   | 0 | 0 | 0 |   | 0 | 1 |   | 0 | 0 |   | 0 | 0 | 1 |   |
+|   | 0 | 0 | 1 |   | 0 | 0 |   | 0 | 0 |   | 1 | 0 | 0 |   |
+|   | 0 | 0 | 1 |   | 0 | 1 |   | 0 | 0 |   | 1 | 1 | 1 |   |
+|   | 1 | 0 | 0 |   | 0 | 0 |   | 1 | 0 |   | 0 | 0 | 0 |   |
+|   | 1 | 0 | 0 |   | 0 | 1 |   | 1 | 0 |   | 0 | 0 | 1 |   |
+|   | 1 | 1 | 1 |   | 0 | 0 |   | 1 | 0 |   | 1 | 0 | 0 |   |
+|   | 1 | 1 | 1 |   | 1 | 1 |   | 1 | 1 |   | 1 | 1 | 1 |   |
+
 #+end_info
 ** TODO UWY
 #+begin_note
@@ -316,7 +353,29 @@
   2. $p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1.
+| p | ∧ | ( | q | ∨ | r | ) | ≡ | ( | p | ∧ | q | ) | ∨ | ( | p | ∧ | r | ) |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| 0 | 0 |   | 0 | 0 | 0 |   |   |   | 0 | 0 | 0 |   | 0 |   | 0 | 0 | 0 |   |
+| 0 | 0 |   | 0 | 1 | 1 |   |   |   | 0 | 0 | 0 |   | 0 |   | 0 | 0 | 1 |   |
+| 0 | 0 |   | 1 | 1 | 0 |   |   |   | 0 | 0 | 1 |   | 0 |   | 0 | 0 | 0 |   |
+| 0 | 0 |   | 1 | 1 | 1 |   |   |   | 0 | 0 | 1 |   | 0 |   | 0 | 0 | 1 |   |
+| 1 | 0 |   | 0 | 0 | 0 |   |   |   | 1 | 0 | 0 |   | 0 |   | 1 | 0 | 0 |   |
+| 1 | 1 |   | 0 | 1 | 1 |   |   |   | 1 | 0 | 0 |   | 0 |   | 1 | 1 | 1 |   |
+| 1 | 1 |   | 1 | 1 | 0 |   |   |   | 1 | 1 | 1 |   | 1 |   | 1 | 0 | 0 |   |
+| 1 | 1 |   | 1 | 1 | 1 |   |   |   | 1 | 1 | 1 |   | 1 |   | 1 | 1 | 1 |   |
+  2.
+| p | ∨ | ( | q | ∧ | r | ) | ≡ | ( | p | ∨ | q | ) | ∧ | ( | p | ∨ | r | ) |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| 0 | 0 |   | 0 | 0 | 0 |   |   |   | 0 | 0 | 0 |   | 0 |   | 0 | 0 | 0 |   |
+| 0 | 0 |   | 0 | 0 | 1 |   |   |   | 0 | 0 | 0 |   | 0 |   | 0 | 1 | 1 |   |
+| 0 | 0 |   | 1 | 0 | 0 |   |   |   | 0 | 1 | 1 |   | 1 |   | 0 | 0 | 0 |   |
+| 0 | 1 |   | 1 | 1 | 1 |   |   |   | 0 | 1 | 1 |   | 1 |   | 0 | 1 | 1 |   |
+| 1 | 1 |   | 0 | 0 | 0 |   |   |   | 1 | 1 | 0 |   | 1 |   | 1 | 1 | 0 |   |
+| 1 | 1 |   | 0 | 0 | 1 |   |   |   | 1 | 1 | 0 |   | 1 |   | 1 | 1 | 1 |   |
+| 1 | 1 |   | 1 | 0 | 0 |   |   |   | 1 | 1 | 1 |   | 1 |   | 1 | 1 | 0 |   |
+| 1 | 1 |   | 1 | 1 | 1 |   |   |   | 1 | 1 | 1 |   | 1 |   | 1 | 1 | 1 |   |
+
 #+end_info
 ** TODO OBW
 #+begin_note
@@ -325,7 +384,21 @@
   2. $\neg (p \wedge q) \equiv \neg p \vee \neg q$
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1.
+| ¬ | ( | p | ∨ | q | ) | ≡ | ¬ | p | ∧ | ¬ | q |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| 1 |   | 0 | 0 | 0 |   |   | 1 | 0 | 1 | 1 | 0 |
+| 0 |   | 0 | 1 | 1 |   |   | 1 | 0 | 0 | 0 | 1 |
+| 0 |   | 1 | 1 | 0 |   |   | 0 | 1 | 0 | 1 | 0 |
+| 0 |   | 1 | 1 | 1 |   |   | 0 | 1 | 0 | 0 | 1 |
+  2.
+| ¬ | ( | p | ∧ | q | ) | ≡ | ¬ | p | ∨ | ¬ | q |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| 1 |   | 0 | 0 | 0 |   |   | 1 | 0 | 1 | 1 | 0 |
+| 1 |   | 0 | 0 | 1 |   |   | 1 | 0 | 1 | 0 | 1 |
+| 1 |   | 1 | 0 | 0 |   |   | 0 | 1 | 1 | 1 | 0 |
+| 0 |   | 1 | 1 | 1 |   |   | 0 | 1 | 0 | 0 | 1 |
+
 #+end_info
 ** TODO USL
 #+begin_note
@@ -338,7 +411,36 @@
   5. $p \lor \mathbf{1} \equiv \mathbf{1}$ (absorption)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1.
+| p | ∧ | 1 | ≡ | p |
+|---+---+---+---+---|
+| 0 | 0 | 1 |   | 0 |
+| 1 | 1 | 1 |   | 1 |
+
+  2.
+| p | ∨ | 0 | ≡ | p |
+|---+---+---+---+---|
+| 0 | 0 | 0 |   | 0 |
+| 1 | 1 | 0 |   | 1 |
+
+  3.
+| ¬ | ¬ | p | ≡ | p |
+|---+---+---+---+---|
+| 0 | 1 | 0 |   | 0 |
+| 1 | 0 | 1 |   | 1 |
+
+  4.
+| p | ∧ | 0 | ≡ | 0 |
+|---+---+---+---+---|
+| 0 | 0 | 0 |   | 0 |
+| 1 | 0 | 0 |   | 0 |
+
+  5.
+| p | ∨ | 1 | ≡ | 1 |
+|---+---+---+---+---|
+| 0 | 1 | 1 |   | 1 |
+| 1 | 1 | 1 |   | 1 |
+
 #+end_info
 ** TODO OYP
 #+begin_note
@@ -352,7 +454,12 @@
   5. $\overline{\overline{\mathsf{A}}} = \mathsf{A}$.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I saw that this problem correlated nicely with the previous problem.
+  1. idempotence
+  2. absorbtion
+  3. idempotence
+  4. absorbtion
+  5. double negation
 #+end_info
 ** TODO UBV
 #+begin_note
@@ -364,7 +471,11 @@
   5. Getting an A on the final exam is necessary and sufficient for passing this class.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Losing the first round makes it impossible to win the trophy.
+  2. Losing the tournament is not sufficient for winning the trophy.
+  3. I am weak and unsuccessful.
+  4. You can fail and you can pass this test.
+  5. Not getting an A on the final exam is necessary and sufficient for failing this class.
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
@@ -379,6 +490,7 @@
 ** TODO OIO *
 #+begin_note
   Here is a \ldquo{}setq chain\rdquo illustrating subset size compared to superset size:
+
 
 #+BEGIN_SRC emacs-lisp
   (setq A [s i z e]
@@ -436,7 +548,10 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The symbol -> means that if the thing on the thing on the left is true, the thing on the right
+  is also true.  That means that is U is true, 1 is true.  Becuase B is a subset of U, B is true as
+  well making 2 true.  A is a subset of B, so A is true if B is true, making 3 true as well.  That means
+  A -> B -> U.
 #+end_info
 ** TODO OYU
 #+begin_note
@@ -454,7 +569,11 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. p given q.
+  2. p on the terms of q.
+  3. p supposing q.
+  4. p in case q.
+  5. p contingent upon q.
 #+end_info
 ** TODO UOH
 #+begin_note
@@ -473,7 +592,9 @@
      your being accepted.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. q -> p
+  2. p -> q
+  3. p <-> p
 #+end_info
 ** TODO OZD *
 #+begin_note
@@ -495,7 +616,10 @@
   4. 1 < 2 if and only if 2 < 3.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. true.
+  2. false.
+  3. false.
+  4. true.
 #+end_info
 ** TODO OOY *
 #+begin_note
@@ -532,7 +656,41 @@
   5. $\mathsf{p} \wedge \neg \mathsf{q}$
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. 
+| p | → | q |
+|---+---+---|
+| 0 | 1 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+  2. 
+| p | ⊕ | q |
+|---+---+---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 1 | 0 |
+| 1 | 0 | 1 |
+  3.
+| p | → | ¬ | q |
+|---+---+---+---|
+| 0 | 1 | 1 | 0 |
+| 0 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 |
+  4. 
+| ¬ | p | → | q |
+|---+---+---+---|
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 |
+| 0 | 1 | 1 | 1 |
+  5. 
+| p | ∧ | ¬ | q |
+|---+---+---+---|
+| 0 | 0 | 1 | 0 |
+| 0 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 |
 #+end_info
 ** TODO OJM *
 #+begin_note
@@ -558,7 +716,17 @@
   Construct a truth table for (p \lor q) \land (\not p \lor r) \rightarrow (q \lor r).
 #+end_note
 #+begin_info
-  Your answer goes here.
+| ( | p | ∨ | q | ) | ∧ | ( | ¬ | p | ∨ | r | ) | → | ( | q | ∨ | r | ) |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+|   | 0 | 0 | 0 |   | 0 |   | 1 | 0 | 1 | 0 |   | 1 |   | 0 | 0 | 0 |   |
+|   | 0 | 0 | 0 |   | 0 |   | 1 | 0 | 1 | 1 |   | 1 |   | 0 | 1 | 1 |   |
+|   | 0 | 1 | 1 |   | 1 |   | 1 | 0 | 1 | 0 |   | 1 |   | 1 | 1 | 0 |   |
+|   | 0 | 1 | 1 |   | 1 |   | 1 | 0 | 1 | 1 |   | 1 |   | 1 | 1 | 1 |   |
+|   | 1 | 1 | 0 |   | 1 |   | 0 | 1 | 0 | 0 |   | 1 |   | 0 | 0 | 0 |   |
+|   | 1 | 1 | 0 |   | 1 |   | 0 | 1 | 1 | 1 |   | 1 |   | 0 | 1 | 1 |   |
+|   | 1 | 1 | 1 |   | 1 |   | 0 | 1 | 0 | 0 |   | 1 |   | 1 | 1 | 0 |   |
+|   | 1 | 1 | 1 |   | 1 |   | 0 | 1 | 1 | 1 |   | 1 |   | 1 | 1 | 1 |   |
+
 #+end_info
 ** TODO OKQ *
 #+begin_note
@@ -576,14 +744,38 @@
   Show that $\neg(p \leftrightarrow q)$ and $p \leftrightarrow \neg q$ are logically equivalent.
 #+end_note
 #+begin_info
-  Your answer goes here.
+| ¬ | ( | p | ↔ | q | ) |
+|---+---+---+---+---+---|
+| 0 |   | 0 | 1 | 0 |   |
+| 1 |   | 0 | 0 | 1 |   |
+| 1 |   | 1 | 0 | 0 |   |
+| 0 |   | 1 | 1 | 1 |   |
+
+| p | ↔ | ¬ | q |
+|---+---+---+---|
+| 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 |
+
 #+end_info
 ** TODO OKL
 #+begin_note
   Determine if $(p \vee q) \wedge (\neg p \vee r) \rightarrow (q \vee r)$ is a tautology.
 #+end_note
 #+begin_info
-  Your answer goes here.
+| ( | p | ∨ | q | ) | ∧ | ( | ¬ | p | ∨ | r | ) | → | ( | q | ∨ | r | ) |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+|   | 0 | 0 | 0 |   | 0 |   | 1 | 0 | 1 | 0 |   | 1 |   | 0 | 0 | 0 |   |
+|   | 0 | 0 | 0 |   | 0 |   | 1 | 0 | 1 | 1 |   | 1 |   | 0 | 1 | 1 |   |
+|   | 0 | 1 | 1 |   | 1 |   | 1 | 0 | 1 | 0 |   | 1 |   | 1 | 1 | 0 |   |
+|   | 0 | 1 | 1 |   | 1 |   | 1 | 0 | 1 | 1 |   | 1 |   | 1 | 1 | 1 |   |
+|   | 1 | 1 | 0 |   | 1 |   | 0 | 1 | 0 | 0 |   | 1 |   | 0 | 0 | 0 |   |
+|   | 1 | 1 | 0 |   | 1 |   | 0 | 1 | 1 | 1 |   | 1 |   | 0 | 1 | 1 |   |
+|   | 1 | 1 | 1 |   | 1 |   | 0 | 1 | 0 | 0 |   | 1 |   | 1 | 1 | 0 |   |
+|   | 1 | 1 | 1 |   | 1 |   | 0 | 1 | 1 | 1 |   | 1 |   | 1 | 1 | 1 |   |
+
+It is a tautology (it is always true).
 #+end_info
 ** TODO UEZ
 #+begin_note
@@ -591,7 +783,10 @@
   that is true when /p/ and /q/ are true and /r/ is false, but is false otherwise.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  You can sit in class and take the test if you are not expelled.
+  p = sit in class
+  q = take the test
+  r = you are expelled
 #+end_info
 ** TODO OYW *
 #+begin_note
@@ -839,12 +1034,14 @@
 *** Solution
 *** Proof
     Not applicable.
+    DONE
 ** TODO USV
 #+begin_note
-  Or pyrire jvgu ahzoref. Svaq n jnl gb vafreg vagb gurfr gra yvarf gur sbhe
-  fgnaqneq zngu bcrengbef (+, -, \gvzrf, \qvi), be ! (snpgbevny), be \enqvp (fdhner ebbg),
-  naq cneragurfrf sbe tebhcvat, gb znxr gra qvssrerag rkcerffvbaf gung rnpu
-  rinyhngr gb 6. Sbe rknzcyr: \enqvp4 + \enqvp4 + \enqvp4 = 6.
+Or pyrire jvgu ahzoref. Svaq n jnl gb vafreg vagb gurfr gra yvarf gur sbhe fgnaqneq zngu bcrengbef 
+(+, -, \gvzrf, \qvi), be ! (snpgbevny), be \enqvp (fdhner ebbg), naq cneragurfrf sbe tebhcvat, gb znxr gra
+ qvssrerag rkcerffvbaf gung rnpu rinyhngr gb 6. Sbe rknzcyr: \enqvp4 + \enqvp4 + \enqvp4 = 6.
+
+
   | 0 |   | 0 |   | 0 |   | = | 6 |
   |   |   |   |   |   |   |   |   |
   | 1 |   | 1 |   | 1 |   | = | 6 |
@@ -885,4 +1082,8 @@
 *** Approach
 *** Solution
 *** Proof
-    Not applicable.
+  Original: p -> q
+  converse: q -> p
+  inverse: \not p -> \not q
+  contrapositive \not q -> \not p
+

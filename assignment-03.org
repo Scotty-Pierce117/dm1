@@ -37,6 +37,9 @@
   (let ((a 1) (b 2) (c 3)) (+ a b c))
 #+END_SRC
 
+#+RESULTS:
+: 6
+
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) (+ a b c d))
 #+END_SRC
@@ -45,9 +48,15 @@
   (let ((a 1) (b 2) (c 3)) [+ a b c d])
 #+END_SRC
 
+#+RESULTS:
+: [+ a b c d]
+
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3) (+ 4)) (+ a b c +))
 #+END_SRC
+
+#+RESULTS:
+: 10
 
 #+BEGIN_SRC emacs-lisp
   (makunbound 'a)
@@ -59,8 +68,8 @@
 #+END_SRC
 #+end_note
 #+begin_info
-  Your answer goes here.
 #+end_info
+(el)
 ** TODO TEJ
 #+begin_note
   A function-as-association between elements of a domain and elements of a
@@ -165,7 +174,7 @@
   =make-hash-table= call?
 #+end_note
 #+begin_info
-  Your answer goes here.
+ Your answer goes here.
 #+end_info
 ** TODO TER
 #+begin_note

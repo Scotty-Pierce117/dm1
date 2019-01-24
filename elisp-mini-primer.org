@@ -106,6 +106,9 @@
  3.14159
 #+END_SRC
 
+#+RESULTS:
+: 3.14159
+
 #+BEGIN_SRC elisp
   42
 #+END_SRC
@@ -223,6 +226,8 @@
   ) 1 2 3 + (* 4 5)(
 #+END_SRC
 
+#+RESULTS:
+
   Note that evaluating that code block produced no output, because the input was
   not well-formed. By the way, if you ever get thrown into the debugger (into a
   buffer named *Backtrace*), typing q will get you out. Trying to evaluate the
@@ -276,11 +281,17 @@
   (elt [A B C] 0)
 #+END_SRC
 
+#+RESULTS:
+: A
+
   And this:
 
 #+BEGIN_SRC elisp
   (elt [A B C] 2)
 #+END_SRC
+
+#+RESULTS:
+: C
 
   And this:
 
@@ -314,6 +325,9 @@
 #+BEGIN_SRC elisp
   (append '(0 1 2) '("red" "green" "blue"))
 #+END_SRC
+
+#+RESULTS:
+| 0 | 1 | 2 | red | green | blue |
 
 #+BEGIN_SRC elisp
   (append '(a b c) '("red" "green" "blue"))

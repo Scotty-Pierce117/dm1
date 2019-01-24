@@ -237,15 +237,15 @@ and permanently aggrandize himself.\rdquo
    means no.) Update the table for week 2 and all subsequent weeks each class
    day and week during the semester.
 
-| / |   <> | <>  | <>  | <>  | <>  | <>  | <>  | <>   |
+| / |   <> | <>  | <>  | <>  | <>  | <>  | <>  |   <> |
 |---+------+-----+-----+-----+-----+-----+-----+------|
-| # | Week | CRU | PFP | CDL | SAQ | PAQ | CDL | PPL  |
+| # | Week | CRU | PFP | CDL | SAQ | PAQ | CDL |  PPL |
 |---+------+-----+-----+-----+-----+-----+-----+------|
 | # |    1 | \check   | \check   | \check   | \check   | \check   | \check   | 100% |
 |---+------+-----+-----+-----+-----+-----+-----+------|
-| # |    2 |     |     |     |     |     |     |      |
+| # |    2 | \check   |     |     |     | \check   | \check   |  80% |
 |---+------+-----+-----+-----+-----+-----+-----+------|
-| # |    3 |     |     |     |     |     |     |      |
+| # |    3 | \check   | \check   | \check   |     |     |     |      |
 |---+------+-----+-----+-----+-----+-----+-----+------|
 | # |    4 |     |     |     |     |     |     |      |
 |---+------+-----+-----+-----+-----+-----+-----+------|

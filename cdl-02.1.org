@@ -4,7 +4,7 @@
 #+OPTIONS: html-postamble:nil
 #+STARTUP: showeverything
 
-  Your first task is to read [[https://rickneff.github.io/the-problem-of-the-hats.html][this statement of a puzzle]] (that is most likely a
+Your first task is to read [[https://rickneff.github.io/the-problem-of-the-hats.html][this statement of a puzzle]] (that is most likely a
   problem for you --- NOT an exercise!).
 
   Then ponder and discuss with your groupmates which of the three choices is

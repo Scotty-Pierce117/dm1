@@ -47,6 +47,6 @@ Ages: (A B C) (2 2 9)
   Q2. For the census-taker (or you) to reach a conclusion, the \ldquo{}something more\rdquo
   information is
   - [ ] necessary and sufficient.
-  - [ ] necessary but insufficient.
+  - [\check] necessary but insufficient.
   - [ ] unnecessary but sufficient.
-  - [\check] unnecessary and insufficient.
+  - [ ] unnecessary and insufficient.
