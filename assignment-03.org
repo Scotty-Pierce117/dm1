@@ -812,15 +812,19 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO WJS
+** DONE WJS
+   CLOSED: [2019-01-24 Thu 16:40]
 #+begin_note
   Describe an analogous situation to floor when taking the ceiling of negative
   numbers.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  When a number is negative and you take the ceiling, it rounds up to the higher negative number.
+  When you take the floor of a negative, it rounds down to the next negative number.  
+  For example, ceiling (-5.2) is -5 and floor of (-5.2) is -6.
 #+end_info
-** TODO WKC
+** DONE WKC
+   CLOSED: [2019-01-24 Thu 16:43]
 #+begin_note
   Define the \ldquo{}take the fractional part of\rdquo function =frac-part= in terms of
   =floor= as follows:
@@ -841,17 +845,19 @@ Pretty much anything with a "p" is a predicate.
   define =floor= (assuming it were /not/ built-in) using =frac-part=?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Frac part would return only the fraction part of the number.  If frac-part != 0, you would 
+  subtract fract-part.
 #+end_info
-** TODO WNW
+** DONE WNW
+   CLOSED: [2019-01-24 Thu 16:45]
 #+begin_note
   What conditions/restrictions on a function must be placed for it to be
   /invertible/ (have an inverse)?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It has to be a predicate.
 #+end_info
-** TODO TMZ
+** TODO TMZ ;; ask Brother Neff
 #+begin_note
   Write elisp with loops and lambda predicates to answer the following:
   1. How many pairs of numbers between 1 and 1000 pass the predicate given by
@@ -868,13 +874,14 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TNL
+** DONE TNL
+   CLOSED: [2019-01-24 Thu 16:49]
 #+begin_note
   Explore the counterpart of \Sigma, the symbol used to collapse a /sum/ of terms;
   namely, the Greek letter (which?) used to collapse a /product/ of terms.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Online, it says the counterpart to Sum() is Product(), which comes with the symbol \pi
 #+end_info
 ** TODO WRD
 #+begin_note
