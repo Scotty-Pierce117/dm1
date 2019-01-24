@@ -347,7 +347,7 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
 (- num (floor num))) ;; got help with this part.  split the decimal from the rest of the number
 
 (defun round (num)
-   (cond
+   (cond ;; try until one works
       ((< (split-num num) .5) (floor num)) ;; if the fraction part is above .5, ceiling, below, floor
       (t (ceiling num))
    )
@@ -357,8 +357,22 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
 
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+(defun split-num (num)
+(- num (floor num))) ;; got help with this part.  split the decimal from the rest of the number
+
+(defun round (num)
+   (if ;; try until one works
+      (< (split-num num) .5) (floor num) ;; if the fraction part is above .5, ceiling, below, floor
+      (ceiling num))
+   )
+  
+
+(round '2.6)
+
+#+END_SRC
 #+RESULTS:
-: 2
+: 3
 
 ** DONE TKG
    CLOSED: [2019-01-24 Thu 14:15]
@@ -535,7 +549,7 @@ Pretty much anything with a "p" is a predicate.
   6. A student that exists in the class is asked a question by a student that exists in the class.
 #+end_info
 ** DONE TUQ
-   CLOSED: [2019-01-24 Thu 15:41]
+   CLOSED: [2019-01-24 Thu 15:55]
 #+begin_note
   Take the statement Q(x, y) \ldquo{}x asks y a question\rdquo. Express each of these
   sentences in terms of Q(x, y), quantifiers, and logical connectives, where the
@@ -550,9 +564,9 @@ Pretty much anything with a "p" is a predicate.
 #+end_note
 #+begin_info
   1. \not \forall x \forall y Q(S(x),T(y))
-  2. \ni x \ni y Q(S(x),T(y))
-  3. \forall x \ni y Q(S(x),T(y) \land A(y))
-  4. \ni x \ni y Q(S(x) ,T(y) \land (x \ge 2))
+  2. \exist x \exist y Q(S(x),T(y))
+  3. \forall{}x S(x) \exist{}y T(y) \land \exist{}z A(z), Q(x, y) \land Q(x, z)
+  4. \exist x S(x) \exists{}y S(y) \exist{}z T(z), Q(x, z) \land Q(y, z)`
 #+end_info
 ** DONE WVU
    CLOSED: [2019-01-24 Thu 15:41]
@@ -588,7 +602,8 @@ Pretty much anything with a "p" is a predicate.
   2. No person in the domain has dropped out of every class.
   3. Every student has dropped out of a class that exists.
 #+end_info
-** TODO TXG
+** DONE TXG
+   CLOSED: [2019-01-24 Thu 16:14]
 #+begin_note
   What are the truth values of the expressions below if T(x, y) is \ldquo{}xy < y\rdquo,
   where the domain consists of all integers?
@@ -602,14 +617,14 @@ Pretty much anything with a "p" is a predicate.
   8. $\forall$ x $\exists$ y T(x, y)
 #+end_note
 #+begin_info
-  1.
-  2.
-  3.
-  4.
-  5.
-  6.
-  7.
-  8.
+  1. true
+  2. false
+  3. true
+  4. true 
+  5. true
+  6. false
+  7. false
+  8. true
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
