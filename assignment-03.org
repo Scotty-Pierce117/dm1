@@ -670,15 +670,17 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TEH
+** DONE TEH
+   CLOSED: [2019-01-24 Thu 16:20]
   Important: see Exercise WDT for context.
 #+begin_note
   Could you get by without this star-suffixed form? How?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  No.  The star-suffix form allows a to evaluate within d.
 #+end_info
-** TODO WFC
+** DONE WFC
+   CLOSED: [2019-01-24 Thu 16:29]
 #+begin_note
   Remembering that these are functions, do the four basic math operators (=+=,
   =-=, =*=, =/=) work as you might expect?
@@ -701,9 +703,18 @@ Pretty much anything with a "p" is a predicate.
   arguments).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I am familliar with prefix equations, so it works as expected.  If you use multiple operands,
+  you have to use parenthesis
 #+end_info
-** TODO WGP
+#+BEGIN_SRC elisp
+  (+ 3(* 2 3))
+#+END_SRC
+
+#+RESULTS:
+: 9
+
+** DONE WGP
+   CLOSED: [2019-01-24 Thu 16:33]
   Important: see Exercise TER for context.
 #+begin_note
   The =morphify= function already exists by the name =mapcar=, and there are
@@ -736,6 +747,17 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Your answer goes here.
 #+end_info
+#+BEGIN_SRC elisp
+(defun vector-to-string(vec) ;; roomate told me it existed on the mini-primer!
+   (append vec nil))
+
+(format "%s" (vector-to-string [a dog is]))
+
+#+END_SRC
+
+#+RESULTS:
+: (a dog is)
+
 ** TODO WGW *
 #+begin_note
   Prefix notation takes some getting used to. Converting an expression from
