@@ -333,23 +333,43 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
   9. true
   10. true
 #+end_info
-** TODO TIW
+** DONE TIW
+   CLOSED: [2019-01-24 Thu 14:10]
 #+begin_note
   Define the function \ldquo{}round to nearest integer\rdquo using the floor and ceiling
   functions, together with the \ldquo{}Iverson bracket\rdquo function. (A number whose
   fractional part is less than one-half should be rounded down, otherwise up.)
 #+end_note
-#+begin_info
-  Your answer goes here.
+#+begin_info 
 #+end_info
-** TODO TKG
+#+BEGIN_SRC emacs-lisp
+(defun split-num (num)
+(- num (floor num))) ;; got help with this part.  split the decimal from the rest of the number
+
+(defun round (num)
+   (cond
+      ((< (split-num num) .5) (floor num)) ;; if the fraction part is above .5, ceiling, below, floor
+      (t (ceiling num))
+   )
+)   
+
+(round '1.51)
+
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+** DONE TKG
+   CLOSED: [2019-01-24 Thu 14:15]
 #+begin_note
   Explore the inverse of =assoc= via the functions =rassoc= and associates.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Implemented it in WFK.
 #+end_info
-** TODO WOV
+** DONE WOV
+   CLOSED: [2019-01-24 Thu 14:24]
 #+begin_note
   Identify the formula or rule that generates the terms of each sequence:
   1. =[7 14 21 28 35 42 49 56 63 70 ...]=
@@ -364,9 +384,20 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
   10. =[2 3 5 7 11 13 17 19 23 29 ...]=
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Add 7 each time
+  2. Add 4 each time
+  3. Add n+1 each time (eg: add 1, then 2, 3, 4, etc.)
+  4. Binary counter (decimal: 1, 2, 3, 4, 5, etc.
+  5. Fibonacci sequence 
+  6. n, n*3+1, n/2 repeating 
+  7. Another Fibonacii 
+  8. *2 each time
+  9. *3 each time
+  10. prime numbers
+
 #+end_info
-** TODO WQW
+** DONE WQW
+   CLOSED: [2019-01-24 Thu 14:29]
 #+begin_note
   Classify the following lisp functions according as each is or is not a predicate:
   | Predicate? | Yes or No? |
@@ -382,9 +413,21 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
   | =oddp=     |            |
 #+end_note
 #+begin_info
-  Your answer goes here. (Replicate the above table.)
+  | Predicate? | Yes or No? |
+  |------------+------------|
+  | =list=     |      no    |
+  | =listp=    |      yes   |
+  | =integerp= |      yes   |
+  | =vector=   |      no    |
+  | =vectorp=  |      yes   |
+  | =symbolp=  |      yes   |
+  | =zerop=    |      yes   |
+  | =evenp=    |      yes   |
+  | =oddp=     |      yes   |
+Pretty much anything with a "p" is a predicate.
 #+end_info
-** TODO WRP
+** DONE WRP
+   CLOSED: [2019-01-24 Thu 14:33]
 #+begin_note
   Let P(x) be the statement \ldquo{}x is older than 21 years\rdquo where the domain for x
   consists of all people.
@@ -396,9 +439,13 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
   4. $\forall$ x $\neg$ P(x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. There exists a person that is older than 21.
+  2. Every person (all) is older than 21.
+  3. There exists a person that is not older than 21.
+  4. Ever person (all) is not older than 21
 #+end_info
-** TODO TOJ
+** DONE TOJ
+   CLOSED: [2019-01-24 Thu 14:37]
 #+begin_note
   Let S(x) be the statement \ldquo{}x is a student at BYU-Idaho\rdquo where the domain
   consists of the residents of Idaho.
@@ -412,7 +459,12 @@ Very simmilar to assoc. You don't need quotes arond the names and just a quote o
   6. $\forall$ x $\neg$ S(x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. There exists a student of BYU-Idaho in the residents of Idaho.
+  2. Every resident in Idaho is a student of BYU-Idaho.
+  3. A student of BYU-Idaho does not exist among the residents of Idaho.
+  4. There are residents of Idaho that are not students of BYU-Idaho
+  5. Not every resident of Idaho is not a student of BYU-Idaho.
+  6. Every resident of Idaho is not a student of BYU-Idaho.
 #+end_info
 ** TODO WRU
 #+begin_note
