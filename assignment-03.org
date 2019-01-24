@@ -466,7 +466,8 @@ Pretty much anything with a "p" is a predicate.
   5. Not every resident of Idaho is not a student of BYU-Idaho.
   6. Every resident of Idaho is not a student of BYU-Idaho.
 #+end_info
-** TODO WRU
+** DONE WRU
+   CLOSED: [2019-01-24 Thu 15:06]
 #+begin_note
   Translate these statements into English, where F(x) is \ldquo{}x is a friend\rdquo,
   C(x) is \ldquo{}x is cool\rdquo, and the domain consists of all people.
@@ -476,9 +477,13 @@ Pretty much anything with a "p" is a predicate.
   4. $\exists$ x (F(x) $\rightarrow$ C(x))
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Every friend is cool.
+  2. There exists a person that  is a friend and is cool.
+  3. Everyone is a friend and is cool
+  4. There exists a person that is a cool friend.
 #+end_info
-** TODO TOL
+** DONE TOL
+   CLOSED: [2019-01-24 Thu 15:08]
 #+begin_note
   Translate these statements into English, where S(x) is \ldquo{}x is a student\rdquo, R(x)
   is \ldquo{}x is from Russia\rdquo, and the domain consists of all people.
@@ -488,9 +493,13 @@ Pretty much anything with a "p" is a predicate.
   4. $\exists$ x (S(x) $\wedge$ R(x))
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Every student is from Russia.
+  2. There exists a student that is from Russia.
+  3. Every person is a student and is from Russia.
+  4. There exists a person that is a student and is from Russia.
 #+end_info
-** TODO TUK
+** DONE TUK
+   CLOSED: [2019-01-24 Thu 15:13]
 #+begin_note
   Translate these statements into English, where the domain for each variable
   consists of all real numbers.
@@ -499,9 +508,13 @@ Pretty much anything with a "p" is a predicate.
   3. $\exists$ x $\forall$ y $\exists$ z (x = y + z)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. There exists an x that is greater than every y.
+  2. There exists an x and a y that if x is greater than or equal to zero and y 
+     is greater than or equal to zero, then x times y is greater than or equal to zero.
+  3. There exists an x that is equal to every y plus a z the exists.
 #+end_info
-** TODO WVQ
+** DONE WVQ
+   CLOSED: [2019-01-24 Thu 15:18]
 #+begin_note
   Let Q(x, y) be the statement \ldquo{}x asks y a question,\rdquo where the domain for both
   x and y consists of all students in a class. Express each quantification in an
@@ -514,9 +527,15 @@ Pretty much anything with a "p" is a predicate.
   6. $\exists$ y $\exists$ x Q(x, y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Every student in the class asks a student that exists in the class a question.
+  2. Every student in the class askes a question to every student in the class.
+  3. There exists a student in the class that asks another student that exists in the class a question.
+  4. There exists a student in the class that every student in the class a question
+  5. Every student in the class is asked a question by a student that exists in the class.
+  6. A student that exists in the class is asked a question by a student that exists in the class.
 #+end_info
-** TODO TUQ
+** DONE TUQ
+   CLOSED: [2019-01-24 Thu 15:41]
 #+begin_note
   Take the statement Q(x, y) \ldquo{}x asks y a question\rdquo. Express each of these
   sentences in terms of Q(x, y), quantifiers, and logical connectives, where the
@@ -530,9 +549,13 @@ Pretty much anything with a "p" is a predicate.
   4. At least two students have asked a teacher a question.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. \not \forall x \forall y Q(S(x),T(y))
+  2. \ni x \ni y Q(S(x),T(y))
+  3. \forall x \ni y Q(S(x),T(y) \land A(y))
+  4. \ni x \ni y Q(S(x) ,T(y) \land (x \ge 2))
 #+end_info
-** TODO WVU
+** DONE WVU
+   CLOSED: [2019-01-24 Thu 15:41]
 #+begin_note
   Let the statement T(x, y) \ldquo{}x has taught y\rdquo where the domains for x and y
   consist of all teachers teaching and all classes taught in some department.
@@ -544,9 +567,14 @@ Pretty much anything with a "p" is a predicate.
   4. At least two teachers have taught a class. 
 #+end_note
 #+begin_info
-  Your answer goes here.
+
+  1. \not x \forall y T(x, y)
+  2. \forall x \forall y T(x, y)
+  3. \forall x \ni y T(x, y)
+  4. \ni x \forall y T(x, y) \land (x \ge 2)
 #+end_info
-** TODO TVL
+** DONE TVL
+   CLOSED: [2019-01-24 Thu 15:44]
 #+begin_note
   Let D(x, y) be the statement \ldquo{}x has dropped out of y\rdquo where the domain for x
   consists of all students and the domain for y consists of all classes. Express
@@ -556,7 +584,9 @@ Pretty much anything with a "p" is a predicate.
   3. $\forall$ x $\exists$ y D(x, y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Jackson Andrews has dropped out of Discrete Mathematics.
+  2. No person in the domain has dropped out of every class.
+  3. Every student has dropped out of a class that exists.
 #+end_info
 ** TODO TXG
 #+begin_note
@@ -572,7 +602,14 @@ Pretty much anything with a "p" is a predicate.
   8. $\forall$ x $\exists$ y T(x, y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1.
+  2.
+  3.
+  4.
+  5.
+  6.
+  7.
+  8.
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
