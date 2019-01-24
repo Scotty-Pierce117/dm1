@@ -27,7 +27,8 @@
 : 7
 
 
-** TODO WDT
+** DONE WDT
+   CLOSED: [2019-01-24 Thu 13:06]
 #+begin_note
   PVP the result of evaluating the following (paying special attention to the
   more-than-syntactic difference between the \lsquo{}starless\rsquo{} form of =let= and the
@@ -66,10 +67,21 @@
 #+BEGIN_SRC emacs-lisp
   (let* ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
+
+#+RESULTS:
+: 11
+
 #+end_note
 #+begin_info
+The first evaluated as expected with a result of 6.
+The second did not evaluate becuase "d" was not defined.
+The third evaluated and printed "[+ a b c d]" becuase it was in brackets.
+The fourth evaluated and resulted in 10, despite the fact that I though eLisp couldn't handle operator overloading.
+the fifth did not evaluate becuase "a" was a void variable.
+the sixth evaluated becuase the "*" allowed a to evaluate as a variable.
 #+end_info
-** TODO TEJ
+** DONE TEJ
+   CLOSED: [2019-01-24 Thu 13:24]
 #+begin_note
   A function-as-association between elements of a domain and elements of a
   codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
@@ -104,15 +116,41 @@
 
   There are several variations of =assoc=. Find and give examples of using them.
 #+end_note
-#+begin_info
-  Your answer goes here.
-#+end_info
+#+BEGIN_SRC emacs-lisp
+  (defun lookup-rgb (color-name)
+    (rest (assoc-string color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+  (lookup-rgb "blue")
+#+END_SRC
 
+#+RESULTS:
+| 0 | 0 | 255 |
+For assoc-string, the key should be a string.
 
+#+BEGIN_SRC emacs-lisp
+  (defun lookup-rgb (color-name)
+    (rest (rassoc color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+  (lookup-rgb '(255 0 0))
+#+END_SRC
 
+#+RESULTS:
+| 255 | 0 | 0 |
+For rassoc, you use the results to look up the item. It's like a reverse assoc
 
+#+BEGIN_SRC emacs-lisp
+  (defun lookup-rgb (color-name)
+    (rest (assq color-name
+                 '((red 255 0 0) (green 0 255 0) (blue 0 0 255)))))
+  (lookup-rgb 'blue)
+#+END_SRC
 
-** TODO WFK
+#+RESULTS:
+| 0 | 0 | 255 |
+Very simmilar to assoc. You don't need quotes arond the names and just a quote on what you are looking up.
+#+END_SRC
+** DONE WFK
+   CLOSED: [2019-01-24 Thu 13:25]
 #+begin_note
   In the function-as-map context, here is another interpretation:
 
@@ -159,7 +197,7 @@
 
   And of course elisp:
 #+BEGIN_SRC emacs-lisp :results output
-  (let* ((mymap (make-hash-table :test 'equal)))
+  (let* ((mymap (make-hash-table)))
     (puthash "one" "red" mymap)
     (puthash "two" "blue" mymap)
     (puthash "three" "green" mymap)
@@ -168,6 +206,12 @@
               (gethash "three" mymap)))
     (maphash (lambda (key value) (princ (format "%s : %s\n" key value))) mymap))
 #+END_SRC
+
+#+RESULTS:
+: (nil nil nil)
+: one : red
+: two : blue
+: three : green
 
 : ("red" "blue" "green")
 : one : red
@@ -178,9 +222,10 @@
   =make-hash-table= call?
 #+end_note
 #+begin_info
- Your answer goes here.
+ When you remove those parts, it changes the key values to "nil".
 #+end_info
-** TODO TER
+** DONE TER
+   CLOSED: [2019-01-24 Thu 13:34]
 #+begin_note
   This exercise explores /looping/ versus /mapping/.
 
@@ -199,6 +244,9 @@
   (morphify (quote downcase) (quote ("THIS" "IS" "TOO" "LOUD")))
 #+END_SRC
 
+#+RESULTS:
+(this is too loud)
+
   The =morphify= function is essentially a /mapping/ function, which means it
   takes a passed-in function (=fun=) and a passed-in list (=lst=), and /maps fun
   over lst/, i.e., the results of calling the function =fun= on each element of
@@ -212,14 +260,17 @@
     (if (null lst)
         nil
       (append (list (funcall fun (first lst))) (morphifyr fun (rest lst)))))
+  (morphifyr 'downcase '("ABCDE" "9876"))
 #+END_SRC
 
   Explain how this version of =morphify= works.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It looks like it manipulates the text depending on what modifier the user chooses.
+  Morphifyr returns nil if nothing is passed to it, and calls itself recursively instead of a loop.
 #+end_info
-** TODO TGE
+** DONE TGE
+   CLOSED: [2019-01-24 Thu 13:40]
 #+begin_note
   Note the difference if -13 is used instead of 13 below:
 #+BEGIN_SRC emacs-lisp :results silent
@@ -239,17 +290,21 @@
   Is the hard way correct?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It does not look like it, becuase it is returning what looks like a floating point number
+  instead of an integer.  If it returned "3" like the regular floor function, It's correct.
 #+end_info
-** TODO THP
+** DONE THP
+   CLOSED: [2019-01-24 Thu 13:48]
 #+begin_note
   Graph the floor and ceiling functions f(x) = \lfloor{}x\rfloor and f(x) = \lceil{}x\rceil for real
   number values of x in the interval [-5.0 .. 5.0].
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I attempted to do this with ascii, but it proved too much work and I really want to finish this assignment.
+  You can view my graphs at THPfloor.png and THPceil.png.
 #+end_info
-** TODO WKM
+** DONE WKM
+   CLOSED: [2019-01-24 Thu 13:53]
 #+begin_note
   Which of these statements about floor and ceiling are correct, for any real
   number $x$ and any integers $n$ and $m$?
@@ -267,7 +322,16 @@
       0$ as in statement 8).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. true
+  2. true
+  3. false
+  4. true
+  5. true
+  6. true
+  7. true
+  8. false
+  9. true
+  10. true
 #+end_info
 ** TODO TIW
 #+begin_note
