@@ -26,7 +26,6 @@
 #+RESULTS:
 : 7
 
-
 ** DONE WDT
    CLOSED: [2019-01-24 Thu 13:06]
 #+begin_note
