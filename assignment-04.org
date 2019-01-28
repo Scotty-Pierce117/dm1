@@ -9,8 +9,6 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 
-* Time Hint
-  Last semester students spent an average of 7.38 hours on this assignment.
 * Exercises
 ** TODO MGX
 #+begin_note
