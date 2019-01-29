@@ -10,7 +10,8 @@
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 
 * Exercises
-** TODO MGX
+** DONE MGX
+   CLOSED: [2019-01-29 Tue 16:31]
 #+begin_note
   More mapping versus looping.
 
@@ -28,17 +29,29 @@
     (every (lambda (x) (map-for-all pred x domain-y)) domain-x))
 #+END_SRC
 
-#+BEGIN_SRC elisp :results raw
+#+BEGIN_SRC elisp
   (map-for-all-for-all '< [1 2 3] [4 5 6])
 #+END_SRC
+
+#+RESULTS:
+: t
+
 :HINT:
   - Hint :: See TKH for the context.
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  makes sense!
 #+end_info
-** TODO ECI
+#+BEGIN_SRC elisp
+
+#+END_SRC
+
+#+RESULTS:
+: 6
+
+** DONE ECI
+   CLOSED: [2019-01-29 Tue 16:31]
 #+begin_note
   Implement the =for-some-for-some=, =for-some-for-all=, and =for-all-for-some=
   functions in a similar manner to the mapping =for-all-for-all=. Test them with
@@ -61,8 +74,32 @@
     (every (lambda (x) (map-for-some pred x domain-y)) domain-x))
 #+END_SRC
 
+#+BEGIN_SRC elisp :results silent
+  (defun map-for-some-for-all (pred domain-x domain-y)
+    (some (lambda (x) (map-for-all pred x domain-y)) domain-x))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun map-for-some-for-some (pred domain-x domain-y)
+    (some (lambda (x) (map-for-some pred x domain-y)) domain-x))
+#+END_SRC
 #+end_info
-** TODO ECT
+#+BEGIN_SRC elisp
+  (list 
+
+  (map-for-all-for-some '< [1 2 5] [1 5 5])
+ 
+  (map-for-some-for-all '< [1 6 3] [4 5 6])
+
+  (map-for-some-for-some '< [1 8 3] [4 1 6]))
+
+#+END_SRC
+
+#+RESULTS:
+| nil | t | t |
+
+** DONE ECT
+   CLOSED: [2019-01-29 Tue 16:36]
 #+begin_note
   Which of the following pairs are in the relation on the set [1 2 3 4] given by
   the mathy set description {(x, y) | x > y + 1} or by the equivalent lispy set
@@ -87,18 +124,27 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. f
+  2. f
+  3. f
+  4. f
+  5. t
+  6. f
+  7. t
+  8. t
+  9. f
 #+end_info
-** TODO MKJ
+** DONE MKJ
+   CLOSED: [2019-01-29 Tue 16:46]
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
   | [(1 1) (1 3) (2 2) (3 1)] | Yes or No? |
   |---------------------------+------------|
-  | Reflexive?                |            |
-  | Symmetric?                |            |
-  | Antisymmetric?            |            |
-  | Transitive?               |            |
+  | Reflexive?                |    no      |
+  | Symmetric?                |    yes     |
+  | Antisymmetric?            |    no      |
+  | Transitive?               |    no      |
 :HINT:
   - Hint :: This is a very straightforward exercise.
 :END:
@@ -106,16 +152,17 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO EFE
+** DONE EFE
+   CLOSED: [2019-01-29 Tue 16:52]
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
   | [(1 1) (2 2) (3 1) (3 3)] | Yes or No? |
   |---------------------------+------------|
-  | Reflexive?                |            |
-  | Symmetric?                |            |
-  | Antisymmetric?            |            |
-  | Transitive?               |            |
+  | Reflexive?                |     yes    |
+  | Symmetric?                |     no     |
+  | Antisymmetric?            |     yes    |
+  | Transitive?               |     yes    |
 :HINT:
   - Hint :: This is a very straightforward exercise.
 :END:
@@ -123,16 +170,17 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO MKL
+** DONE MKL
+   CLOSED: [2019-01-29 Tue 16:48]
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
   | [(1 2) (2 1) (3 3)] | Yes or No? |
   |---------------------+------------|
-  | Reflexive?          |            |
-  | Symmetric?          |            |
-  | Antisymmetric?      |            |
-  | Transitive?         |            |
+  | Reflexive?          |    no      |
+  | Symmetric?          |    yes     |
+  | Antisymmetric?      |    no      |
+  | Transitive?         |    no      |
 :HINT:
   - Hint :: This is a very straightforward exercise.
 :END:
@@ -140,16 +188,17 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO EFS
+** DONE EFS
+   CLOSED: [2019-01-29 Tue 16:49]
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
   | [(1 3) (2 3)]  | Yes or No? |
   |----------------+------------|
-  | Reflexive?     |            |
-  | Symmetric?     |            |
-  | Antisymmetric? |            |
-  | Transitive?    |            |
+  | Reflexive?     |   no       |
+  | Symmetric?     |   no       |
+  | Antisymmetric? |   yes      |
+  | Transitive?    |   no       |
 :HINT:
   - Hint :: This is a very straightforward exercise.
 :END:
@@ -276,6 +325,16 @@
 #+begin_info
   Your answer goes here.
 #+end_info
+#+BEGIN_SRC elisp
+   (defun cartesian-product-n (&rest l1)
+(loop for set in l1
+    
+(loop for i across s1
+        append (loop for j across s2
+                     append (loop for k across s3
+                                  collect (list i j k)))))
+
+#+END_SRC;ask brother neff!
 ** TODO MHB
 #+begin_note
    From the definition of antisymmetric, show using logic that if xRy and x \ne y

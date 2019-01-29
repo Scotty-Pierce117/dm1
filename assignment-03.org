@@ -882,7 +882,8 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Online, it says the counterpart to Sum() is Product(), which comes with the symbol \pi
 #+end_info
-** TODO WRD
+** DONE WRD
+   CLOSED: [2019-01-25 Fri 15:41]
 #+begin_note
   With at least two examples of a binary function, verify the nested summation
   interchange rule.
@@ -890,7 +891,26 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TNQ
+#+BEGIN_SRC elisp
+(require 'cl)
+(loop for k from 0 to 5
+      sum (loop for i from 0 to k
+                sum (* k k i)))
+
+(loop for k from 0 to 5
+      sum (loop for i from 0 to k
+                sum (* k (+ i 1))))
+
+(loop for k from 0 to 5
+      sum (loop for i from 0 to 5
+                sum (+ i k)))
+#+END_SRC
+
+#+RESULTS:
+: 180
+
+** DONE TNQ
+   CLOSED: [2019-01-25 Fri 15:45]
 #+begin_note
   Consider the following function:
 
@@ -898,15 +918,19 @@ Pretty much anything with a "p" is a predicate.
   (defun calculate-pi-very-slowly (max-iterations)
     (* 4 (loop for n from 0 to max-iterations
                sum (/ 1.0 (* (+ (* 2 n) 1) (expt -1 n))))))
+
+(calculate-pi-very-slowly 10000)
 #+END_SRC
 
 #+RESULTS:
-: calculate-pi-very-slowly
+: 3.1416926435905346
 
   How slow is \ldquo{}very slowly\rdquo?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The more loops the program goes through, the more precise pi becomes.  That means that if you
+  want the most precision, you must run the loop that many times.  For infinite precision,
+  you would have to loop through infinite times, taking infinite time!  Super slow!
 #+end_info
 ** TODO WZO
 #+begin_note
@@ -1007,7 +1031,7 @@ Pretty much anything with a "p" is a predicate.
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TTV
+** TTV
 #+begin_note
   Determine the truth value of each of these statements if the domain consists
   of all real numbers.
@@ -1017,7 +1041,10 @@ Pretty much anything with a "p" is a predicate.
   4. $\forall$ x (2x > x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. x = -2.08 ish
+  2. all positive numbers greater than 1
+  3. true
+  4. false (all positive numbers)
 #+end_info
 ** TODO WUZ
 #+begin_note
@@ -1355,7 +1382,7 @@ int main()
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO WUE
+** WUE
 #+begin_note
   Consider Doctrine and Covenants 130:20-21 in light of what you know of
   predicates and quantifiers:
@@ -1377,7 +1404,8 @@ int main()
   Justify your choice.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I would say 4, becuase even though it says "any blessing", each blessing is dependant 
+  upon each of God's laws we follow.`
 #+end_info
 * Puzzles
 ** TODO TEU
