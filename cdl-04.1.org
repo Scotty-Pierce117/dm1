@@ -1,0 +1,86 @@
+#+TITLE: DM1 Class Directed Learning 04.1
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything
+
+* Relations
+** As defined by [[http://mathworld.wolfram.com/Relation.html][Wolfram Mathworld]]
+
+  A relation is any subset of a Cartesian product. For instance, a subset of
+  A×B, called a "binary relation from A to B," is a collection of ordered
+  pairs (a,b) with first components from A and second components from B, and,
+  in particular, a subset of A×A is called a "relation on A." For a binary
+  relation R, one often writes aRb to mean that (a,b) is in R×R.
+
+** As defined by [[https://simple.wikipedia.org/wiki/Relation_(mathematics)][Simple English Wikipedia]]
+
+  In mathematics, an n-ary relation on n sets, is any subset of Cartesian
+  product of the n sets. The relation is homogeneous when it is formed with
+  one set. For example any curve in the Cartesian plane is a subset of the
+  Cartesian product of real numbers, RxR. The homogeneous binary relations are
+  studied for properties like reflexiveness, symmetry, and transitivity which
+  determine different kinds of orderings on the set. Heterogeneous n-ary
+  relations, are used in the semantics of predicate calculus, and in
+  relational databases.
+
+  In relational databases jargon, the relations are called tables. There is a
+  relational algebra consisting in the operations on sets, because relations
+  are sets, extended with operators like projection, which forms a new
+  relation selecting a subset of the columns (tuple entries) in a table, the
+  selection operator, which selects just the rows (tuples),according to some
+  condition, and join which works like a composition operator.
+
+  The use of the term "relation" is often used as shorthand to refer to binary
+  relations, where the set of all the starting points is called the domain and
+  the set of the ending points is the codomain.
+
+  But see also [[https://en.wikipedia.org/wiki/Relation][Full-Blown Wikipedia]].  
+** By the book
+   A \times B, the *Cartesian product* (or just product) of set A with set B
+   is the set of all ordered pairs (a b) where a \in A and b \in B. This
+   generalizes to n > 2 sets in a straightforward way.
+
+   A *binary relation* R from a set A to a set B is a subset: R \sube A \times B.
+
+   A binary relation R /on a set/ A (a *self relation*) is a subset of A \times A,
+   or a relation from A to A (from the set to itself).
+
+   For an A \times B example:
+
+   - A = [a b c]
+   - B = [1 2 3]
+   - R = [(a 1) (a 2) (b 2) (b 3) (c 3)]
+
+   For a self relation example:
+
+   - A = [a b c]
+   - R = [(a a) (a b) (a c)]
+
+* As Groups
+  Fill in the table below with Yes or No:
+
+  What is the most correct description of relation types for the relations
+  on the set [1 2 3] given as sets of pairs in the first column?
+
+  |---+------------------------------+------------+------------+----------------+-------------|
+  | # | Relations on the set [1 2 3] | Reflexive? | Symmetric? | Antisymmetric? | Transitive? |
+  |---+------------------------------+------------+------------+----------------+-------------|
+  | 1 | [(1 1) (1 3) (2 2) (3 1)]    |            |            |                |             |
+  |---+------------------------------+------------+------------+----------------+-------------|
+  | 2 | [(1 1) (2 2) (3 1) (3 3)]    |            |            |                |             |
+  |---+------------------------------+------------+------------+----------------+-------------|
+  | 3 | [(1 2) (2 1) (2 3)]          |            |            |                |             |
+  |---+------------------------------+------------+------------+----------------+-------------|
+  | 4 | [(1 2) (2 1) (3 3)]          |            |            |                |             |
+  |---+------------------------------+------------+------------+----------------+-------------|
+  | 5 | [(1 3) (2 3)]                |            |            |                |             |
+  |---+------------------------------+------------+------------+----------------+-------------|
+
+* Get Ready to Compete!
+  Each of you individually answer the questions when they are made available.
+
+  If you have not already done so, [[https://www.polleverywhere.com/register?p=7m22m-gtz4&u=SG7x5MFk][follow this link]] to sign up to participate.
+
+  When the poll is active, respond using the Poll Everywhere app on your mobile
+  device, or at this link: https://pollev.com/rickneff737
