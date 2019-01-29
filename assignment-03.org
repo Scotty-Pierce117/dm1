@@ -894,11 +894,14 @@ Pretty much anything with a "p" is a predicate.
 #+begin_note
   Consider the following function:
 
-#+BEGIN_SRC emacs-lisp :results silent
+#+BEGIN_SRC emacs-lisp
   (defun calculate-pi-very-slowly (max-iterations)
     (* 4 (loop for n from 0 to max-iterations
                sum (/ 1.0 (* (+ (* 2 n) 1) (expt -1 n))))))
 #+END_SRC
+
+#+RESULTS:
+: calculate-pi-very-slowly
 
   How slow is \ldquo{}very slowly\rdquo?
 #+end_note
