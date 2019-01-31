@@ -8,6 +8,13 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-01-31 Thu 10:43]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *6:00* |
+#+END:
+
 * Exercises
 ** DONE UCA
    CLOSED: [2019-01-17 Thu 15:41]

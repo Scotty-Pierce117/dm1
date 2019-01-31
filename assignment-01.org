@@ -15,7 +15,8 @@
 #+END:
 
 * Exercises
-** TODO CRC
+** DONE CRC
+   CLOSED: [2019-01-31 Thu 10:38]
 #+begin_note
   #+ATTR_HTML: :alt desert image :title What is this doing here?!
   [[file:../img/desert.jpg]]
@@ -35,7 +36,8 @@
   At times, the student can feel on fire, loving the class, feeling smart and excelling in
   the problem solving.  At other time, they are cold.  The progress is slow, the brain is frozen, and they are extremely uncomfortable.  
 #+end_info
-** TODO DGZ
+** DONE DGZ
+   CLOSED: [2019-01-31 Thu 10:38]
 #+begin_note
   The operation called /dehydration/ takes a word and deletes all letters in it
   from H to O. What is the original (rehydrated) text of this dehydrated
@@ -53,7 +55,8 @@
   Of cabbages—and kings—And why the sea is boiling hot—And whether pigs have wings.”
 #+end_info
 * Problemsi
-** TODO CHJ
+** DONE CHJ
+   CLOSED: [2019-01-31 Thu 10:38]
 #+begin_note
   Let $n / 0$ be infinity, for any positive integer /n/.
 
@@ -66,7 +69,8 @@
   there are multiple syllables.  Then I searched single-syllable words with the most consonants, and I 
   found the word “strengths”, which has 8:1 consonant to vowel ratio.
 #+end_info
-** TODO DZB
+** DONE DZB
+   CLOSED: [2019-01-31 Thu 10:38]
 #+begin_note
   In the figure below, the innermost circle has radius 1. It is circumscribed by
   an equilateral triangle, which is circumscribed by a circle, which is

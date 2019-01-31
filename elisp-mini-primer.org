@@ -629,6 +629,10 @@
 #+BEGIN_SRC elisp
   (frobulate '(1 2 3 4 5 6 7))
 #+END_SRC
+
+#+RESULTS:
+| 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+
 * Read and Heed a Scripture
   Liken [[https://www.lds.org/languages/eng/content/scriptures/ot/isa/28.10#9][Isaiah 28:10]] to yourself, take a break and pause to absorb what you\rsquo{}ve
   learned!

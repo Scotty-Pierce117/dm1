@@ -109,16 +109,20 @@
   (defun in-the-relation (x y)
     (> x (+ y 1)))
 #+END_SRC
-
-  1. (2 1)
-  2. (2 2)
-  3. (2 3)
-  4. (2 4)
-  5. (3 1)
-  6. (3 2)
-  7. (4 1)
-  8. (4 2)
-  9. (4 3)
+#+BEGIN_SRC elisp
+  (loop for (x y) in '(
+(2 1)
+(2 2)
+(2 3)
+(2 4)
+(3 1)
+(3 2)
+(4 1)
+(4 2)
+(4 3)
+)
+  collect (list (list x y) (if (in-the-relation x y) 'in 'out))
+#+END_SRC
 :HINT:
   - Hint :: This is a very straightforward exercise.
 :END:
@@ -162,7 +166,7 @@
   | Reflexive?                |     yes    |
   | Symmetric?                |     no     |
   | Antisymmetric?            |     yes    |
-  | Transitive?               |     yes    |
+  | Transitive?               |     no     |
 :HINT:
   - Hint :: This is a very straightforward exercise.
 :END:
@@ -219,7 +223,7 @@
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO EBQ
+** TODO EBQ ;Ask Brother Neff!
 #+begin_note
   Here is one way to do a Cartesian product of two 3-element sets:
 #+BEGIN_SRC elisp :results raw
@@ -334,7 +338,14 @@
                      append (loop for k across s3
                                   collect (list i j k)))))
 
-#+END_SRC;ask brother neff!
+#+END_SRC;ask brother neff; Ask brother Neff
+#+BEGIN_SRC elisp
+  (defun loops-list (n num-lists)
+    (if (= n num-lists)
+        (apply 'list 'list (loop for i from 0 below n collect (make-item-symbol i )))
+        (append (list 'loop 'for (make-item-symbol n ) 'in (list 'nth n 'lists)))
+        
+#+END_SRC
 ** TODO MHB
 #+begin_note
    From the definition of antisymmetric, show using logic that if xRy and x \ne y
@@ -501,3 +512,13 @@
 *** Approach
 *** Solution
 *** Proof
+#+BEGIN_SRC elisp
+  (defun factorial (s)
+     (if (zerop s)
+       1
+     (* s (factorial (- s 1)))))
+  (factorial 6)
+#+END_SRC
+
+#+RESULTS:
+: 720
