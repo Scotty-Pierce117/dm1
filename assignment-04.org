@@ -8,6 +8,13 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-01-31 Thu 11:19]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
 
 * Exercises
 ** DONE MGX
@@ -219,7 +226,15 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+
+Set Name	Equivalence Class	Lesser Members	 	 	      	↓	 	 	    	Greater Members
+A0	          [0]	                …	       -15	-10	-5	0	5	 10	15	…
+A1	          [1]	                …	       -14	-9	-4	1	6	 11	16	…
+A2	          [2]	                …	       -13	-8	-3	2	7	 12	17	…
+A3	          [3]	                …	       -12	-7	-2	3	8	 13	18	…
+A4	          [4]	                …	       -11	-6	-1	4	9	 14	19	…
+A5          	[5]	                …	       -12	-7	-2	5	10 15	18	…
+A6	          [6]	                …	       -11	-6	-1	6	11 16	19	…
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
