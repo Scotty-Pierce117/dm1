@@ -318,6 +318,9 @@ On the week indicated, bring this updated document to my office and make your cl
   better off you will be.
 
 ** Week 1
+#+INCLUDE: ./assignment-01.org
+
+
 *** Some Exercise or Problem
 
     Solution here
@@ -366,6 +369,6 @@ On the week indicated, bring this updated document to my office and make your cl
 
 ** Week 13
 
-* Other
+* Other                                                            :noexport:
   This document may be modified by the instructor at any time without notification.
   
