@@ -9,7 +9,7 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2019-01-31 Thu 11:19]
+#+CAPTION: Clock summary at [2019-01-31 Thu 16:24]
 | Headline     | Time   |
 |--------------+--------|
 | *Total time* | *0:00* |
@@ -217,7 +217,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO MMC
+** DONE MMC
+   CLOSED: [2019-01-31 Thu 15:20]
 #+begin_note
   Create a table like the one above with the members of the CM7 partition sets.
 :HINT:
@@ -233,12 +234,12 @@ A1	          [1]	                …	       -14	-9	-4	1	6	 11	16	…
 A2	          [2]	                …	       -13	-8	-3	2	7	 12	17	…
 A3	          [3]	                …	       -12	-7	-2	3	8	 13	18	…
 A4	          [4]	                …	       -11	-6	-1	4	9	 14	19	…
-A5          	[5]	                …	       -12	-7	-2	5	10 15	18	…
-A6	          [6]	                …	       -11	-6	-1	6	11 16	19	…
+A5          	[5]	                …	       -10	-5	 0	5	10 15	20	…
+A6	          [6]	                …	       -9 	-4	 1	6	11 16	21	…
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO EBQ ;Ask Brother Neff!
+** EBQ ;Ask Brother Neff!
 #+begin_note
   Here is one way to do a Cartesian product of two 3-element sets:
 #+BEGIN_SRC elisp :results raw
@@ -361,7 +362,67 @@ A6	          [6]	                …	       -11	-6	-1	6	11 16	19	…
         (append (list 'loop 'for (make-item-symbol n ) 'in (list 'nth n 'lists)))
         
 #+END_SRC
-** TODO MHB
+#+BEGIN_SRC elisp 
+(defun cartesian-product (a b)
+  (mapcan
+    (lambda (item-a)
+      (mapcar
+        (lambda (item-b)
+          (if (listp item-a)
+            (append item-a (list item-b))
+            (list item-a item-b)))
+        b))
+    a))
+
+
+(reduce #'cartesian-product '((0 1) (0 1) (0 1) (0 1) (0 1)))
+#+END_SRC
+
+#+RESULTS:
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 0 |
+| 0 | 0 | 0 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 |
+| 0 | 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 1 | 0 |
+| 0 | 1 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 0 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 1 |
+| 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 | 1 | 1 | 1 |
+| 1 | 1 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 0 | 1 |
+| 1 | 1 | 0 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 1 |
+
+#+BEGIN_SRC elisp :results code
+  (if (< 4 5) (list 1 2 3) (list a b c)))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src elisp
+(1 2 3)
+#+end_src
+
+** DONE MHB
+   CLOSED: [2019-01-31 Thu 16:14]
 #+begin_note
    From the definition of antisymmetric, show using logic that if xRy and x \ne y
    then it is false that yRx.
@@ -371,9 +432,12 @@ A6	          [6]	                …	       -11	-6	-1	6	11 16	19	…
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  If (xRy \land yRx then x = y), but if (xRy \land x \ne y, then yRx does not work)
+  So, if x relates to y, and y relates to x, you can assume that x = y.  But, if
+  x relates to y and x \ne y, then yRx does not hold. 
 #+end_info
-** TODO MLB
+** DONE MLB
+   CLOSED: [2019-01-31 Thu 16:20]
 #+begin_note
   How many possible binary relations are there on a set with 3 elements?
 
@@ -396,6 +460,17 @@ A6	          [6]	                …	       -11	-6	-1	6	11 16	19	…
 #+begin_info
   Your answer goes here.
 #+end_info
+#+BEGIN_SRC elisp
+  (defun number-of-binary-relations (n)
+    "Computes the number of binary relations on a set with n elements."
+    (* n n)
+    )
+    (number-of-binary-relations '5)
+#+END_SRC
+
+#+RESULTS:
+: 25
+
 ** TODO EJE *
 #+begin_note
   Study the following code and add to it your own. The =setq= chain implements a
@@ -467,7 +542,18 @@ A6	          [6]	                …	       -11	-6	-1	6	11 16	19	…
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. No, it is not relexive because you are not your own sibling.
+  2. Yes.  X has the same parents as itself, Y has the same parents as itself,
+     and X and Y have the same parents as one another.
+  3. No, it is not transitive.  Y could have a different parent than X with a sibling
+     that has 2 different parents than X.  Therefore, xRy \land yRz, x \ne z.
+  4. Same as above, not transitive.  If y knows a language that x doesn't, and knows z who speaks
+     that language, xRy \land yRz, x \ne z
+  5. No. Same reason as above
+  6. No
+  7. yes
+  8. 
+  9. 
 #+end_info
 ** TODO MON
 #+begin_note

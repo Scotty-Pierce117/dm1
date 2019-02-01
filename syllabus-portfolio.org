@@ -4,7 +4,7 @@
 #+OPTIONS: html-postamble:nil
 #+STARTUP: showeverything entitiespretty
 
-* What\rsquo{}s It All About?
+* What\rsquo{}s It All About?                                             :noexport:
   This course is about *mathematics for computer science.* 
 
   It introduces the mathematical topics needed to provide a solid theoretical 
@@ -21,7 +21,7 @@
 
   In other words, it\rsquo{}s a blast!
 
-* Objectives
+* Objectives                                                       :noexport:
 + Master the basic terminology and operations of sets and logic, functions and
   relations, combinatorics and probability, number theory and practice, trees
   and graphs, and languages and grammars.
@@ -32,35 +32,35 @@
 + Learn basic functional programming through using, reading, and writing elisp
   code.
 
-* Prerequisites
+* Prerequisites                                                    :noexport:
 + You must have successfully completed CS 165, Object-Oriented Software Development.
 + You must also have developed an awareness of what logical thinking entails. 
 
-* Requirements
+* Requirements                                                     :noexport:
 You are required to
 + attend class each class period (but then again, why wouldn\rsquo{}t you?),
 + read assigned portions of the course materials /before/ the class meeting when they will be discussed,
 + complete weekly preparation assessments, and 
 + do weekly homework assignments to deepen your understanding of selected topics.
 
-* Text
+* Text                                                             :noexport:
 + [[https://rickneff.github.io/metaphors-be-with-you.html][Metaphors Be With You]]
 
-* Software
+* Software                                                         :noexport:
   (For the first two, see installation instructions [[https://rickneff.github.io][here]] and go to the /Tools/
   section. For the third, more information will be given later.)
 + git 
 + Spacemacs/Emacs
 + @@latex:\LaTeX{}@@ 
 
-* Behavioral Requirements
+* Behavioral Requirements                                          :noexport:
 You are required to\dots{}
 + attend class, as assessments will happen in class each day that are not reproducible outside of class.
 + read assigned portions of the course materials /before/ class each Tuesday and Thursday.
 + complete all team and personal assessments to deepen your understanding of selected topics.
 + acquire and maintain a three-ring binder that will hold your portfolio of completed work (see below).
 
-* Course Periodicity
+* Course Periodicity                                               :noexport:
 This course has a weekly period, i.e., you can count on knowing ahead of time
 what you will be doing each day of each week. Each class period consists of two
 30-minute sections.
@@ -78,25 +78,25 @@ On Thursdays these sections are:
  - Class Directed Learning :: --- You will participate in a class-wide activity that
       reinforces what you\rsquo{}ve read and what I\rsquo{}ve shown you.
 
-* Questions
+* Questions                                                        :noexport:
 + The questions answered on Thursday are generalized from those you submit via
   the slack channel on Tuesday Evenings.
 + You must submit any and all unanswered questions on Tuesday evening. Not
   submitting questions leads to a reduced learning experience.
 + You will have plenty of questions. Submit them! Choose knowledge over ignorance.
 
-* Exercises
+* Exercises                                                        :noexport:
 Exercises are smaller experiences that are designed to float uncertainties and
 questions you have to the surface of your mind. They are designed to be smaller
 so you can find out what you don\rsquo{}t know and then take the steps necessary to
 know.
 
-* Problems 
+* Problems                                                         :noexport:
 Problems are weightier experiences that invite you to explore topics in discrete
 mathematics, as well as increase your logical thinking and problem solving
 prowess. All involve writing mathematically.
 
-* Assessment
+* Assessment                                                       :noexport:
 Every four weeks you will meet with me in my office. The purpose
 of this meeting is for you to present your portfolio of work to me, make a
 grade-to-date claim, and provide evidence justifying that claim.
@@ -108,13 +108,13 @@ are required to produce the portfolio using Spacemacs, export it as a pdf file,
 and print it. To accmoplish this you will need @@latex:\LaTeX{}@@ installed on
 your machine.
 
-* Late Work
+* Late Work                                                        :noexport:
 Late work is accepted /only if/ the reason is extraordinary, and acceptance is
 reached through private and prolonged negotiation. Also, you must come talk to
 me in person in my office --- *NOT* by email, nor any other means of
 communication.
 
-* Grades
+* Grades                                                           :noexport:
 In each of our three personal meetings, you will present your portfolio and a
 letter-based grade-to-date claim. Afterwards I will give you my thoughts on the
 strength of your claim. The last claim that you make, taking into account any
@@ -164,7 +164,7 @@ self-aggrandizement wrong? Should we seek our own good?\rdquo Listen to his answ
 and that is to elevate, benefit, and bless others first. If you will elevate
 others, the very work itself will exalt you. Upon no other plan can a man justly
 and permanently aggrandize himself.\rdquo
-* Harassment
+* Harassment                                                       :noexport:
 	Title IX of the Education Amendments of 1972 prohibits sex discrimination
   against any participant in an education program or activity that receives
   federal funds, including Federal loans and grants. Title IX also covers
@@ -172,7 +172,7 @@ and permanently aggrandize himself.\rdquo
   harassment or gender based discrimination, please contact the Personnel Office
   at 496-1130.
 
-* Disability
+* Disability                                                       :noexport:
   Brigham Young University-Idaho is committed to providing a working and
   learning atmosphere which reasonably accommodates qualified persons with
   disabilities. If you have any disability which may impair your ability to
@@ -184,7 +184,7 @@ and permanently aggrandize himself.\rdquo
   the basis of disability, you may seek resolution through established grievance
   policy and procedures. You should contact the Personnel Office at 496-1130.
 
-* Readings
+* Readings                                                         :noexport:
   These readings are to be completed *prior to* each listed week\rsquo{}s Tuesday class.
   The listed Exercises/Problems/Puzzles (EPPs) for each week are to be completed
   *prior to* midnight each Friday. (More details about these EPPs will be
@@ -247,7 +247,7 @@ and permanently aggrandize himself.\rdquo
 |---+------+-----+-----+-----+-------+-----+-----+------|
 | # |    3 | \check   | \check   | \check   | maybe | \check   | \check   |  70% |
 |---+------+-----+-----+-----+-------+-----+-----+------|
-| # |    4 |     |     |     |       |     |     |      |
+| # |    4 | \check   | \check   | \check   | \check     | \check   | \check   |      |
 |---+------+-----+-----+-----+-------+-----+-----+------|
 | # |    5 |     |     |     |       |     |     |      |
 |---+------+-----+-----+-----+-------+-----+-----+------|
