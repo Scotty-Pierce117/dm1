@@ -62,7 +62,6 @@
 #+END_SRC
 
 #+RESULTS:
-: Calculated 8.7000323319290214 with 10000000 iterations in 0.24998300000000001 seconds.
 
 #+BEGIN_SRC elisp :results silent
   (defun limiting-radius (num-sides)
@@ -83,13 +82,23 @@
   (calculate-limiting-radius 100000)
 #+END_SRC
 
+#+RESULTS:
+: Calculated 8.69960730405618676 with 100000 iterations in 0.05881619453430176 seconds.
+
 #+BEGIN_SRC elisp
   (calculate-limiting-radius 1000000)
 #+END_SRC
 
+#+RESULTS:
+: Calculated 8.69999369233345732 with 1000000 iterations in 0.94669032096862793 seconds.
+
 #+BEGIN_SRC elisp
   (calculate-limiting-radius 10000000)
 #+END_SRC
+
+#+RESULTS:
+: Calculated 8.70003233192909420 with 10000000 iterations in 3.85238242149353027 seconds.
+
 ** A Fascinating History
   This problem has a fascinating history, presented in /The Math Book/ by
   Clifford Pickover, and excerpted for your consideration, profit and learning
