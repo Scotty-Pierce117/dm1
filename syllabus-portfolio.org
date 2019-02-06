@@ -241,11 +241,11 @@ and permanently aggrandize himself.\rdquo
 |---+------+-----+-----+-----+-------+-----+-----+------|
 | # | Week | CRU | PFP | CDL | SAQ   | PAQ | CDL |  PPL |
 |---+------+-----+-----+-----+-------+-----+-----+------|
-| # |    1 | \check   | \check   | \check   | \check     | \check   | \check   | 100% |
+| # |    1 | \check   | \check   | \check   | \check     | \check   | \check   | 80% |
 |---+------+-----+-----+-----+-------+-----+-----+------|
-| # |    2 | \check   |     |     |       | \check   | \check   |  90% |
+| # |    2 | \check   | * |  *  |   *   | \check   | \check   |  90% |
 |---+------+-----+-----+-----+-------+-----+-----+------|
-| # |    3 | \check   | \check   | \check   | maybe | \check   | \check   |  70% |
+| # |    3 | \check   | \check   | \check   | \check | \check   | \check   |  75% |
 |---+------+-----+-----+-----+-------+-----+-----+------|
 | # |    4 | \check   | \check   | \check   | \check     | \check   | \check   | 80%  |
 |---+------+-----+-----+-----+-------+-----+-----+------|
@@ -312,75 +312,698 @@ On the week indicated, bring this updated document to my office and make your cl
 #+End_Latex
 
 * Evidences
-
+  
   Fill in your evidences here each week to build your portfolio. The number of
   pieces of evidence are determined by you. However, the more you have the
   better off you will be.
 
 ** Week 1
-#+INCLUDE: ./assignment-01.org
 
+** DONE DGZ
+   CLOSED: [2019-01-31 Thu 10:38]
+#+begin_note
+  The operation called /dehydration/ takes a word and deletes all letters in it
+  from H to O. What is the original (rehydrated) text of this dehydrated
+  sequence of words?
 
-*** Some Exercise or Problem
-
-    Solution here
-
+  TE TE AS CE TE WARUS SAD T TA OF AY TGS F SES AD SPS AD SEAG WAX F CABBAGES
+  AD GS AD WY TE SEA S BG T AD WETER PGS AVE WGS
+#+end_note
+#+begin_info
+  Interestingly enough, after looking at two distinct dehydrated words, “WARUS” and “CABBAGES”,
+  I recalled a memory of my grade school years at charter school.  We were required to memorize 
+  multiple poems throughout the school year.  I knew this was from some sort of poem, so I searched
+  “walrus cabbage poem” and bam.  Stanza 65 from Lewis Carroll’s “Alice in Wonderland” which says 
+  “The time has come,” the Walrus said, “To talk of many things: Of shoes—and ships—and sealing-wax
+  Of cabbages—and kings—And why the sea is boiling hot—And whether pigs have wings.”
+#+end_info
 *** Some Other Exercise or Problem
+#+begin_note
+  Let $n / 0$ be infinity, for any positive integer /n/.
 
-    Solution here
+  What English word has the largest /finite/ consonant-vowel-ratio (CVR)? For
+  example, the CVRs of the words (including the TLA) in the previous sentence
+  are 3:1, 5:2, 3:1, 2:1, 2:1, 5:2, 1:1, 2:1, 3:2, 2:3, and infinity (3:0).
+#+end_note
+#+begin_info
+  I was trying to think of words with few syllables, because typically there are multiple vowels when 
+  there are multiple syllables.  Then I searched single-syllable words with the most consonants, and I 
+  found the word “strengths”, which has 8:1 consonant to vowel ratio.
+#+end_info
 
 *** Some Problem Requiring Code
+** DONE DZB
+   CLOSED: [2019-01-31 Thu 10:38]
+#+begin_note
+  In the figure below, the innermost circle has radius 1. It is circumscribed by
+  an equilateral triangle, which is circumscribed by a circle, which is
+  circumscribed by a square, which is circumscribed by yet another circle, and
+  so forth.
 
-#+BEGIN_SRC elisp :results silent
-;; This is just some example code showing you how it can be done.
-;; Put evidence code in source blocks like this one.
-  (defun my-cool-function ()
-    (let (it be)
-      (setq it (+ 1 2) be (* 3 4))
-       (cons it be)))
+  [[file:../img/circumscribed-polygons-and-circles.png][file:../img/circumscribed-polygons-and-circles.png]]
+
+  What is the radius of the outermost circle?
+#+end_note
+#+begin_info
+  I used excel to compute the circle.  I created a somewhat infinite series based upon
+  the ratio of around 0.82, which I figured out by calculating the first three circle radiuses.
+  I then used that ratio to compute the diameter as the change approached zero, which was around 6.55.
+#+end_info
+** Week 2
+#+CAPTION: Clock summary at [2019-01-18 Fri 10:43]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *8:00* |
+#+END:
+** DONE UCG
+   CLOSED: [2019-01-17 Thu 16:43]
+#+begin_note
+  Let set *A* = =[verve vim vigor]=, set *B* = =[butter vinegar pepper vigor]=.
+  For each of the following set operations, give its resulting members (as a
+  vector of symbols):
+
+  1. The set of words that are in A *or* B; call this set *C*.
+  2. The set of words that are in A *and* B; call this set *D*.
+  3. The subset of set *C* of words that start with \lsquo{}v\rsquo.
+  4. The subset of set *C* of words that end with \lsquo{}r\rsquo.
+  5. The subset of set *C* of words that start with \lsquo{}v\rsquo and end with \lsquo{}r\rsquo.
+  6. The subset of set *D* of words that have six letters.
+:HINT:
+  - Hint :: This is also very straightforward. But see if you can write some
+            elisp code to help you find the answers!
+:END:
+#+end_note
+#+begin_info
+  1. C = [verve vim vigor butter vinegar pepper] 
+  2. D = [vigor]
+  3. C(subset) = [verve vim vigor vinegar]
+  4. C(subset) = [vigor butter vinegar pepper]
+  5. C(subset) = [vigor vinegar]
+  6. D(subset) = [] ;; empty
+#+end_info
+
+** DONE UIN
+   CLOSED: [2019-01-17 Thu 16:13]
+#+begin_note
+  What is the set difference between the set of letters in the English alphabet
+  and the set of letters in the Hawaiian alphabet?
+#+end_note
+#+BEGIN_SRC emacs-lisp
+;;I will use sets to see the difference.  I googled the Hawaiian alphabet.
+(require 'cl)
+(set-difference '(a b c d e f g h i j k l m n o p q r s t u v w x y z) '(a e i o u h k l m n p w))
 #+END_SRC
 
-** Week 2
-#+INCLUDE: ./assignment-02.org
-*** Some Exercise or Problem
+#+RESULTS:
+| b | c | d | f | g | j | q | r | s | t | v | x | y | z |
 
-    Solution here
+** DONE UTQ
+   CLOSED: [2019-01-17 Thu 17:19]
+#+begin_note
+  Let /p/ and /q/ be the propositions:
 
-*** Some Other Exercise or Problem
+  /p/: You applied for admission at BYU-Idaho.
 
-    Solution here
+  /q/: You were accepted.
 
-*** Some Problem Requiring Code
+  Express these sentences as propositions using logical connectives.
+  1. You applied for admission at BYU-Idaho and were accepted.
+  2. You did not apply for admission at BYU-Idaho but were still accepted.
+  3. You applied for admission at BYU-Idaho but were not accepted.
+  4. Either you did not apply for admission at BYU-Idaho and didn\rsquo{}t get accepted
+     or you did apply and got accepted.
+#+end_note
+#+begin_info
+  1. p ^ q
+  2. \not p ^ q
+  3. p ^ \not q
+  4. (\not p ^ \not q) v (p ^ q)
+#+end_info
 
+** DONE UIJ
+   CLOSED: [2019-01-17 Thu 16:42]
+#+begin_note
+  The following Venn diagram numbers three regions of a set B with a subset A
+  relationship within a Universal set U:
 
+#+BEGIN_SRC ditaa :file img/fig-set-subset-conditional.png :cmdline -S :export :eval no-export
+  U                       1
+    +-------------------+
+    | B               2 |
+    |   +-----------+   |
+    |   | A       3 |   |
+    |   |           |   |
+    |   |           |   |
+    |   +-----------+   |
+    |                   |
+    +-------------------+
+#+END_SRC
 
-  The INCLUDE directive has a keyword, namely :minlevel --- what do you suppose
-  it does?!
+#+RESULTS:
+[[file:img/fig-set-subset-conditional.png]]
+
+  Make a connection between the logical conditional operator (\rightarrow) and the
+  /definition/ of a subset. Refer to the three numbered regions in your answer.
+:HINT:
+  - Hint :: Making this connection means: 1) express the logical conditional
+            operator in terms of the definition of subset, or 2) express subset
+            in terms of the definition of the logical conditional operator,
+            whichever makes the most sense to you. Express either (or both) in
+            terms of the three numbered regions.
+
+  - More Emphatically :: Making this connection will help you understand why the
+       conditional operator works the way it does. To answer fully, you /must/
+       give the definition of a subset, and you /must/ refer to the three
+       numbered regions in the Venn diagram.
+:END:
+#+end_note
+#+begin_info
+  The symbol -> means that if the thing on the thing on the left is true, the thing on the right
+  is also true.  That means that is U is true, 1 is true.  Becuase B is a subset of U, B is true as
+  well making 2 true.  A is a subset of B, so A is true if B is true, making 3 true as well.  That means
+  A -> B -> U.
+#+end_info
+
+** DONE UZM
+   CLOSED: [2019-01-17 Thu 16:54]
+#+begin_note
+  Determine whether these biconditionals are true or false:
+  1. 2 + 1 = 3 if and only if 1 + 2 = 3.
+  2. 1 + 2 = 3 if and only if 3 + 1 = 6.
+  3. 1 + 3 = 2 if and only if the earth is flat.
+  4. 1 < 2 if and only if 2 < 3.
+#+end_note
+#+begin_info
+  1. true.
+  2. false.
+  3. false.
+  4. true.
+#+end_info
 
 ** Week 3
-#+INCLUDE: ./assignment-03.org
- *** Some Exercise or Problem
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-01-25 Fri 16:54]
+| Headline     | Time    |
+|--------------+---------|
+| *Total time* | *12:25* |
+#+END:
+** DONE TEJ
+   CLOSED: [2019-01-24 Thu 13:24]
+#+begin_note
+  A function-as-association between elements of a domain and elements of a
+  codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
+  lists\rdquo (or alists) and the =assoc= (and associated) functions.
 
-    Solution here
+  =(assoc KEY LIST)= returns non-nil if KEY is \ldquo{}equal\rdquo to the first element of
+  an element of LIST. The value is actually the first element of LIST whose
+  first element equals KEY.
 
-*** Some Other Exercise or Problem
+  For example, here is a function that uses an alist to look up the RGB values
+  of a given color name:
 
-    Solution here
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun lookup-rgb (color-name)
+    (rest (assoc color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+#+END_SRC
 
-*** Some Problem Requiring Code
- 
+#+BEGIN_SRC emacs-lisp :results raw
+  (lookup-rgb "blue")
+#+END_SRC
+
+: (0 0 255)
+
+  What if the color name is not in the alist?
+
+#+BEGIN_SRC emacs-lisp :results raw
+  (lookup-rgb "grue")
+#+END_SRC
+
+: nil
+
+  There are several variations of =assoc=. Find and give examples of using them.
+#+end_note
+#+BEGIN_SRC emacs-lisp
+  (defun lookup-rgb (color-name)
+    (rest (assoc-string color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+  (lookup-rgb "blue")
+#+END_SRC
+
+#+RESULTS:
+| 0 | 0 | 255 |
+For assoc-string, the key should be a string.
+
+#+BEGIN_SRC emacs-lisp
+  (defun lookup-rgb (color-name)
+    (rest (rassoc color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+  (lookup-rgb '(255 0 0))
+#+END_SRC
+
+#+RESULTS:
+| 255 | 0 | 0 |
+For rassoc, you use the results to look up the item. It's like a reverse assoc
+
+#+BEGIN_SRC emacs-lisp
+  (defun lookup-rgb (color-name)
+    (rest (assq color-name
+                 '((red 255 0 0) (green 0 255 0) (blue 0 0 255)))))
+  (lookup-rgb 'blue)
+#+END_SRC
+
+#+RESULTS:
+| 0 | 0 | 255 |
+Very simmilar to assoc. You don't need quotes arond the names and just a quote on what you are looking up.
+#+END_SRC
+
+** DONE WKM
+   CLOSED: [2019-01-24 Thu 13:53]
+#+begin_note
+  Which of these statements about floor and ceiling are correct, for any real
+  number $x$ and any integers $n$ and $m$?
+  1. $x - 1 < \lfloor{}x\rfloor \le x \le \lceil{}x\rceil < x + 1$.
+  2. $\lfloor{}-x\rfloor = -\lceil{}x\rceil$.
+  3. $\lceil{}-x\rceil = -\lfloor{}x\rfloor$.
+  4. $\lfloor{}x + n\rfloor = \lfloor{}x\rfloor + n$.
+  5. $\lceil{}x + n\rceil = \lceil{}x\rceil + n$.
+  6. $\lfloor{}\frac{n}{2}\rfloor + \lceil{}\frac{n}{2}\rceil = n$.
+  7. $\lfloor{}\frac{n}{2}\rfloor + \lfloor{}\frac{n + 1}{2}\rfloor = n$.
+  8. $\lceil{}\frac{n}{2}\rceil + \lceil{}\frac{n + 1}{2}\rceil = n$.
+  9. $\lfloor{}\frac{n + m}{2}\rfloor + \lceil{}\frac{n - m + 1}{2}\rceil = n$ (for any $m$, not just $m =
+     0$ as in statement 7).
+  10. $\lceil{}\frac{n + m}{2}\rceil + \lceil{}\frac{n - m + 1}{2}\rceil = n$ (for any $m$, not just $m =
+      0$ as in statement 8).
+#+end_note
+#+begin_info
+  1. true
+  2. true
+  3. false
+  4. true
+  5. true
+  6. true
+  7. true
+  8. false
+  9. true
+  10. true
+#+end_info
+
+** DONE TOL
+   CLOSED: [2019-01-24 Thu 15:08]
+#+begin_note
+  Translate these statements into English, where S(x) is \ldquo{}x is a student\rdquo, R(x)
+  is \ldquo{}x is from Russia\rdquo, and the domain consists of all people.
+  1. $\forall$ x (S(x) $\rightarrow$ R(x))
+  2. $\exists$ x (R(x) $\rightarrow$ R(x))
+  3. $\forall$ x (S(x) $\wedge$ R(x))
+  4. $\exists$ x (S(x) $\wedge$ R(x))
+#+end_note
+#+begin_info
+  1. Every student is from Russia.
+  2. There exists a student that is from Russia.
+  3. Every person is a student and is from Russia.
+  4. There exists a person that is a student and is from Russia.
+#+end_info
+
+** DONE TUQ
+   CLOSED: [2019-01-24 Thu 15:55]
+#+begin_note
+  Take the statement Q(x, y) \ldquo{}x asks y a question\rdquo. Express each of these
+  sentences in terms of Q(x, y), quantifiers, and logical connectives, where the
+  domain for x consists of people at your school, and likewise for y consists of
+  people at your school. Use the predicates S(x) = \ldquo{}x is a student\rdquo, T(x) = \ldquo{}x
+  is a teacher\rdquo, and A(x) = \ldquo{}x is a TA\rdquo to distinguish different roles for
+  people.
+  1. No student has ever asked a teacher a question.
+  2. There is a student who has asked a teacher a question.
+  3. Every student has asked a teacher and a TA a question.
+  4. At least two students have asked a teacher a question.
+#+end_note
+#+begin_info
+  1. \not \forall x \forall y Q(S(x),T(y))
+  2. \exist x \exist y Q(S(x),T(y))
+  3. \forall{}x S(x) \exist{}y T(y) \land \exist{}z A(z), Q(x, y) \land Q(x, z)
+  4. \exist x S(x) \exists{}y S(y) \exist{}z T(z), Q(x, z) \land Q(y, z)`
+#+end_info
+
+** DONE WFC
+   CLOSED: [2019-01-24 Thu 16:29]
+#+begin_note
+  Remembering that these are functions, do the four basic math operators (=+=,
+  =-=, =*=, =/=) work as you might expect?
+
+  How about when the number of operands
+  - is greater than two?
+  - is less than two (i.e., one or zero)?
+
+  This is a good time to mention that functions with arity /n/ for /n/ = 1
+  (unary) and /n/ = 2 (binary) have alternate type names, as does a generic
+  classification for /n/ > 2:
+
+  | Arity | Type     |
+  |-------+----------|
+  |     1 | Monadic  |
+  |     2 | Dyadic   |
+  |   > 2 | Polyadic |
+
+  Argue for /polyadic/ to mean having /arbitrary arity/ (taking 0 /or more/
+  arguments).
+#+end_note
+#+begin_info
+  I am familliar with prefix equations, so it works as expected.  If you use multiple operands,
+  you have to use parenthesis
+#+end_info
+#+BEGIN_SRC elisp
+  (+ 3(* 2 3))
+#+END_SRC
+
+#+RESULTS:
+: 9
+
+** DONE WKC
+   CLOSED: [2019-01-24 Thu 16:43]
+#+begin_note
+  Define the \ldquo{}take the fractional part of\rdquo function =frac-part= in terms of
+  =floor= as follows:
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun frac-part (number)
+    (- number (floor number)))
+#+END_SRC
+
+  For example,
+#+BEGIN_SRC emacs-lisp
+  (frac-part 3.14159)
+#+END_SRC
+
+: 0.14158999999999988
+
+  Suppose =frac-part= were the primitive, built-in function. How would you
+  define =floor= (assuming it were /not/ built-in) using =frac-part=?
+#+end_note
+#+begin_info
+  Frac part would return only the fraction part of the number.  If frac-part != 0, you would 
+  subtract fract-part.
+#+end_info
+
+** DONE TNQ
+   CLOSED: [2019-01-25 Fri 15:45]
+#+begin_note
+  Consider the following function:
+
+#+BEGIN_SRC emacs-lisp
+  (defun calculate-pi-very-slowly (max-iterations)
+    (* 4 (loop for n from 0 to max-iterations
+               sum (/ 1.0 (* (+ (* 2 n) 1) (expt -1 n))))))
+
+(calculate-pi-very-slowly 10000)
+#+END_SRC
+
+#+RESULTS:
+: 3.1416926435905346
+
+  How slow is \ldquo{}very slowly\rdquo?
+#+end_note
+#+begin_info
+  The more loops the program goes through, the more precise pi becomes.  That means that if you
+  want the most precision, you must run the loop that many times.  For infinite precision,
+  you would have to loop through infinite times, taking infinite time!  Super slow!
+#+end_info
+
+** DONE WUE
+   CLOSED: [2019-02-05 Tue 16:53]
+#+begin_note
+  Consider Doctrine and Covenants 130:20-21 in light of what you know of
+  predicates and quantifiers:
+
+  - 20. :: /There is a law, irrevocably decreed in heaven before the foundations
+           of this world, upon which all blessings are predicated./
+  - 21. :: /And when we obtain any blessing from God, it is by obedience to that
+           law upon which it is predicated./
+
+  Given the predicate $P(x, y)$ = \ldquo{}blessing $x$ is predicated on law \(y\)\rdquo,
+  these two verses are best expressed as a quantified statement by which of the
+  following?
+
+  1. $\forall\,x\,\forall\,y\,P(x, y)$
+  2. $\forall\,x\,\exists\,y\,P(x, y)$
+  3. $\exists\,x\,\forall\,y\,P(x, y)$
+  4. $\exists\,x\,\exists\,y\,P(x, y)$
+
+  Justify your choice.
+#+end_note
+#+begin_info
+  I would say 4, becuase even though it says "any blessing", each blessing is dependant 
+  upon each of God's laws we follow.`
+#+end_info
 ** Week 4
-#+INCLUDE: ./assignment-04.org
-   [[elisp:(progn%20(forward-line)%20(insert-file%20"assignment-04.org"))][Insert Assignment File]]
-*** Some Exercise or Problem
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-01-31 Thu 16:24]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *6:00* |
+#+END: 
+** DONE ECI
+   CLOSED: [2019-01-29 Tue 16:31]
+#+begin_note
+  Implement the =for-some-for-some=, =for-some-for-all=, and =for-all-for-some=
+  functions in a similar manner to the mapping =for-all-for-all=. Test them with
+  at least three different predicates and their associated domains.
+:HINT:
+  - Hint :: See MGX for the context. If there is an =every= for universal
+            quantification, what might be its existential counterpart function?
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
 
-    Solution here
+#+BEGIN_SRC elisp :results silent
+  (defun map-for-some (pred x domain-y)
+    (some (lambda (y) (funcall pred x y)) domain-y))
+#+END_SRC
 
-*** Some Other Exercise or Problem
+#+BEGIN_SRC elisp :results silent
+  (defun map-for-all-for-some (pred domain-x domain-y)
+    (every (lambda (x) (map-for-some pred x domain-y)) domain-x))
+#+END_SRC
 
-    Solution here
+#+BEGIN_SRC elisp :results silent
+  (defun map-for-some-for-all (pred domain-x domain-y)
+    (some (lambda (x) (map-for-all pred x domain-y)) domain-x))
+#+END_SRC
 
-*** Some Problem Requiring Code
+#+BEGIN_SRC elisp :results silent
+  (defun map-for-some-for-some (pred domain-x domain-y)
+    (some (lambda (x) (map-for-some pred x domain-y)) domain-x))
+#+END_SRC
+#+end_info
+#+BEGIN_SRC elisp
+  (list 
+
+  (map-for-all-for-some '< [1 2 5] [1 5 5])
+ 
+  (map-for-some-for-all '< [1 6 3] [4 5 6])
+
+  (map-for-some-for-some '< [1 8 3] [4 1 6]))
+
+#+END_SRC
+
+#+RESULTS:
+| nil | t | t |
+
+** DONE MKJ
+   CLOSED: [2019-01-29 Tue 16:46]
+#+begin_note
+  What is the most correct description of relation types for the relation
+  on the set [1 2 3] given as the pairs heading the first column?
+  | [(1 1) (1 3) (2 2) (3 1)] | Yes or No? |
+  |---------------------------+------------|
+  | Reflexive?                |    no      |
+  | Symmetric?                |    yes     |
+  | Antisymmetric?            |    no      |
+  | Transitive?               |    no      |
+:HINT:
+  - Hint :: This is a very straightforward exercise.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** DONE EFE
+   CLOSED: [2019-01-29 Tue 16:52]
+#+begin_note
+  What is the most correct description of relation types for the relation
+  on the set [1 2 3] given as the pairs heading the first column?
+  | [(1 1) (2 2) (3 1) (3 3)] | Yes or No? |
+  |---------------------------+------------|
+  | Reflexive?                | yes        |
+  | Symmetric?                | no         |
+  | Antisymmetric?            | no         |
+  | Transitive?               | no         |
+:HINT:
+  - Hint :: This is a very straightforward exercise.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** DONE MKL
+   CLOSED: [2019-01-29 Tue 16:48]
+#+begin_note
+  What is the most correct description of relation types for the relation
+  on the set [1 2 3] given as the pairs heading the first column?
+  | [(1 2) (2 1) (3 3)] | Yes or No? |
+  |---------------------+------------|
+  | Reflexive?          |    no      |
+  | Symmetric?          |    yes     |
+  | Antisymmetric?      |    no      |
+  | Transitive?         |    no      |
+:HINT:
+  - Hint :: This is a very straightforward exercise.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** DONE EFS
+   CLOSED: [2019-01-29 Tue 16:49]
+#+begin_note
+  What is the most correct description of relation types for the relation
+  on the set [1 2 3] given as the pairs heading the first column?
+  | [(1 3) (2 3)]  | Yes or No? |
+  |----------------+------------|
+  | Reflexive?     |   no       |
+  | Symmetric?     |   no       |
+  | Antisymmetric? |   yes      |
+  | Transitive?    |   no       |
+:HINT:
+  - Hint :: This is a very straightforward exercise.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+
+** DONE MHB
+   CLOSED: [2019-01-31 Thu 16:14]
+#+begin_note
+   From the definition of antisymmetric, show using logic that if xRy and x \ne y
+   then it is false that yRx.
+:HINT:
+  - Hint :: The definition is a conditional, so use its contrapositive, which is
+            equivalent.
+:END:
+#+end_note
+#+begin_info
+  If (xRy \land yRx then x = y), but if (xRy \land x \ne y, then yRx does not work)
+  So, if x relates to y, and y relates to x, you can assume that x = y.  But, if
+  x relates to y and x \ne y, then yRx does not hold. 
+#+end_info
+
+** DONE EKQ
+   CLOSED: [2019-01-31 Thu 17:23]
+#+begin_note
+  Which of the following are equivalence relations? If it is, show it has
+  reflexivity, symmetry and transitivity. If not, argue for which of these three
+  properties it lacks. The first four have people for their domain, the last
+  four have numbers for their domain:
+
+  1. xRy if x and y are siblings.
+  2. xRy if x and y have the same parents.
+  3. xRy if x and y share a common parent.
+  4. xRy if x and y speak a common language.
+  5. With domain English words, xRy if x shares a vowel with y.
+  6. xRy if x \le y.
+  7. xRy if x^2 + y^2 = 1.
+  8. xRy if x + y = 42.
+  9. xRy if \lceil{}x\rceil = \lfloor{}y\rfloor.
+:HINT:
+  - Hint :: This is a straightforward exercise in applying the definitions of
+            these properties, and doing some logical thinking.
+:END:
+#+end_note
+#+begin_info
+  1. No, it is not relexive because you are not your own sibling.
+  2. Yes.  X has the same parents as itself, Y has the same parents as itself,
+     and X and Y have the same parents as one another.
+  3. No, it is not transitive.  Y could have a different parent than X with a sibling
+     that has 2 different parents than X.  Therefore, xRy \land yRz, x \ne z.
+  4. Same as above, not transitive.  If y knows a language that x doesn't, and knows z who speaks
+     that language, xRy \land yRz, x \ne z
+  5. No. Same reason as above
+  6. No
+  7. yes
+  8. no, this could imply that x + x also equals 42 and y + y also equals 42, which is not true.
+  9. yes
+#+end_info
+** EBQ ;Ask Brother Neff!
+
+#+BEGIN_SRC elisp
+   (defun cartesian-product-n (&rest l1)
+(loop for set in l1
+    
+(loop for i across s1
+        append (loop for j across s2
+                     append (loop for k across s3
+                                  collect (list i j k)))))
+
+#+END_SRC;ask brother neff; Ask brother Neff
+#+BEGIN_SRC elisp
+  (defun loops-list (n num-lists)
+    (if (= n num-lists)
+        (apply 'list 'list (loop for i from 0 below n collect (make-item-symbol i )))
+        (append (list 'loop 'for (make-item-symbol n ) 'in (list 'nth n 'lists)))
+        
+#+END_SRC
+#+BEGIN_SRC elisp
+(defun cartesian-product (a b) ; please help me understand this!  It took me a long time before I got here!
+  (mapcan
+    (lambda (item-a)
+      (mapcar
+        (lambda (item-b)
+          (if (listp item-a)
+            (append item-a (list item-b))
+            (list item-a item-b)))
+        b))
+    a))
+
+
+(reduce #'cartesian-product '((0 1) (0 1) (0 1) (0 1) (0 1)))
+#+END_SRC
+
+RESULTS:
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 0 |
+| 0 | 0 | 0 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 |
+| 0 | 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 1 | 0 |
+| 0 | 1 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 0 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 1 |
+| 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 | 1 | 1 | 1 |
+| 1 | 1 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 0 | 1 |
+| 1 | 1 | 0 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 1 |
 
 ** Week 5
 

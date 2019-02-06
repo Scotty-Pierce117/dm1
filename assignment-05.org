@@ -25,7 +25,8 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  In the first scenario, he has 8 outfits.  In the second, he has 160 options.  The addition principle 
+  
 #+end_info
 ** TODO REX
 #+begin_note
