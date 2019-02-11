@@ -11,7 +11,7 @@
 ** TODO CRC
 #+begin_note
   #+ATTR_HTML: :alt desert image :title What is this doing here?!
-  [[file:../img/desert.jpg]]
+  [[file:img/desert.jpg]]
 
   This is the first of many exercises/problems/puzzles to come, always displayed
   in this type of yellow-background box.
@@ -53,7 +53,7 @@
   circumscribed by a square, which is circumscribed by yet another circle, and
   so forth.
 
-  [[file:../img/circumscribed-polygons-and-circles.png][file:../img/circumscribed-polygons-and-circles.png]]
+  [[file:img/circumscribed-polygons-and-circles.png]]
 
   What is the radius of the outermost circle?
 #+end_note
