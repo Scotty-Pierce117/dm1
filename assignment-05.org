@@ -9,7 +9,8 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 * Exercises
-** TODO QAM
+** DONE QAM
+   CLOSED: [2019-02-12 Tue 09:58]
 #+begin_note
   Henry only has one pair of pants. How many different outfits does Henry have
   if he has 5 long-sleeve shirts and 3 short-sleeve shirts? (An outfit is \ldquo{}pants
@@ -28,7 +29,7 @@
   In the first scenario, he has 8 outfits.  In the second, he has 160 options.  The addition principle 
   
 #+end_info
-** TODO REX
+** REX
 #+begin_note
   How should the /Sum Rule/ be adjusted when the two sets being selected from
   are /not/ disjoint --- which means the /opposite/ of the oft-repeated \ldquo{}the
@@ -40,9 +41,10 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It should be changed to be the length of the entire set.
 #+end_info
-** TODO QCV
+** DONE QCV
+   CLOSED: [2019-02-12 Tue 15:51]
 #+begin_note
   How many different /functions/ are there from a set with 3 elements to a set
   with 5 elements?
@@ -51,9 +53,9 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Set A to n and B to m.  There are m^n functions in a -> b, therefore, there are 5^3 or 125 functions.
 #+end_info
-** TODO RFC
+** RFC
 #+begin_note
   How many different /one-to-one/ functions are there from a set with 3 elements
   to a set with 5 elements?
@@ -63,9 +65,9 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  A one to one function is m!/(m-n)!, so there are 6 functions.
 #+end_info
-** TODO QCZ
+** QCZ
 #+begin_note
   How many different /onto/ functions are there from a set with 3 elements to a
   set with 5 elements?
@@ -75,7 +77,8 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  There are zero, becuase an onto function implies that every element of one set can be
+  mapped to the other, therefore there are zero.
 #+end_info
 ** TODO RFF
 #+begin_note
@@ -92,7 +95,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO QDM
+** DONE QDM
+   CLOSED: [2019-02-12 Tue 15:58]
 #+begin_note
   The English language predominantly uses the Subject-Verb-Object word type
   ordering; for example, \ldquo{}Gary saw Alice\rdquo. Other languages might use
@@ -103,9 +107,9 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+There are 6 different orderings.
 #+end_info
-** TODO RJV
+** RJV
 #+begin_note
   Suppose you flip a /fair/ coin 10 times. How many different ways can you get
 
@@ -116,16 +120,21 @@
   5. at least two heads?
 #+end_note
 #+begin_info
-  Your answer goes here.
+Use n! / (n-m)!m!
+  1. 1
+  2. 10
+  3. 45
+  4. 10! / (10-m)!m!
+  5. 1013, encompassing exactly 2, 3, 4, 5, 6, 7, 8, 9, and 10.
 #+end_info
-** TODO QIQ
+** QIQ
 #+begin_note
   How many bit strings of length 10 contain at least two 1s?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Same answer as above, 1013.
 #+end_info
-** TODO RLH
+** RLH
 #+begin_note
   There are many kinds of fruit: raspberries, strawberries, blueberries, apples,
   oranges, bananas, kiwi, papaya, mango, just to name a few. Just choosing five
@@ -133,19 +142,19 @@
   make?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  9!/(9-5)!5! = 126
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO RGL
+** RGL
 #+begin_note
   Recalling the example of how many are the permutations of the letters
   ABCDELMNO, investigate and explain why 0! is defined to be equal to 1.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  n! = n*(n-1)!, therefore if 1! = 1, and 1!=1*1!, 0! also equals 1.
 #+end_info
-** TODO QEB
+** QEB
 #+begin_note
   How many of the 9! arrangements of the letters ABCDELMNO contain the string
   ELM?
@@ -154,25 +163,41 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  P=n!/(n-r)!
+  9!/(9-3)!
+  504 
 #+end_info
-** TODO RGM
+** RGM
 #+begin_note
   How many TLAs (arrangements of 3 alphabetic letters) are there /with
   repetition allowed/?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This would be equal to the entire alphbet raisted to the power of 3 for three letter
 #+end_info
-** TODO QFK
+#+BEGIN_SRC elisp
+  (expt 26 3)
+#+END_SRC
+
+#+RESULTS:
+: 17576
+
+** QFK
 #+begin_note
   How many different sequences of initials are there for people who either have
   two initials (first and last) or three initials (first, middle and last)?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  simmilar to above.
 #+end_info
-** TODO RHB
+#+BEGIN_SRC elisp
+  (+ (expt 26 3) (expt 26 2))
+#+END_SRC
+
+#+RESULTS:
+: 18252
+
+** RHB
 #+begin_note
   How many different sequences can be formed using /either/ two /or/ three
   letters (A-Z) followed by /either/ two /or/ three digits (0-9)?
@@ -185,9 +210,15 @@
   - ...
 #+end_note
 #+begin_info
-  Your answer goes here.
 #+end_info
-** TODO QGK
+#+BEGIN_SRC elisp
+  (+ (+ (expt 26 2) (expt 10 2) (expt 10 3)) (+ (expt 26 3) (expt 10 2) (expt 10 3)))
+#+END_SRC
+
+#+RESULTS:
+: 20452
+
+** QGK
 #+begin_note
   How many different \ldquo{}words\rdquo of the form =ccvcv= are there where =c= represents
   one of the 21 consonants and =v= represents one of the 5 vowels in the English
@@ -196,8 +227,16 @@
   or \ldquo{}gligi\rdquo, which have repeated letters.
 #+end_note
 #+begin_info
-  Your answer goes here.
+Non-repeating consonants is 20 * 19, times 6 vowels, 18 more consonants (so as to not repeat), then 6 vowels again.
 #+end_info
+#+BEGIN_SRC elisp
+  (* (* 20 19) 18 (expt 5 2))
+
+#+END_SRC
+
+#+RESULTS:
+: 171000
+
 ** TODO RVB *
 #+begin_note
   \({n \choose k} = {n - 1 \choose k} + {n - 1 \choose k - 1}\).
@@ -246,15 +285,15 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO QKT
+** QKT
 #+begin_note
   When you roll two dice, what is the probability that the sum of the numbers
   (1-6) on their faces will be a multiple of 3 (3, 6, 9 or 12)?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  There are 36 possible answers, and 4 possible others, so 4/36 = 1/9.
 #+end_info
-** TODO RNM
+** RNM
 #+begin_note
   Rather than roll dice, Ruth and Ed usually flip a coin to decide who's going
   to do the chores. One day Ed complains --- he thinks he loses too often. So
@@ -269,9 +308,17 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  His chances are exactly the same.  Because there is a 1/2 chance of getting heads, you add the 
+  probability and divide it by the number of coins he is playing with.
 #+end_info
-** TODO QOS
+#+BEGIN_SRC elisp
+  (/ (+ 0.5 0.5) 2)
+#+END_SRC
+
+#+RESULTS:
+: 0.5
+
+** QOS
 #+begin_note
   Generalize the two- and four- fair-coin-flipping experiment to deal with the
   experiment of flipping /2n/ coins. Find the probability of the event that /n/
@@ -281,8 +328,10 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Each time, you do  1/n^2 to find the probability. 
 #+end_info
+
+
 ** TODO ROP *
 #+begin_note
   What is the probability that when randomly selecting a permutation of the 26

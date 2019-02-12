@@ -42,13 +42,14 @@
         average-time (/ total-time total-students)) 
 #+END_SRC
 * Exercises
-** TODO FAB
+** DONE FAB
+   CLOSED: [2019-02-12 Tue 09:22]
 #+begin_note
   There is a redundant word in the statement of the division theorem. What is
   it, and why is it redundant?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The word "in" before "an" in the second sentence.
 #+end_info
 ** TODO FDZ
 #+begin_note
@@ -269,7 +270,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO ITT
+** DONE ITT
+   CLOSED: [2019-02-12 Tue 09:27]
 #+begin_note
   How many divisors does a given number have?
 
@@ -290,7 +292,8 @@
   number?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  One sequences through integers in order, and if the answer results in an integer, 
+  it can be considered a divisor.
 #+end_info
 ** TODO FDK *
 #+begin_note
