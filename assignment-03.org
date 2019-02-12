@@ -10,10 +10,10 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2019-02-05 Tue 16:54]
+#+CAPTION: Clock summary at [2019-01-25 Fri 16:54]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *0:00* |
+| *Total time* | *13:25* |
 #+END:
 
 * Exercises
@@ -1445,3 +1445,4 @@ int main()
 *** Approach
 *** Solution
 *** Proof
+    

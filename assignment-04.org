@@ -243,7 +243,7 @@ A6	          [6]	                …	       -9 	-4	 1	6	11 16	21	…
 #+begin_note
   Here is one way to do a Cartesian product of two 3-element sets:
 #+BEGIN_SRC elisp :results raw
-  (let* ((A [a b c])
+(let* ((A [a b c])
          (B [1 2 3]))
     (list (list 'a 1) (list 'a 2) (list 'a 3)
           (list 'b 1) (list 'b 2) (list 'b 3)
