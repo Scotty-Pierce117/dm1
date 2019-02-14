@@ -41,6 +41,10 @@
         total-time (+ total-hours hours-from-minutes (/ leftover-minutes 60.0))
         average-time (/ total-time total-students)) 
 #+END_SRC
+
+#+RESULTS:
+4.636842105263158
+
 * Exercises
 ** DONE FAB
    CLOSED: [2019-02-12 Tue 09:22]
@@ -49,9 +53,10 @@
   it, and why is it redundant?
 #+end_note
 #+begin_info
-  The word "in" before "an" in the second sentence.
+  The word "positive" is not needed
 #+end_info
-** TODO FDZ
+** DONE FDZ
+   CLOSED: [2019-02-14 Thu 15:39]
 #+begin_note
   Re-implement =prime-power-list-to-number= without using =let= by instead
   putting everything =let= is doing within the =loop=.
@@ -62,15 +67,42 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO FJH
+#+BEGIN_SRC elisp :reults raw
+ (defun prime-power-list-to-number (prime-power-list)
+  (reduce #'* (loop with number = 1
+        with primes = [2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71]
+        for prime across primes
+        for power in prime-power-list
+        collect (* number (expt prime power)))))
+#+END_SRC
+
+#+RESULTS:
+: prime-power-list-to-number
+#+BEGIN_SRC elisp
+  (prime-power-list-to-number '(6 5 4 3 2 1))
+#+END_SRC
+
+#+RESULTS:
+: 5244319080000
+
+** DONE FJH
+   CLOSED: [2019-02-14 Thu 15:43]
 #+begin_note
   The FTA supports the mapping of the sequence =[2 0 0 0 0 1]= to a two-digit
   number. What is that number?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Just using mental math, this is (13*2) * 2 = 52
 #+end_info
-** TODO IWK
+#+BEGIN_SRC elisp
+   (prime-power-list-to-number '(2 0 0 0 0 1))
+#+END_SRC
+
+#+RESULTS:
+: 52
+
+** DONE IWK
+   CLOSED: [2019-02-14 Thu 15:54]
 #+begin_note
   A famous theorem states that there are infinitely many primes of the form
   /ak/ + /b/ whenever /a/ and /b/ are coprime. To get a feel for this, find for
@@ -78,9 +110,19 @@
   and ten values where /4k + 11/ is nonprime.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Prime: 11, 15, 19, 23, 31, 39, 43, 59, 67, 71, 79
+  Non-Prime: 27, 35, 47, 51, 55, 63, 75, 87, 91, 99
 #+end_info
-** TODO FOJ
+#+BEGIN_SRC elisp :reults list
+  (loop for k upto 100
+  collect (+ (* 4 k) 11))
+#+END_SRC
+
+#+RESULTS:
+| 11 | 15 | 19 | 23 | 27 | 31 | 35 | 39 | 43 | 47 | 51 | 55 | 59 | 63 | 67 | 71 | 75 | 79 | 83 | 87 | 91 | 95 | 99 | 103 | 107 | 111 | 115 | 119 | 123 | 127 | 131 | 135 | 139 | 143 | 147 | 151 | 155 | 159 | 163 | 167 | 171 | 175 | 179 | 183 | 187 | 191 | 195 | 199 | 203 | 207 | 211 | 215 | 219 | 223 | 227 | 231 | 235 | 239 | 243 | 247 | 251 | 255 | 259 | 263 | 267 | 271 | 275 | 279 | 283 | 287 | 291 | 295 | 299 | 303 | 307 | 311 | 315 | 319 | 323 | 327 | 331 | 335 | 339 | 343 | 347 | 351 | 355 | 359 | 363 | 367 | 371 | 375 | 379 | 383 | 387 | 391 | 395 | 399 | 403 | 407 | 411 |
+
+** DONE FOJ
+   CLOSED: [2019-02-14 Thu 16:01]
 #+begin_note
   CCS = Consecutive Composite Sequence.
 
@@ -89,19 +131,24 @@
   - Hint :: This is a potentially tricky series of questions.
 :END:
 #+end_note
-#+begin_info
-  Your answer goes here.
+#+begin_info 
+  2. 8, 9 
+  3. 8, 9, 10
+  4. 24, 25, 26, 27
+  10. 114, 115, 116, 117, 118, 119, 120, 121, 122, 123
 #+end_info
-** TODO VAR
+** DONE VAR
+   CLOSED: [2019-02-14 Thu 16:03]
 #+begin_note
   Browse the linked information on [[https://en.wikipedia.org/wiki/Highly_composite_number][highly composite numbers]]. Find the video
   about the synonymous \ldquo{}anti-primes\rdquo and watch it. What is your favorite HCN (or
   anti-prime)? Is it divisible by at least 10 distinct primes?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I like 10080, because it's 2*2*2*2*2
 #+end_info
-** TODO VAY
+** DONE VAY
+   CLOSED: [2019-02-14 Thu 16:16]
 #+begin_note
   Trace through the steps of each of these GCD calculations:
 
@@ -116,9 +163,13 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. 57/43 = 1 r 14; 43/14 = 3 r 1; 14/1 = 14 r 0, b = 1 gcd = 1
+  2. 501/39 = 12 r 33; 39/33 = 1 r6; 33/6 = 5 r 3; 6/3 = 2; 3 = b = gcd
+  3. 765/110 = 6 r 105; 110/105 = 1 r 5; 105/5 = 21; gcd = b = 5
+  4. 899/493 = 1 r 406; 493/406 = 1 r 87; 406/87 = 4 r 58, 87/58 = 1 r 29; 58/29 = 2, gcd = b = 29
 #+end_info
-** TODO FQW
+** DONE FQW
+   CLOSED: [2019-02-14 Thu 16:18]
 #+begin_note
   PVP what the following returns:
 
@@ -133,9 +184,11 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It tests if the second number is the gcd or lcm of the thing calculated within.  If everything
+  is true, the function returns true.
 #+end_info
-** TODO VCR
+** DONE VCR
+   CLOSED: [2019-02-14 Thu 16:23]
 #+begin_note
   Verify that for many pairs of positive integers =a= and =b=:
 
@@ -147,8 +200,14 @@
   or why not?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  True
 #+end_info
+#+BEGIN_SRC elisp :results raw
+    (loop for a upto 100
+    (loop for b upto 100
+    collect (= (* (gcd a b) (lcm a b)) (* a b))))
+
+#+END_SRC
 ** TODO FRM
 #+begin_note
   Given that (a slight expansion of) the CSF of /a/ is 2^3 \cdot 3^2 \cdot 5^1
@@ -174,7 +233,7 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Yes!
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
