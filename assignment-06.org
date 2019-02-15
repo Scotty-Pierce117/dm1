@@ -8,6 +8,13 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-02-14 Thu 16:58]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *3:23* |
+#+END:
+
 * Time Hint
   Students who did well on this assignment in the past spent over 7 hours on
   it. But if you know a little python, the PYTHON-HINT drawers may help you save
@@ -208,7 +215,8 @@
     collect (= (* (gcd a b) (lcm a b)) (* a b))))
 
 #+END_SRC
-** TODO FRM
+** DONE FRM
+   CLOSED: [2019-02-14 Thu 16:24]
 #+begin_note
   Given that (a slight expansion of) the CSF of /a/ is 2^3 \cdot 3^2 \cdot 5^1
   \cdot 7^0 and the CSF of /b/ is 2^2 \cdot 3^3 \cdot 5^0 \cdot 7^1, give the CSFs of the
@@ -388,7 +396,7 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO IWC
+** TODO IWC too hard
 #+begin_note
   Re-implement =prime-power-list-to-number= as =prime-powers-to-number= using
   mapping instead of looping, and a vector /or/ a list, instead of just a list
@@ -396,7 +404,7 @@
 #+end_note
 #+begin_info
   Your answer goes here.
-#+end_info
+#+end_
 ** TODO IXT *
 #+begin_note
   A famous conjecture (not theorem) states that every even number appears
@@ -436,7 +444,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO IYJ
+** DONE IYJ
+   CLOSED: [2019-02-14 Thu 16:50]
 #+begin_note
   How many 7-digit primes have the form n^2 + 1? What are they?
 :HINT:
@@ -444,9 +453,10 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I dont think there are any, I tested it in excel.
 #+end_info
-** TODO IZL
+** DONE IZL
+   CLOSED: [2019-02-14 Thu 16:54]
 #+begin_note
   Not the first, nor the only one, but this function (with its =factorial=
   helper) gives one such CCS:
@@ -495,7 +505,9 @@ print(allComp(comp))
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I think that if you are blind to where prime numbers lie, this is a good way of figuring it out.
+  However, if you know there is a priem within a certain range, you could simplify the function to only
+  include those numbers, saving a great deal of processing power.
 #+end_info
 ** TODO FOY *
 #+begin_note
@@ -512,7 +524,8 @@ print(allComp(comp))
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO VAO
+** DONE VAO
+   CLOSED: [2019-02-14 Thu 17:05]
 #+begin_note
   Pierre de Fermat found a way of finding factors of a number. It is based on
   certain assumptions. Study the code below and articulate what these
@@ -544,7 +557,8 @@ print(allComp(comp))
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It assumes that the numbers that s and x associate with are close together so the calculation
+  does not take as long.
 #+end_info
 ** TODO FQI
 #+begin_note
@@ -579,7 +593,7 @@ print(allComp(comp))
 #+END_SRC
 
 #+BEGIN_SRC elisp :results silent
-  (setq limit 0
+  (setq limit 1000
         p100rle (list 1 1 0 1 0 1 3 1 0 1 3 1 0 1 3 1 5 1 0 1 5 1 3 1 0
                       1 3 1 5 1 5 1 0 1 5 1 3 1 0 1 5 1 3 1 5 1 7 1 3)
         got-it-right (equal (reconstitute-primes p100rle)
