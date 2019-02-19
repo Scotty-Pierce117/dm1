@@ -225,9 +225,7 @@ and permanently aggrandize himself.\rdquo
   |      |         | NGP BRQ PIQ PRK NIO PFA BGT NGI NLR BSP |
   |      |         | NBO PBI BJO NKY BMI                     |
 
-#+Begin_Latex
-\pagebreak
-#+End_Latex
+@@latex: \pagebreak@@
 
 * Portfolio
 ** Course Tracker
