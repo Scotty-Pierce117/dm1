@@ -9,7 +9,8 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 * Exercises
-** TODO GMQ
+** DONE GMQ
+   CLOSED: [2019-02-21 Thu 15:49]
 #+begin_note
   First recall (or look up) how the =&rest= keyword works, e.g.:
 
@@ -45,9 +46,51 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This creates a list of all numbers from zero to the least common multiple of the two numbers 
+  you input.  In short, it displays all the possible mods of the two numbers, then stops when 
+  both have an output of zero.
 #+end_info
-** TODO GMY
+#+BEGIN_SRC emacs-lisp :results silent
+ (defun printf (format-directive &rest args)
+ (princ (apply 'format format-directive args)))
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results output
+(printf "%s" '"hello there" '"my name is bryan" '"these are rest args")
+#+END_SRC
+
+#+RESULTS:
+: hello there
+
+#+BEGIN_SRC emacs-lisp :results silent
+(defun mystery (&rest numbers)
+  (loop for n from 0 to (apply 'lcm numbers)
+        do (printf "%3d <--> %s\n" n
+                   (loop for m in numbers collect (mod n m)))))
+#+END_SRC
+#+BEGIN_SRC elisp :results output
+  (mystery 3 5)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+  0 <--> (0 0)
+  1 <--> (1 1)
+  2 <--> (2 2)
+  3 <--> (0 3)
+  4 <--> (1 4)
+  5 <--> (2 0)
+  6 <--> (0 1)
+  7 <--> (1 2)
+  8 <--> (2 3)
+  9 <--> (0 4)
+ 10 <--> (1 0)
+ 11 <--> (2 1)
+ 12 <--> (0 2)
+ 13 <--> (1 3)
+ 14 <--> (2 4)
+ 15 <--> (0 0)
+#+end_example
+** GMY
 #+begin_note
   Replace the =;;...= line with three lines, binding the values of =y1=, =y2= and
   =y3=. Write a helper function to compute these values.
@@ -74,9 +117,48 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  
 #+end_info
-** TODO JQA
+
+#+BEGIN_SRC elisp :results raw
+(require 'cl) ;; for destructuring-bind
+
+(defun egcd (a b)
+  "Computes the greatest common divisor of a and b recursively.
+   This extended version returns a list of d, x and y, where
+   d = ax + by = gcd(a, b)."
+  (if (zerop b)
+      (list a 1 0)
+    (let ((q (/ a b))
+          (r (% a b)))
+      (destructuring-bind (d x y) (egcd b r)
+        (list d y (- x (* q y)))))))
+
+  (let* ((r1 4)
+         (r2 2)
+         (r3 9)
+         (m1 7)
+         (m2 11)
+         (m3 13)
+         (m (* m1 m2 m3))
+         (o1 (/ m m1))
+         (o2 (/ m m2))
+         (o3 (/ m m3))
+         (y1 (find-y o1 m1))
+         (y2 (find-y o2 m2))
+         (y3 (find-y o3 m3)) 
+    (mod (+ (* r1 o1 y1) (* r2 o2 y2) (* r3 o3 y3)) m)))
+
+(defun find-y (o m)
+   (let* ((equat (egcd o m)))
+         (if (= (nth 0 equat) 1)
+             (mod (nth 1 equat) m)
+             ("no solutions"))
+   ))
+
+#+END_SRC
+** DONE JQA
+   CLOSED: [2019-02-21 Thu 15:39]
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -88,9 +170,51 @@
    x \equiv_{13} 4
 #+end_note
 #+begin_info
-  Your answer goes here.
+  654
 #+end_info
-** TODO GRZ
+#+BEGIN_SRC elisp :results silent
+  (defun rns (n)
+  (list (mod n 7) (mod n 11) (mod n 13)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (defun from-rns (rns-triple)
+(car (rassoc rns-triple rns-alist)))
+#+END_SRC
+
+#+RESULTS:
+: from-rns
+
+#+END_SRC
+#+BEGIN_SRC elisp
+  (setq rns-alist
+  (loop for x from 0 to 1001
+  for y = (rns x)
+  collect (append (list x) y)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (from-rns '(0 8 12))
+#+END_SRC
+
+#+RESULTS:
+987
+212
+794
+654
+
+#+BEGIN_SRC elisp :results silent
+  (defun to-rns (rns-num)
+  (cdr (assoc rns-num rns-alist)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (to-rns 555)
+#+END_SRC
+
+#+RESULTS:
+| 2 | 5 | 9 |
+
+#+END_SRC
+** DONE GRZ
+   CLOSED: [2019-02-21 Thu 15:39]
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -102,9 +226,10 @@
    x \equiv_{13} 1
 #+end_note
 #+begin_info
-  Your answer goes here.
+  794
 #+end_info
-** TODO JYA
+** DONE JYA
+   CLOSED: [2019-02-21 Thu 15:40]
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -116,9 +241,10 @@
    x \equiv_{13} 4
 #+end_note
 #+begin_info
-  Your answer goes here.
+  212
 #+end_info
-** TODO GXF
+** DONE GXF
+   CLOSED: [2019-02-21 Thu 15:40]
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -130,7 +256,7 @@
    x \equiv_{13} 12
 #+end_note
 #+begin_info
-  Your answer goes here.
+  987
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
@@ -150,7 +276,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO JPZ
+** DONE JPZ
+   CLOSED: [2019-02-21 Thu 16:12]
 #+begin_note
   If p and q are coprime positive integers, then does a bijection necessarily
   exist between $\mathbb{Z}_{pq}$ and $\mathbb{Z}_{p} \times \mathbb{Z}_{q}$?
@@ -171,9 +298,38 @@
   programming style?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This function does the same exact thing as the first exercise, but it uses mapping 
+  instead of looping.  This is a better example of a functional program.
 #+end_info
-** TODO XFO
+#+BEGIN_SRC elisp
+  (let* ((p 3)
+       (q 5)
+       (z-pq (number-sequence 0 (* p q))))
+    (mapcar* 'list z-pq
+             (mapcar (lambda (n) (mod n p)) z-pq)
+             (mapcar (lambda (n) (mod n q)) z-pq)))
+#+END_SRC
+
+#+RESULTS:
+|  0 | 0 | 0 |
+|  1 | 1 | 1 |
+|  2 | 2 | 2 |
+|  3 | 0 | 3 |
+|  4 | 1 | 4 |
+|  5 | 2 | 0 |
+|  6 | 0 | 1 |
+|  7 | 1 | 2 |
+|  8 | 2 | 3 |
+|  9 | 0 | 4 |
+| 10 | 1 | 0 |
+| 11 | 2 | 1 |
+| 12 | 0 | 2 |
+| 13 | 1 | 3 |
+| 14 | 2 | 4 |
+| 15 | 0 | 0 |
+
+** DONE XFO
+   CLOSED: [2019-02-21 Thu 16:20]
 #+begin_note
   The Chinese Remainder Theorem makes possible the use of a /residue number
   system/ to do computer arithmetic with \ldquo{}large\rdquo integers, where largeness is
@@ -327,6 +483,10 @@
                  [0 11  9  7  5  3  1 12 10  8  6  4  2]
                  [0 12 11 10  9  8  7  6  5  4  3  2  1]] i) j))
 #+END_SRC
+
+#+RESULTS:
+: m13
+
 :HINT:
   - Hint :: For =to-rns= and =from-rns=, =assoc= and =rassoc= are recommended.
             Thus the creation of an association list (alist) is a prerequisite
@@ -337,6 +497,76 @@
 #+begin_info
   Your answer goes here.
 #+end_info
+Functions to use:
+apply
+vconcat
+mapcar*
+vector
+
+(mapcar 'documentation (mapcar 'intern (mapcar 'car funcs)))
+
+apply 'vconcat mapcar* 'vector 
+#+BEGIN_SRC elisp :results silent
+  (defun shuffle (&rest sequences)
+  (apply 'vconcat (apply 'mapcar* 'vector sequences)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (shuffle [A B C] [x y z] '(1 2))
+#+END_SRC
+
+#+RESULTS:
+[A x 1 B y 2]
+[A x 1 B y 2 C z 3]
+[A x B y C z]
+[[A B C] [x y z]]
+
+  (shuffle [A B C] [1 2 3)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun rns (n)
+  (list (mod n 7) (mod n 11) (mod n 13)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (defun from-rns (rns-triple)
+(car (rassoc rns-triple rns-alist)))
+#+END_SRC
+
+#+END_SRC
+#+BEGIN_SRC elisp
+  (setq rns-alist
+  (loop for x from 0 to 1001
+  for y = (rns x)
+  collect (append (list x) y)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (from-rns '(0 8 12))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun to-rns (rns-num)
+  (cdr (assoc rns-num rns-alist)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (to-rns 555)
+#+END_SRC
+For this part, I consulted my roomate Brian!
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun add2 (i j)
+  (list (a7 (nth 0 i) (nth 0 j)) (a11 (nth 1 i) (nth 1 j)) (a13 (nth 2 i) (nth 2 j))))
+    
+
+  (defun mul2 (i j)
+  (list (a7 (nth 0 i) (nth 0 j)) (a11 (nth 1 i) (nth 1 j)) (a13 (nth 2 i) (nth 2 j))))
+#+END_SRC
+#+BEGIN_SRC elisp :results list
+  (add2 '(1 2 3) '(4 5 6))
+#+END_SRC
+
+#+RESULTS:
+- 5
+- 7
+- 9
 * Puzzles
   Puzzle, to be precise.
 ** TODO GYI
@@ -359,3 +589,53 @@
 *** Approach
 *** Solution
 *** Proof
+
+#+BEGIN_SRC elisp :results silent
+  (defun rns (n)
+  (list (mod n 7) (mod n 11) (mod n 13)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (defun from-rns (rns-triple)
+(car (rassoc rns-triple rns-alist)))
+#+END_SRC
+
+#+RESULTS:
+: from-rns
+
+#+END_SRC
+#+BEGIN_SRC elisp
+  (setq rns-alist
+  (loop for x from 0 to 1001
+  for y = (rns x)
+  collect (append (list x) y)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (from-rns '(3 5 4))
+#+END_SRC
+#+BEGIN_SRC elisp :results silent
+  (defun to-rns (rns-num)
+  (cdr (assoc rns-num rns-alist)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (to-rns 555)
+#+END_SRC
+
+#+RESULTS:
+| 2 | 5 | 9 |
+
+#+END_SRC
+
+#+BEGIN_SRC elisp
+    (list (from-rns '(1 1 3))
+    (from-rns '(1 1 4))
+    (from-rns '(1 4 3))
+    (from-rns '(1 4 4))
+    (from-rns '(2 1 3))
+    (from-rns '(2 1 4))
+    (from-rns '(2 4 3))
+    (from-rns '(2 4 4)))
+
+#+END_SRC
+
+#+RESULTS:
+| 848 | 771 | 939 | 862 | 562 | 485 | 653 | 576 |
