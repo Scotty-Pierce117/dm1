@@ -1,0 +1,280 @@
+#+TITLE: Code R Us
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t d:(not "HINT")
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: theme-bigblow.setup
+
+* Week 07
+** Day 1
+*** DONE Talk about the CRT
+#+BEGIN_SRC elisp
+  (defun trace-gcd (a b)
+    (loop with r = b
+          until (zerop r)
+          collect (list a '= b (list (/ a b)) '+ (setq r (% a b)))
+          do (setq a b b r))) 
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (trace-gcd 87 55)
+#+END_SRC
+
+**** For Solving Simultaneous Congruences
+#+BEGIN_SRC elisp :results raw
+  (list (% 116 3) (% 116 5) (% 116 7))
+#+END_SRC
+
+***** See GMY in PQV
+#+BEGIN_SRC elisp :results raw
+  (defun egcd (a b)
+    "Computes the greatest common divisor of a and b recursively.
+     This extended version returns a list of d, x and y, where
+     d = ax + by = gcd(a, b)."
+    (if (zerop b)
+        (list a 1 0)
+      (let ((q (/ a b))
+            (r (% a b)))
+        (destructuring-bind (d x y) (egcd b r)
+          (list d y (- x (* q y)))))))
+
+    (defun find-y (o m)
+      (second (egcd o m)))
+
+    (let* ((r1 2)
+           (r2 3)
+           (r3 10)
+           (m1 7)
+           (m2 11)
+           (m3 13)
+           (m (* m1 m2 m3))
+           (o1 (/ m m1))
+           (o2 (/ m m2))
+           (o3 (/ m m3))
+           (y1 (find-y o1 m1))
+           (y2 (find-y o2 m2))
+           (y3 (find-y o3 m3)))
+      (mod (+ (* r1 o1 y1) (* r2 o2 y2) (* r3 o3 y3)) m))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (list (mod 751 7) (mod 751 11) (mod 751 13))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (find-y 77 13)
+#+END_SRC
+
+**** For Residue Number System implementation
+***** Follow the Hint for XFO
+      For =to-rns= and =from-rns=, =assoc= and =rassoc= are recommended. Thus the
+      creation of an association list (alist) is a prerequisite for using these
+      functions. The challenge is to create this alist without using mod (or %)
+      or loops.
+***** Two Tasks
+    1. Create the function =create-rns-alist=.
+    2. Use the =test-rns= package.
+#+BEGIN_SRC elisp :results silent
+  (defun rns (n)
+    (list (mod n 7) (mod n 11) (mod n 13)))
+
+  (defun create-rns-alist ()
+    (loop for n from 0 to 1001
+          collect (cons n (rns n))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results code
+  (setq rns-alist (create-rns-alist))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun to-rns (n)
+    (cdr (assoc n rns-alist)))
+
+  (defun from-rns (rns-triple)
+    (car (rassoc rns-triple rns-alist)))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (list (to-rns 999)
+        (from-rns '(5 9 11)))
+#+END_SRC
+
+#+RESULTS:
+| (5 9 11) | 999 |
+
+#+BEGIN_SRC elisp :results raw
+  (list (to-rns 12) (to-rns 16))
+#+END_SRC
+
+#+RESULTS:
+((5 1 12) (2 5 3))
+
+#+BEGIN_SRC elisp :results raw
+  (list (mod (* 5 2) 7) (mod (* 1 5) 11) (mod (* 12 3) 13))
+#+END_SRC
+
+#+RESULTS:
+(3 5 10)
+*** DONE CDL
+  Write elisp code that takes two same-sized vectors of one-character symbols
+  and \ldquo{}shuffles\rdquo them together into one vector. For example:
+#+BEGIN_SRC elisp :results silent
+  (defun shuffle (vector1 vector2)
+    (apply 'vconcat (mapcar* 'vector vector1 vector2)))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (shuffle [a b c d e f] [1 2 3 4])
+#+END_SRC
+
+#+RESULTS:
+[a 1 b 2 c 3 d 4]
+
+  It\rsquo{}s EASY with a loop:
+
+#+BEGIN_SRC elisp :results silent
+  (defun shuffle (v1 v2)
+    (loop for e1 across v1
+          for e2 across v2
+          vconcat (vector e1 e2)))
+#+END_SRC
+
+**** The challenge?
+     Do it without using loops
+***** And ...
+      make it polyadic (variadic) \smiley
+#+BEGIN_SRC elisp :results silent
+  (defun shuffle (&rest vectors)
+    (if (null vectors)
+        []
+      (if (= 1 (length vectors))
+          (let* ((vector (first vectors))
+                 (half-length (/ (length vector) 2))
+                 (first-half (subseq vector 0 half-length))
+                 (second-half (subseq vector half-length)))
+            (setq vectors (list first-half second-half))))
+      (apply 'vconcat (apply 'mapcar* 'vector vectors))))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (shuffle)
+#+END_SRC
+** Day 2
+*** CDL on Eggs
+    An old woman goes to market and a horse steps on her basket and crushes the
+    eggs. The rider offers to pay for the damage and asks her how many eggs she
+    had brought. She does not remember the exact number, but when she had taken
+    them out two at a time, there was one egg left. The same happened when she
+    picked them out three, four, five, and six at a time, but when she took them
+    seven at a time they came out even. What is the smallest number of eggs she
+    could've had?
+**** In other words,
+      solve for x in:
+
+      x \equiv_2 1
+      x \equiv_3 1
+      x \equiv_4 1
+      x \equiv_5 1
+      x \equiv_6 1
+      x \equiv_7 0
+
+#+BEGIN_SRC elisp
+  (loop for n from 0 to 3000
+        if (and (= 1 (% n 2)) (= 1 (% n 3)) (= 1 (% n 4)) (= 1 (% n 5)) (= 1 (% n 6)) (= 0 (% n 7)))
+        minimize n)
+#+END_SRC
+
+* Week 08
+** Day 1
+*** DONE Talk about RSA
+    Specifically, hints and helps for XGG.
+**** Encryption = Scrambling
+***** Perfect Shuffling (Scrambling)
+#+BEGIN_SRC elisp :results raw
+  (setq deck0 [As 2s 3s 4s 5s 6s 7s 8s 9s 10s Js Qs Ks
+               Ah 2h 3h 4h 5h 6h 7h 8h 9h 10h Jh Qh Kh
+               Ac 2c 3c 4c 5c 6c 7c 8c 9c 10c Jc Qc Kc
+               Ad 2d 3d 4d 5d 6d 7d 8d 9d 10d Jd Qd Kd]
+        deck1 (shuffle deck0)
+        deck2 (shuffle deck1)
+        deck3 (shuffle deck2)
+        deck4 (shuffle deck3)
+        deck5 (shuffle deck4)
+        deck6 (shuffle deck5)
+        deck7 (shuffle deck6)
+        deck8 (shuffle deck7)
+        show deck5)
+#+END_SRC
+
+#+RESULTS:
+[As 9s 4h Qh 7c 2d 10d 6s Ah 9h 4c Qc 7d 3s Js 6h Ac 9c 4d Qd 8s 3h Jh 6c Ad 9d 5s Ks 8h 3c Jc 6d 2s 10s 5h Kh 8c 3d Jd 7s 2h 10h 5c Kc 8d 4s Qs 7h 2c 10c 5d Kd]
+
+#+BEGIN_SRC elisp
+  (list (list deck0)
+        (list deck8)
+        (list (format "(equal deck0 deck8) => %s" (equal deck0 deck8))))
+#+END_SRC
+
+#+RESULTS:
+| [As 2s 3s 4s 5s 6s 7s 8s 9s 10s Js Qs Ks Ah 2h 3h 4h 5h 6h 7h 8h 9h 10h Jh Qh Kh Ac 2c 3c 4c 5c 6c 7c 8c 9c 10c Jc Qc Kc Ad 2d 3d 4d 5d 6d 7d 8d 9d 10d Jd Qd Kd] |
+| [As 2s 3s 4s 5s 6s 7s 8s 9s 10s Js Qs Ks Ah 2h 3h 4h 5h 6h 7h 8h 9h 10h Jh Qh Kh Ac 2c 3c 4c 5c 6c 7c 8c 9c 10c Jc Qc Kc Ad 2d 3d 4d 5d 6d 7d 8d 9d 10d Jd Qd Kd] |
+| (equal deck0 deck8) => t                                                                                                                                          |
+
+#+BEGIN_SRC elisp
+  (a-better-mod-expt 8 65537 33)  
+  (calc-eval "8^65537%33")
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+* Bonus
+  Learn More About Elisp Macros:
+#+BEGIN_SRC elisp :results silent
+  (defmacro with (bindings &rest forms)
+    (let ((len (length bindings)))
+      (if (or (not (vectorp bindings))
+              (not (zerop (mod len 3)))
+              (not (loop for i from 1 below len by 3 always (eq '= (elt bindings i)))))
+          (error "bad bindings: %S" bindings)
+        (let* ((sym-list (loop for i from 0 below len by 3 collect (elt bindings i)))
+               (val-list (loop for i from 2 below len by 3 collect (elt bindings i)))
+               (bindings-list (apply 'list (mapcar* 'list sym-list val-list))))
+          `(let* ,bindings-list ,@forms)))))
+#+END_SRC
+
+  Sample use:
+#+BEGIN_SRC elisp :results code 
+  (macroexpand (quote
+  (with [a = 1
+         b = 2
+         c = (* a b)
+         d = (+ b b c)]
+    (+ a b d))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results code 
+  (loop with bindings-list = (car (cdr (car (cdr (cdr (cdr (symbol-function 'compute-final-grade)))))))
+        for (var val) in bindings-list
+        vconcat (vector var '= val))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun compute-letter-grade (list-of-grades)
+    "From list-of-grades compute weighted percentage and
+    convert to letter grade, returning both."
+    (with [weighted-percentage = (apply '+ list-of-grades)
+           number = (ceiling weighted-percentage)
+           tensDigit = (/ number 10)
+           onesDigit = (mod number 10)
+           index = (min (max (- tensDigit 5) 0) 4)
+           letter = (substring "FDCBA" index (+ index 1))
+           sign = (if (<= onesDigit 2) "-" (if (>= onesDigit 7) "+"))
+           letter-grade = (concat letter (if (and (< number 95) (>= number 60)) sign))]
+      (list (format "%2.2f" weighted-percentage) letter-grade)))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (compute-letter-grade '(50 10 12 3))
+#+END_SRC
