@@ -94,3 +94,23 @@
 #+end_info
 * Puzzles
   No puzzles this week.
+#+BEGIN_SRC elisp :results silent
+  (defun shuffle (&rest vectors)
+  (if (null vectors) 
+     []
+  (if (= 1 (length vectors))
+     (let* ((vector (first vectors))
+        (half-length (/ (length vector) 2))
+        (first-half (subseq vector 0 half-length))
+        (second-half (subseq vector half-length)))
+     (setq vectors (list first-half second-half))))
+     (apply 'vconcat (apply 'mapcar* 'vector vectors))))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (shuffle [A B C D E F])
+#+END_SRC
+
+#+RESULTS:
+: [A D B E C F]
+
+
