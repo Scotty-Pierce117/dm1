@@ -8,9 +8,17 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-02-28 Thu 16:57]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *4:35* |
+#+END:
+
 * Exercises
   Exercise, to be precise.
-** TODO GYN
+** DONE GYN
+   CLOSED: [2019-02-28 Thu 15:31]
 #+begin_note
   Help Abu and Ila out. This version of =mod-expt= gets a /little/ better
   mileage than their simplistic one. It keeps the numbers smaller by reducing
@@ -29,11 +37,23 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  So this function works by using the modular arithmetic rule that when finding a modulus,
+  you can employ the property taht works as follows: Say you want to find 94 mod 5.  You can
+  split that up into as many seperate problems as you'd like in order to get that answer.  For
+  this example, I'll split it in three.  33 % 5 = 3, so if we take (33%5 + 33%5 + 28%5) % 5, we get
+  the answer of 9 % 5 which is equal to 4.  This is what the above loop does, but at each step of
+  the exponent!  This saves a significant amount of processing power!
 #+end_info
+#+BEGIN_SRC elisp
+  (a-better-mod-expt 2 3 5)
+#+END_SRC
+
+#+RESULTS:
+: 2
+
 * Problems
   Problem, to be precise.
-** TODO XGG
+** XGG
 #+begin_note
   Experiment with RSA using the following code. You will need a better modular
   exponentiation function than =mod-expt= or perhaps even =a-better-mod-expt=.
@@ -92,6 +112,115 @@
 #+begin_info
   Your answer goes here.
 #+end_info
+
+#+BEGIN_SRC elisp :results silent
+;(defun pow-mod (base power modulus)
+ ;   (loop with result = 1
+;        for n from 1 to power
+;        do (setq result (mod (* result base) modulus))
+;        finally return result))
+
+;(defalias 'div '/)
+(defun abr (n b)
+  (let ((d (/ n b))
+        (m (mod n b)))
+    (if (zerop d)
+        (list m)
+      (append (abr d b) (list m)))))
+
+  (defun to-base-27 (base-10-num)
+    (mapconcat (lambda (n) (char-to-string (+ ?@ n))) (abr base-10-num 27) ""))
+  (defun reconstruct-number-from-abr (list-of-coeff base)
+   (if (null list-of-coeff)
+      0
+      (+ (car list-of-coeff)
+         (* base (reconstruct-number-from-abr (cdr list-of-coeff) base)))))
+  (defun from-base-27 (base-27-string)
+    (reconstruct-number-from-abr (reverse (mapcar (lambda (n) (- n ?@)) base-27-string)) 27))
+ 
+  (defun pow-mod (base power modulus)
+   (
+
+#+END_SRC
+
+
+#+BEGIN_SRC elisp
+  (from-base-27 "SUPERHOT")
+#+END_SRC
+
+#+RESULTS:
+: 207115141394
+
+#+BEGIN_SRC elisp :results show
+  (to-base-27 207115141394) 
+#+END_SRC
+
+#+RESULTS:
+: SUPERHOT
+
+
+#+BEGIN_SRC elisp :results silent
+  (defun rsa-encrypt (message n e &optional encoder)
+    (let* ((message-encoded (funcall (or encoder 'identity) message))
+           (encrypted (pow-mod message-encoded e n)))
+      encrypted))
+
+  (defun rsa-decrypt (encrypted n d &optional decoder)
+    (let* ((decrypted (pow-mod encrypted d n))
+           (message-decoded (funcall (or decoder 'identity) decrypted)))
+      message-decoded))
+
+  (defun round-trip (message n e d &optional encoder decoder)
+    (equal message
+           (rsa-decrypt (rsa-encrypt message n e encoder)
+                        n d decoder)))
+#+END_SRC
+
+  You will need working =from-base-27= and =to-base-27= functions, as well as a
+  working knowledge of /symbol property lists/ to play with /this/ test code:
+
+#+BEGIN_SRC elisp :results silent
+(setf (get 'rsa-players :p) 11)
+(setf (get 'rsa-players :q) 17)
+(setf (get 'rsa-players :n) (* (get 'rsa-players :p) (get 'rsa-players :q)))
+(setf (get 'rsa-players :t) (* (- (get 'rsa-players :p) 1) (- (get 'rsa-players :q) 1)))
+(setf (get 'rsa-players :e) '13)
+(setf (get 'rsa-players :d) '37)
+
+
+  (defun test-rsa (message-with-spaces)
+    (let* ((message (mapconcat 'identity
+                               (split-string message-with-spaces " ") "@"))
+            (n (get 'rsa-players :n))
+            (e (get 'rsa-players :e))
+            (d (get 'rsa-players :d))
+            (encrypted (rsa-encrypt message n e 'from-base-27))
+            (decrypted (rsa-decrypt encrypted n d 'to-base-27))
+            (decrypted-message-with-spaces
+             (mapconcat 'identity (split-string decrypted "@") " "))
+            (success (string= message-with-spaces
+                              decrypted-message-with-spaces)))
+       (princ (format (concat "\"%s\"\nwas encoded and encrypted as\n%s\n"
+                              "then decrypted and decoded as\n\"%s\"\n")
+                      message-with-spaces
+                      encrypted
+                      decrypted-message-with-spaces))
+       (princ (if success "" "un"))
+       (princ "successfully.\n")
+       success))
+#+END_SRC
+#+BEGIN_SRC elisp :results output
+  (test-rsa "Is")
+#+END_SRC
+
+#+RESULTS:
+: "Is"
+: was encoded and encrypted as
+: 105
+: then decrypted and decoded as
+: "CZ"
+: unsuccessfully.
+
 * Puzzles
   No puzzles this week.
 #+BEGIN_SRC elisp :results silent
@@ -113,4 +242,12 @@
 #+RESULTS:
 : [A D B E C F]
 
+
+Example in for excel question:
+#+BEGIN_SRC elisp
+  (mapcar* '= (number-sequence 0 100 2) (number-sequence 1 100 2))
+#+END_SRC
+
+#+RESULTS:
+| t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t |
 
