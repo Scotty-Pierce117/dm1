@@ -9,7 +9,8 @@
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
 * Exercises
-** TODO LDA
+** DONE LDA
+   CLOSED: [2019-03-05 Tue 17:20]
 #+begin_note
   Alter the following =let= expression so that it creates the same list using
   =cons= rather than =list=.
@@ -18,10 +19,27 @@
   (let ((a 1) (b 2) (c 3) (d 4))
     (list (+ a b) (/ d b) (- d a) (* c d)))
 #+END_SRC
+
+#+RESULTS:
+(3 2 3 12)
+
 #+end_note
 #+begin_info
   Your answer goes here.
 #+end_info
+
+#+BEGIN_SRC elisp :results raw
+  (let ((a 1) (b 2) (c 3) (d 4))
+    (cons (+ a b) (cons (/ d b) (cons (- d a) (cons (* c d) nil)))))
+#+END_SRC
+
+#+RESULTS:
+(3 2 3 12)
+((3 . 2) 3 . 12)
+(3 . 2)
+(((+ a b)) / d b)
+((+ a b) / d b)
+
 ** TODO SQI
 #+begin_note
   Use =cons= to re-implement the =morphifyr= function more efficiently.
@@ -29,6 +47,17 @@
 #+begin_info
   Your answer goes here.
 #+end_info
+#+BEGIN_SRC elisp
+  (defun morphify (fun lst)
+  (loop for item in lst
+        collect (funcall fun item)))
+
+(morphify (quote downcase) (quote ("THIS" "IS" "TOO" "LOUD")))
+#+END_SRC
+
+#+RESULTS:
+| this | is | too | loud |
+
 ** TODO LJP
 #+begin_note
   Use =car=, =cdr=, and =cons= to re-implement the =prime-list-from-rle-list=
@@ -41,7 +70,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO YGT
+** DONE YGT
+   CLOSED: [2019-03-05 Tue 17:36]
 #+begin_note
   Construct a binary search tree from the *words* (not the letters) of the phrase
 
@@ -53,7 +83,15 @@
   What is the *height* of this tree?
 #+end_note
 #+begin_info
-  Your answer goes here.
+             Time
+            /    \
+         flies  wings
+            \   
+            on   
+             /
+           of
+           / 
+       lightning    
 #+end_info
 ** TODO LUM
 #+begin_note
