@@ -299,9 +299,9 @@ On the week indicated, bring this updated document to my office and make your cl
 |---+------------+-------------+------------------+----------------|
 | # | Claim Week | Grade Claim | Instructor Grade | Adjusted Grade |
 |---+------------+-------------+------------------+----------------|
-| # | 5          |  B          |                  |                |
+| # | 5          |  B          |  B               |  B             |
 |---+------------+-------------+------------------+----------------|
-| # | 9          |             |                  |                |
+| # | 9          |  B          |                  |                |
 |---+------------+-------------+------------------+----------------|
 | # | 13 - 14    |             |                  |                |
 |---+------------+-------------+------------------+----------------|
@@ -1006,12 +1006,1346 @@ RESULTS:
 | 1 | 1 | 1 | 1 | 1 |
 
 ** Week 5
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-03-05 Tue 16:32]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *5:32* |
+** DONE QAM
+   CLOSED: [2019-02-12 Tue 09:58]
+#+begin_note
+  Henry only has one pair of pants. How many different outfits does Henry have
+  if he has 5 long-sleeve shirts and 3 short-sleeve shirts? (An outfit is \ldquo{}pants
+  with either a long-sleeve shirt or a short-sleeve shirt\rdquo.)
+
+  If Henry buys another pair of pants and 10 ties, then how many different
+  outfits (shirt /and/ tie /and/ pants) will he have?
+
+  Which basic counting principle applies to each scenario?
+:HINT:
+  - Hint :: Avoid overthinking this exercise, it is very straightforward. In the
+            first scenario, the either/or is a very obvious clue.
+:END:
+#+end_note
+#+begin_info
+  In the first scenario, he has 8 outfits.  In the second, he has 160 options.  The addition principle 
+  
+#+end_info
+** REX
+#+begin_note
+  How should the /Sum Rule/ be adjusted when the two sets being selected from
+  are /not/ disjoint --- which means the /opposite/ of the oft-repeated \ldquo{}the
+  sets are disjoint\rdquo --- they have a /nonempty/ intersection; in other words,
+  they have /some/ members in common.
+:HINT:
+  - Hint :: Concretize two sets and draw their Venn diagram to get some insights
+            into this problem.
+:END:
+#+end_note
+#+begin_info
+  It should be changed to be the length of the entire set.
+#+end_info
+** DONE QCV
+   CLOSED: [2019-02-12 Tue 15:51]
+#+begin_note
+  How many different /functions/ are there from a set with 3 elements to a set
+  with 5 elements?
+:HINT:
+  - Hint :: It may be helpful to review the definition of a /function/.
+:END:
+#+end_note
+#+begin_info
+  Set A to n and B to m.  There are m^n functions in a -> b, therefore, there are 5^3 or 125 functions.
+#+end_info
+** RFC
+#+begin_note
+  How many different /one-to-one/ functions are there from a set with 3 elements
+  to a set with 5 elements?
+:HINT:
+  - Hint :: It may be helpful to review the definition of a /one-to-one
+            function/ (an /injection/).
+:END:
+#+end_note
+#+begin_info
+  A one to one function is m!/(m-n)!, so there are 6 functions.
+#+end_info
+** QCZ
+#+begin_note
+  How many different /onto/ functions are there from a set with 3 elements to a
+  set with 5 elements?
+:HINT:
+  - Hint :: It may be helpful to review the definition of an /onto/ function/ (a
+            /surjection/).
+:END:
+#+end_note
+#+begin_info
+  There are zero, becuase an onto function implies that every element of one set can be
+  mapped to the other, therefore there are zero.
+#+end_info
+** DONE QDM
+   CLOSED: [2019-02-12 Tue 15:58]
+#+begin_note
+  The English language predominantly uses the Subject-Verb-Object word type
+  ordering; for example, \ldquo{}Gary saw Alice\rdquo. Other languages might use
+  Subject-Object-Verb or Object-Verb-Subject, etc. How many different word
+  orderings are possible, /not/ depending on specific words, just their type?
+:HINT:
+  - Hint :: This is a very straightforward exercise in permutations.
+:END:
+#+end_note
+#+begin_info
+There are 6 different orderings.
+#+end_info
+** RJV
+#+begin_note
+  Suppose you flip a /fair/ coin 10 times. How many different ways can you get
+
+  1. no heads?
+  2. exactly one head?
+  3. exactly two heads?
+  4. exactly $r$ heads?
+  5. at least two heads?
+#+end_note
+#+begin_info
+Use n! / (n-m)!m!
+  1. 1
+  2. 10
+  3. 45
+  4. 10! / (10-m)!m!
+  5. 1013, encompassing exactly 2, 3, 4, 5, 6, 7, 8, 9, and 10.
+#+end_info
+** QIQ
+#+begin_note
+  How many bit strings of length 10 contain at least two 1s?
+#+end_note
+#+begin_info
+  Same answer as above, 1013.
+#+end_info
+** RLH
+#+begin_note
+  There are many kinds of fruit: raspberries, strawberries, blueberries, apples,
+  oranges, bananas, kiwi, papaya, mango, just to name a few. Just choosing five
+  from that list of nine, how many different combinations of fruit salad can you
+  make?
+#+end_note
+#+begin_info
+  9!/(9-5)!5! = 126
+#+end_info
+
+** RGL
+#+begin_note
+  Recalling the example of how many are the permutations of the letters
+  ABCDELMNO, investigate and explain why 0! is defined to be equal to 1.
+#+end_note
+#+begin_info
+  n! = n*(n-1)!, therefore if 1! = 1, and 1!=1*1!, 0! also equals 1.
+#+end_info
+** QEB
+#+begin_note
+  How many of the 9! arrangements of the letters ABCDELMNO contain the string
+  ELM?
+:HINT:
+  - Hint :: How many arrangements of ABCDENO are there?
+:END:
+#+end_note
+#+begin_info
+  P=n!/(n-r)!
+  9!/(9-3)!
+  504 
+#+end_info
+** RGM
+#+begin_note
+  How many TLAs (arrangements of 3 alphabetic letters) are there /with
+  repetition allowed/?
+#+end_note
+#+begin_info
+  This would be equal to the entire alphbet raisted to the power of 3 for three letter
+#+end_info
+#+BEGIN_SRC elisp
+  (expt 26 3)
+#+END_SRC
+
+#+RESULTS:
+: 17576
+
+** QFK
+#+begin_note
+  How many different sequences of initials are there for people who either have
+  two initials (first and last) or three initials (first, middle and last)?
+#+end_note
+#+begin_info
+  simmilar to above.
+#+end_info
+#+BEGIN_SRC elisp
+  (+ (expt 26 3) (expt 26 2))
+#+END_SRC
+
+#+RESULTS:
+: 18252
+
+** RHB
+#+begin_note
+  How many different sequences can be formed using /either/ two /or/ three
+  letters (A-Z) followed by /either/ two /or/ three digits (0-9)?
+
+  For example:
+
+  - AB01
+  - ABC02
+  - XYZ123
+  - ...
+#+end_note
+#+begin_info
+#+end_info
+#+BEGIN_SRC elisp
+  (+ (+ (expt 26 2) (expt 10 2) (expt 10 3)) (+ (expt 26 3) (expt 10 2) (expt 10 3)))
+#+END_SRC
+
+#+RESULTS:
+: 20452
+
+** QGK
+#+begin_note
+  How many different \ldquo{}words\rdquo of the form =ccvcv= are there where =c= represents
+  one of the 21 consonants and =v= represents one of the 5 vowels in the English
+  alphabet? Assume no letter can be repeated, just count words like \ldquo{}tribe\rdquo or
+  \ldquo{}blizo\rdquo --- a non-word but count it anyway --- but not something like \ldquo{}trite\rdquo
+  or \ldquo{}gligi\rdquo, which have repeated letters.
+#+end_note
+#+begin_info
+Non-repeating consonants is 20 * 19, times 6 vowels, 18 more consonants (so as to not repeat), then 6 vowels again.
+#+end_info
+#+BEGIN_SRC elisp
+  (* (* 20 19) 18 (expt 5 2))
+
+#+END_SRC
+
+#+RESULTS:
+: 171000
+
+** QKT
+#+begin_note
+  When you roll two dice, what is the probability that the sum of the numbers
+  (1-6) on their faces will be a multiple of 3 (3, 6, 9 or 12)?
+#+end_note
+#+begin_info
+  There are 36 possible answers, and 4 possible others, so 4/36 = 1/9.
+#+end_info
+** RNM
+#+begin_note
+  Rather than roll dice, Ruth and Ed usually flip a coin to decide who's going
+  to do the chores. One day Ed complains --- he thinks he loses too often. So
+  Ruth says, \ldquo{}OK, this time you flip two coins, and I flip one. If you get more
+  heads than I do, I\rsquo{}ll clean the toilets.\rdquo Ed likes Ruth\rsquo{}s display of
+  generosity and says, \ldquo{}You\rsquo{}re on!\rdquo
+
+  What are his chances?
+:HINT:
+  - Hint :: This was adapted from a problem posed by Marilyn Vos Savant in her
+            \ldquo{}Ask Marilyn\rdquo Parade Magazine column.
+:END:
+#+end_note
+#+begin_info
+  His chances are exactly the same.  Because there is a 1/2 chance of getting heads, you add the 
+  probability and divide it by the number of coins he is playing with.
+#+end_info
+#+BEGIN_SRC elisp
+  (/ (+ 0.5 0.5) 2)
+#+END_SRC
+
+#+RESULTS:
+: 0.5
+
+** QOS
+#+begin_note
+  Generalize the two- and four- fair-coin-flipping experiment to deal with the
+  experiment of flipping /2n/ coins. Find the probability of the event that /n/
+  will be heads, and /n/ will be tails.
+:HINT:
+  - Hint :: The answer will be a function of /n/.
+:END:
+#+end_note
+#+begin_info
+  Each time, you do  1/n^2 to find the probability. 
+#+end_info
 
 ** Week 6
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-02-14 Thu 16:58]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *6:30* |
+#+END:
+** DONE FAB
+   CLOSED: [2019-02-12 Tue 09:22]
+#+begin_note
+  There is a redundant word in the statement of the division theorem. What is
+  it, and why is it redundant?
+#+end_note
+#+begin_info
+  The word "positive" is not needed
+#+end_info
+** DONE FDZ
+   CLOSED: [2019-02-14 Thu 15:39]
+#+begin_note
+  Re-implement =prime-power-list-to-number= without using =let= by instead
+  putting everything =let= is doing within the =loop=.
+:HINT:
+  - Hint :: Use the =with= and =finally return= keywords.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+#+BEGIN_SRC elisp :reults raw
+ (defun prime-power-list-to-number (prime-power-list)
+  (reduce #'* (loop with number = 1
+        with primes = [2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71]
+        for prime across primes
+        for power in prime-power-list
+        collect (* number (expt prime power)))))
+#+END_SRC
+
+#+RESULTS:
+: prime-power-list-to-number
+#+BEGIN_SRC elisp
+  (prime-power-list-to-number '(6 5 4 3 2 1))
+#+END_SRC
+
+#+RESULTS:
+: 5244319080000
+
+** DONE FJH
+   CLOSED: [2019-02-14 Thu 15:43]
+#+begin_note
+  The FTA supports the mapping of the sequence =[2 0 0 0 0 1]= to a two-digit
+  number. What is that number?
+#+end_note
+#+begin_info
+  Just using mental math, this is (13*2) * 2 = 52
+#+end_info
+#+BEGIN_SRC elisp
+   (prime-power-list-to-number '(2 0 0 0 0 1))
+#+END_SRC
+
+#+RESULTS:
+: 52
+
+** DONE IWK
+   CLOSED: [2019-02-14 Thu 15:54]
+#+begin_note
+  A famous theorem states that there are infinitely many primes of the form
+  /ak/ + /b/ whenever /a/ and /b/ are coprime. To get a feel for this, find for
+  /a/ = 4 and /b/ = 11, ten different values for /k/ where /4k + 11/ is prime,
+  and ten values where /4k + 11/ is nonprime.
+#+end_note
+#+begin_info
+  Prime: 11, 15, 19, 23, 31, 39, 43, 59, 67, 71, 79
+  Non-Prime: 27, 35, 47, 51, 55, 63, 75, 87, 91, 99
+#+end_info
+#+BEGIN_SRC elisp :reults list
+  (loop for k upto 100
+  collect (+ (* 4 k) 11))
+#+END_SRC
+
+#+RESULTS:
+| 11 | 15 | 19 | 23 | 27 | 31 | 35 | 39 | 43 | 47 | 51 | 55 | 59 | 63 | 67 | 71 | 75 | 79 | 83 | 87 | 91 | 95 | 99 | 103 | 107 | 111 | 115 | 119 | 123 | 127 | 131 | 135 | 139 | 143 | 147 | 151 | 155 | 159 | 163 | 167 | 171 | 175 | 179 | 183 | 187 | 191 | 195 | 199 | 203 | 207 | 211 | 215 | 219 | 223 | 227 | 231 | 235 | 239 | 243 | 247 | 251 | 255 | 259 | 263 | 267 | 271 | 275 | 279 | 283 | 287 | 291 | 295 | 299 | 303 | 307 | 311 | 315 | 319 | 323 | 327 | 331 | 335 | 339 | 343 | 347 | 351 | 355 | 359 | 363 | 367 | 371 | 375 | 379 | 383 | 387 | 391 | 395 | 399 | 403 | 407 | 411 |
+
+** DONE FOJ
+   CLOSED: [2019-02-14 Thu 16:01]
+#+begin_note
+  CCS = Consecutive Composite Sequence.
+
+  What is the first CCS of length 2? 3? 4? 10?
+:HINT:
+  - Hint :: This is a potentially tricky series of questions.
+:END:
+#+end_note
+#+begin_info 
+  2. 8, 9 
+  3. 8, 9, 10
+  4. 24, 25, 26, 27
+  10. 114, 115, 116, 117, 118, 119, 120, 121, 122, 123
+#+end_info
+** DONE VAR
+   CLOSED: [2019-02-14 Thu 16:03]
+#+begin_note
+  Browse the linked information on [[https://en.wikipedia.org/wiki/Highly_composite_number][highly composite numbers]]. Find the video
+  about the synonymous \ldquo{}anti-primes\rdquo and watch it. What is your favorite HCN (or
+  anti-prime)? Is it divisible by at least 10 distinct primes?
+#+end_note
+#+begin_info
+  I like 10080, because it's 2*2*2*2*2
+#+end_info
+** DONE VAY
+   CLOSED: [2019-02-14 Thu 16:16]
+#+begin_note
+  Trace through the steps of each of these GCD calculations:
+
+  | # |   a |   b | (gcd a b) |
+  |---+-----+-----+-----------|
+  | 1 |  57 |  43 |         1 |
+  | 2 | 501 |  39 |         3 |
+  | 3 | 765 | 110 |         5 |
+  | 4 | 899 | 493 |        29 |
+:HINT:
+  - Hint :: This is a very straightforward exercise.
+:END:
+#+end_note
+#+begin_info
+  1. 57/43 = 1 r 14; 43/14 = 3 r 1; 14/1 = 14 r 0, b = 1 gcd = 1
+  2. 501/39 = 12 r 33; 39/33 = 1 r6; 33/6 = 5 r 3; 6/3 = 2; 3 = b = gcd
+  3. 765/110 = 6 r 105; 110/105 = 1 r 5; 105/5 = 21; gcd = b = 5
+  4. 899/493 = 1 r 406; 493/406 = 1 r 87; 406/87 = 4 r 58, 87/58 = 1 r 29; 58/29 = 2, gcd = b = 29
+#+end_info
+** DONE FQW
+   CLOSED: [2019-02-14 Thu 16:18]
+#+begin_note
+  PVP what the following returns:
+
+#+BEGIN_SRC elisp :results silent
+  (and (= (gcd 56 8) 8)
+       (= (gcd 65 15) 5)
+       (= (lcm 5 7) 35)
+       (= (lcm 4 6) 12))
+#+END_SRC
+:HINT:
+  - Hint :: This is a very straightforward exercise.
+:END:
+#+end_note
+#+begin_info
+  It tests if the second number is the gcd or lcm of the thing calculated within.  If everything
+  is true, the function returns true.
+#+end_info
+** DONE VCR
+   CLOSED: [2019-02-14 Thu 16:23]
+#+begin_note
+  Verify that for many pairs of positive integers =a= and =b=:
+
+#+BEGIN_SRC elisp :results silent
+  (= (* (gcd a b) (lcm a b)) (* a b))
+#+END_SRC
+
+  Does this equality necessarily hold for /all/ pairs of positive integers? Why
+  or why not?
+#+end_note
+#+begin_info
+  True
+#+end_info
+#+BEGIN_SRC elisp :results raw
+    (loop for a upto 100
+    (loop for b upto 100
+    collect (= (* (gcd a b) (lcm a b)) (* a b))))
+
+#+END_SRC
+** DONE FRM
+   CLOSED: [2019-02-14 Thu 16:24]
+#+begin_note
+  Given that (a slight expansion of) the CSF of /a/ is 2^3 \cdot 3^2 \cdot 5^1
+  \cdot 7^0 and the CSF of /b/ is 2^2 \cdot 3^3 \cdot 5^0 \cdot 7^1, give the CSFs of the
+  GCD, the LCM, and the product of /a/ and /b/. Then flesh out the following
+  code using map instead of loops:
+
+#+BEGIN_SRC elisp :results silent
+  (defun gcd-lcm-ab (a-in-csf b-in-csf)
+    (let* ((a-csf-powers ...)
+           (b-csf-powers ...)
+           (gcd-of-a-and-b-in-csf ...)
+           (lcm-of-a-and-b-in-csf ...)
+           (product-of-a-and-b-in-csf ...))
+      (list gcd-of-a-and-b-in-csf
+            lcm-of-a-and-b-in-csf
+            product-of-a-and-b-in-csf)))
+#+END_SRC
+
+  Does doing this exercise help you see the answer to the previous one?
+:HINT:
+  - Hint :: Use =mapcar= and =mapcar*= with some suitable =lambda= functions.
+:END:
+#+end_note
+#+begin_info
+  Yes!
+#+end_info
+
+** DONE ITT
+   CLOSED: [2019-02-12 Tue 09:27]
+#+begin_note
+  How many divisors does a given number have?
+
+  Take 36. By trial division (trying successive divisors, starting with 1, which
+  remember divides everything) we see that
+
+  36 =
+#+begin_verse
+  1 ⋅ 36 (that’s 2),
+  2 ⋅ 18 (another 2),
+  3 ⋅ 12 (2 more),
+  4 ⋅ 9 (2 more),
+  6 ⋅ 6 (1 more — no double counting!)
+#+end_verse
+  --- which totals 9 divisors.
+
+  What is a general method for finding this total divisor count for any positive
+  number?
+#+end_note
+#+begin_info
+  One sequences through integers in order, and if the answer results in an integer, 
+  it can be considered a divisor.
+#+end_info
+** DONE IYJ
+   CLOSED: [2019-02-14 Thu 16:50]
+#+begin_note
+  How many 7-digit primes have the form n^2 + 1? What are they?
+:HINT:
+  - Time Hint :: This hard problem is potentially time-consuming.
+:END:
+#+end_note
+#+begin_info
+  I dont think there are any, I tested it in excel.
+#+end_info
+** DONE IZL
+   CLOSED: [2019-02-14 Thu 16:54]
+#+begin_note
+  Not the first, nor the only one, but this function (with its =factorial=
+  helper) gives one such CCS:
+
+#+BEGIN_SRC elisp :results silent
+  (defun factorial (n)
+    (if (zerop n)
+        1
+      (* n (factorial (- n 1)))))
+
+  (defun consecutive-composite-sequence-of-length (r)
+    (let ((r+1-factorial (factorial (1+ r))))
+      (loop for n from 1 to r
+            collect (+ r+1-factorial n 1))))
+#+END_SRC
+
+  Write code (e.g., flesh out)
+
+#+BEGIN_SRC elisp :results silent
+  (defun all-composite (r) ...)
+#+END_SRC
+
+  to verify that the above defined sequence contains only composites. Note that
+  in a sequence of consecutive numbers, every other one is even, hence
+  composite, every third one is a multiple of 3, hence composite, etc. But is
+  there a better way to see this than sifting through the sequence looking for
+  primes somehow hiding among all those composites? Why or why not?
+:PYTHON-HINT:
+#+BEGIN_SRC python :results output
+from math import *
+def isPrime(n):
+    for i in range(2,int(sqrt(n))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def allComp(n):
+  for i in n:
+    if isPrime(i):
+      return False
+  return True
+
+comp = [39916802, 39916803, 39916804, 39916805, 39916806, 39916807, 39916808, 39916809, 39916810, 39916811]
+print(allComp(comp))
+#+END_SRC
+:END:
+#+end_note
+#+begin_info
+  I think that if you are blind to where prime numbers lie, this is a good way of figuring it out.
+  However, if you know there is a priem within a certain range, you could simplify the function to only
+  include those numbers, saving a great deal of processing power.
+#+end_info
+** DONE VAO
+   CLOSED: [2019-02-14 Thu 17:05]
+#+begin_note
+  Pierre de Fermat found a way of finding factors of a number. It is based on
+  certain assumptions. Study the code below and articulate what these
+  assumptions are.
+
+#+BEGIN_SRC elisp :results silent
+  (defun maybe-find-factorization (number limit)
+    (mapc (lambda (n)
+            (let* ((a (floor (sqrt number)))
+                   (s (+ a n))
+                   (x (sqrt (- (* s s) number))))
+              (when (= x (floor x))
+                (princ (format "n = %d, a = %d, s = %d, x = %d,
+   factor1 = s - x = %d,
+   factor2 = s + x = %d\n"
+                               n a s x (- s x) (+ s x))))))
+          (number-sequence 1 limit)))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results output
+  (maybe-find-factorization 125 10)
+#+END_SRC
+
+: n = 4, a = 11, s = 15, x = 10,
+:  factor1 = s - x = 5,
+:  factor2 = s + x = 25
+:HINT:
+  - Hint :: Did you look at the [[https://en.wikipedia.org/wiki/Fermat%2527s_factorization_method][Wikipedia Page]]?
+:END:
+#+end_note
+#+begin_info
+  It assumes that the numbers that s and x associate with are close together so the calculation
+  does not take as long.
+#+end_info
 
 ** Week 7
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-02-21 Fri 16:31]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *5:40* |
+#+END:
+** DONE GMQ
+   CLOSED: [2019-02-21 Thu 15:49]
+#+begin_note
+  First recall (or look up) how the =&rest= keyword works, e.g.:
+
+#+BEGIN_SRC elisp :results silent
+  (defun printf (format-directive &rest args)
+    (princ (apply 'format format-directive args)))
+#+END_SRC
+
+  Now explain what this code does after trying it on a few tests:
+
+#+BEGIN_SRC elisp :results silent
+  (defun mystery (&rest numbers)
+    (loop for n from 0 to (apply '* numbers)
+          do (printf "%3d <--> %s\n" n
+                     (loop for m in numbers collect (mod n m)))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results output
+  (mystery 3 5)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results output
+  (mystery 4 6)
+#+END_SRC
+
+  Replace ='*= with ='lcm= and do the same calls again. Explain what you
+  observed, and come up with a better name for the =mystery= function.
+:HINT:
+  - Hint :: In your source code blocks, use the header directive =:results
+            output= for best results, e.g.:
+: #+BEGIN_SRC elisp :results output
+  - Peek Ahead Hint :: PQU
+:END:
+#+end_note
+#+begin_info
+  This creates a list of all numbers from zero to the least common multiple of the two numbers 
+  you input.  In short, it displays all the possible mods of the two numbers, then stops when 
+  both have an output of zero.
+#+end_info
+#+BEGIN_SRC emacs-lisp :results silent
+ (defun printf (format-directive &rest args)
+ (princ (apply 'format format-directive args)))
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results output
+(printf "%s" '"hello there" '"my name is bryan" '"these are rest args")
+#+END_SRC
+
+#+RESULTS:
+: hello there
+
+#+BEGIN_SRC emacs-lisp :results silent
+(defun mystery (&rest numbers)
+  (loop for n from 0 to (apply 'lcm numbers)
+        do (printf "%3d <--> %s\n" n
+                   (loop for m in numbers collect (mod n m)))))
+#+END_SRC
+#+BEGIN_SRC elisp :results output
+  (mystery 3 5)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+  0 <--> (0 0)
+  1 <--> (1 1)
+  2 <--> (2 2)
+  3 <--> (0 3)
+  4 <--> (1 4)
+  5 <--> (2 0)
+  6 <--> (0 1)
+  7 <--> (1 2)
+  8 <--> (2 3)
+  9 <--> (0 4)
+ 10 <--> (1 0)
+ 11 <--> (2 1)
+ 12 <--> (0 2)
+ 13 <--> (1 3)
+ 14 <--> (2 4)
+ 15 <--> (0 0)
+#+end_example
+** GMY
+#+begin_note
+  Replace the =;;...= line with three lines, binding the values of =y1=, =y2= and
+  =y3=. Write a helper function to compute these values.
+
+#+BEGIN_SRC elisp
+  (let* ((r1 4)
+         (r2 2)
+         (r3 9)
+         (m1 7)
+         (m2 11)
+         (m3 13)
+         (m (* m1 m2 m3))
+         (o1 (/ m m1))
+         (o2 (/ m m2))
+         (o3 (/ m m3))
+         ;;...
+         )
+    (mod (+ (* r1 o1 y1) (* r2 o2 y2) (* r3 o3 y3)) m))
+#+END_SRC
+:HINT:
+  - Hint :: The y\rsquo{}s are just the MMIs of the o\rsquo{}s mod the m\rsquo{}s. The helper
+            function should use the Extended Euclidean GCD algorithm to compute
+            these MMIs.
+:END:
+#+end_note
+#+begin_info
+  
+#+end_info
+
+#+BEGIN_SRC elisp :results raw
+(require 'cl) ;; for destructuring-bind
+
+(defun egcd (a b)
+  "Computes the greatest common divisor of a and b recursively.
+   This extended version returns a list of d, x and y, where
+   d = ax + by = gcd(a, b)."
+  (if (zerop b)
+      (list a 1 0)
+    (let ((q (/ a b))
+          (r (% a b)))
+      (destructuring-bind (d x y) (egcd b r)
+        (list d y (- x (* q y)))))))
+
+  (let* ((r1 4)
+         (r2 2)
+         (r3 9)
+         (m1 7)
+         (m2 11)
+         (m3 13)
+         (m (* m1 m2 m3))
+         (o1 (/ m m1))
+         (o2 (/ m m2))
+         (o3 (/ m m3))
+         (y1 (find-y o1 m1))
+         (y2 (find-y o2 m2))
+         (y3 (find-y o3 m3)) 
+    (mod (+ (* r1 o1 y1) (* r2 o2 y2) (* r3 o3 y3)) m)))
+
+(defun find-y (o m)
+   (let* ((equat (egcd o m)))
+         (if (= (nth 0 equat) 1)
+             (mod (nth 1 equat) m)
+             ("no solutions"))
+   ))
+
+#+END_SRC
+** DONE JQA
+   CLOSED: [2019-02-21 Thu 15:39]
+#+begin_note
+   What is a 3-digit positive simultaneous solution to the following system of
+   linear congruences?
+
+   x \equiv_7 3
+
+   x \equiv_{11} 5
+
+   x \equiv_{13} 4
+#+end_note
+#+begin_info
+  654
+#+end_info
+#+BEGIN_SRC elisp :results silent
+  (defun rns (n)
+  (list (mod n 7) (mod n 11) (mod n 13)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (defun from-rns (rns-triple)
+(car (rassoc rns-triple rns-alist)))
+#+END_SRC
+
+#+RESULTS:
+: from-rns
+
+#+END_SRC
+#+BEGIN_SRC elisp
+  (setq rns-alist
+  (loop for x from 0 to 1001
+  for y = (rns x)
+  collect (append (list x) y)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (from-rns '(0 8 12))
+#+END_SRC
+
+#+RESULTS:
+987
+212
+794
+654
+
+#+BEGIN_SRC elisp :results silent
+  (defun to-rns (rns-num)
+  (cdr (assoc rns-num rns-alist)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (to-rns 555)
+#+END_SRC
+
+#+RESULTS:
+| 2 | 5 | 9 |
+
+#+END_SRC
+** DONE GRZ
+   CLOSED: [2019-02-21 Thu 15:39]
+#+begin_note
+   What is a 3-digit positive simultaneous solution to the following system of
+   linear congruences?
+
+   x \equiv_7 3
+
+   x \equiv_{11} 2
+
+   x \equiv_{13} 1
+#+end_note
+#+begin_info
+  794
+#+end_info
+** DONE JYA
+   CLOSED: [2019-02-21 Thu 15:40]
+#+begin_note
+   What is a 3-digit positive simultaneous solution to the following system of
+   linear congruences?
+
+   x \equiv_7 2
+
+   x \equiv_{11} 3
+
+   x \equiv_{13} 4
+#+end_note
+#+begin_info
+  212
+#+end_info
+** DONE GXF
+   CLOSED: [2019-02-21 Thu 15:40]
+#+begin_note
+   What is a 3-digit positive simultaneous solution to the following system of
+   linear congruences?
+
+   x \equiv_7 0
+
+   x \equiv_{11} 8
+
+   x \equiv_{13} 12
+#+end_note
+#+begin_info
+  987
+#+end_info
+
+** DONE JPZ
+   CLOSED: [2019-02-21 Thu 16:12]
+#+begin_note
+  If p and q are coprime positive integers, then does a bijection necessarily
+  exist between $\mathbb{Z}_{pq}$ and $\mathbb{Z}_{p} \times \mathbb{Z}_{q}$?
+
+  Explain what the following code does, and how:
+#+BEGIN_SRC elisp
+  (let* ((p 3)
+         (q 5)
+         (z-pq (number-sequence 0 (* p q))))
+      (mapcar* 'list z-pq
+               (mapcar (lambda (n) (mod n p)) z-pq)
+               (mapcar (lambda (n) (mod n q)) z-pq)))
+#+END_SRC
+
+  Imagine the above code were wrapped in a function definition with p and q
+  passed as parameters instead of bound in the =let=, then compare this function
+  to the =mystery= function. Which function would be more in the functional
+  programming style?
+#+end_note
+#+begin_info
+  This function does the same exact thing as the first exercise, but it uses mapping 
+  instead of looping.  This is a better example of a functional program.
+#+end_info
+#+BEGIN_SRC elisp
+  (let* ((p 3)
+       (q 5)
+       (z-pq (number-sequence 0 (* p q))))
+    (mapcar* 'list z-pq
+             (mapcar (lambda (n) (mod n p)) z-pq)
+             (mapcar (lambda (n) (mod n q)) z-pq)))
+#+END_SRC
+
+#+RESULTS:
+|  0 | 0 | 0 |
+|  1 | 1 | 1 |
+|  2 | 2 | 2 |
+|  3 | 0 | 3 |
+|  4 | 1 | 4 |
+|  5 | 2 | 0 |
+|  6 | 0 | 1 |
+|  7 | 1 | 2 |
+|  8 | 2 | 3 |
+|  9 | 0 | 4 |
+| 10 | 1 | 0 |
+| 11 | 2 | 1 |
+| 12 | 0 | 2 |
+| 13 | 1 | 3 |
+| 14 | 2 | 4 |
+| 15 | 0 | 0 |
+
+** DONE XFO
+   CLOSED: [2019-02-21 Thu 16:20]
+#+begin_note
+  The Chinese Remainder Theorem makes possible the use of a /residue number
+  system/ to do computer arithmetic with \ldquo{}large\rdquo integers, where largeness is
+  relative. Large in practice means numbers with hundreds or thousands of
+  digits. For this problem, large means no greater than 1000. Normally,
+  arithmetic with numbers in this range would be trivial, but the normal
+  arithmetic operations of addition, subtraction, and multiplication are to be
+  viewed as quite expensive. You must find ways to avoid using them.
+  Exponentially more expensive are the division and modulus operations --- avoid
+  these especially!
+
+  Use the code below as a guide and a starting point, finish implementing the
+  =to-rns=, =from-rns=, =add2= and =mul2= functions, and then in separate code
+  blocks, write test code that can correctly add and multiply one-, two-, and
+  three-digit nonnegative integers, converting to rns, doing the rns operations,
+  then converting back from rns.
+
+  /Avoid at all costs/ the use of =+=, =-=, =*=, =/=, =%=, or =mod=!
+
+  You will benefit greatly if you write helper functions and use good functional
+  programming style throughout.
+
+#+BEGIN_SRC elisp
+  (defun to-rns (n)
+    "Convert a normal integer between 0 and 1000 to its rns modulo
+    1001 representation."
+    )
+
+  (defun from-rns (rns)
+    "Convert from an rns modulo 1001 integer back to its normal
+    representation."
+    )
+
+  (defun add2 (rns1 rns2)
+    "Add two rns modulo 1001 integers to produce their rns sum."
+    )
+
+  (defun mul2 (rns1 rns2)
+    "Multiply two rns modulo 1001 integers to produce their rns
+    product."
+    )
+#+END_SRC
+
+  The rest of the code is good as is. Note the mention in the documentation of
+  the $\mathbb{Z}_7$, $\mathbb{Z}_{11}$, and $\mathbb{Z}_{13}$ residue sets. Recall
+  that a $\mathbb{Z}_n$ residue set is just the possible remainders when modding
+  by n, i.e., [0 1 2 3 \dots n-1].
+
+#+BEGIN_SRC elisp
+  (defun a7 (i j)
+    "Add two nonnegative integers in the Z_7 residue set to produce
+     a sum in that set. Error check to ensure the inputs are valid,
+     and use table lookup instead of normal addition/mod."
+    (unless (and (integerp i) (integerp j) (<= 0 i) (<= 0 j) (< i 7) (< j 7))
+      (error "bad parameters %s and/or %s" i j))
+    (aref (aref [[0 1 2 3 4 5 6]
+                 [1 2 3 4 5 6 0]
+                 [2 3 4 5 6 0 1]
+                 [3 4 5 6 0 1 2]
+                 [4 5 6 0 1 2 3]
+                 [5 6 0 1 2 3 4]
+                 [6 0 1 2 3 4 5]] i) j))
+
+  (defun a11 (i j)
+    "Add two nonnegative integers in the Z_11 residue set to produce
+     a sum in that set. Error check to ensure the inputs are valid,
+     and use table lookup instead of normal addition/mod."
+    (unless (and (integerp i) (integerp j) (<= 0 i) (<= 0 j) (< i 11) (< j 11))
+      (error "bad parameters %s and/or %s" i j))
+    (aref (aref [[ 0  1  2  3  4  5  6  7  8  9 10]
+                 [ 1  2  3  4  5  6  7  8  9 10  0]
+                 [ 2  3  4  5  6  7  8  9 10  0  1]
+                 [ 3  4  5  6  7  8  9 10  0  1  2]
+                 [ 4  5  6  7  8  9 10  0  1  2  3]
+                 [ 5  6  7  8  9 10  0  1  2  3  4]
+                 [ 6  7  8  9 10  0  1  2  3  4  5]
+                 [ 7  8  9 10  0  1  2  3  4  5  6]
+                 [ 8  9 10  0  1  2  3  4  5  6  7]
+                 [ 9 10  0  1  2  3  4  5  6  7  8]
+                 [10  0  1  2  3  4  5  6  7  8  9]] i) j))
+
+  (defun a13 (i j)
+    "Add two nonnegative integers in the Z_13 residue set to produce
+     a sum in that set. Error check to ensure the inputs are valid,
+     and use table lookup instead of normal addition/mod."
+    (unless (and (integerp i) (integerp j) (<= 0 i) (<= 0 j) (< i 13) (< j 13))
+      (error "bad parameters %s and/or %s" i j))
+    (aref (aref [[ 0  1  2  3  4  5  6  7  8  9 10 11 12]
+                 [ 1  2  3  4  5  6  7  8  9 10 11 12  0]
+                 [ 2  3  4  5  6  7  8  9 10 11 12  0  1]
+                 [ 3  4  5  6  7  8  9 10 11 12  0  1  2]
+                 [ 4  5  6  7  8  9 10 11 12  0  1  2  3]
+                 [ 5  6  7  8  9 10 11 12  0  1  2  3  4]
+                 [ 6  7  8  9 10 11 12  0  1  2  3  4  5]
+                 [ 7  8  9 10 11 12  0  1  2  3  4  5  6]
+                 [ 8  9 10 11 12  0  1  2  3  4  5  6  7]
+                 [ 9 10 11 12  0  1  2  3  4  5  6  7  8]
+                 [10 11 12  0  1  2  3  4  5  6  7  8  9]
+                 [11 12  0  1  2  3  4  5  6  7  8  9 10]
+                 [12  0  1  2  3  4  5  6  7  8  9 10 11]] i) j))
+
+  (defun m7 (i j)
+    "Multiply two nonnegative integers in the Z_7 residue set to produce
+     a product in that set. Error check to ensure the inputs are valid,
+     and use table lookup instead of normal multiplication/mod."
+    (unless (and (integerp i) (integerp j) (<= 0 i) (<= 0 j) (< i 7) (< j 7))
+      (error "bad parameters %s and/or %s" i j))
+    (aref (aref [[0  0  0  0  0  0  0]
+                 [0  1  2  3  4  5  6]
+                 [0  2  4  6  1  3  5]
+                 [0  3  6  2  5  1  4]
+                 [0  4  1  5  2  6  3]
+                 [0  5  3  1  6  4  2]
+                 [0  6  5  4  3  2  1]] i) j))
+
+  (defun m11 (i j)
+    "Multiply two nonnegative integers in the Z_11 residue set to produce
+     a product in that set. Error check to ensure the inputs are valid,
+     and use table lookup instead of normal multiplication/mod."
+    (unless (and (integerp i) (integerp j) (<= 0 i) (<= 0 j) (< i 11) (< j 11))
+      (error "bad parameters %s and/or %s" i j))
+    (aref (aref [[0  0  0  0  0  0  0  0  0  0  0]
+                 [0  1  2  3  4  5  6  7  8  9 10]
+                 [0  2  4  6  8 10  1  3  5  7  9]
+                 [0  3  6  9  1  4  7 10  2  5  8]
+                 [0  4  8  1  5  9  2  6 10  3  7]
+                 [0  5 10  4  9  3  8  2  7  1  6]
+                 [0  6  1  7  2  8  3  9  4 10  5]
+                 [0  7  3 10  6  2  9  5  1  8  4]
+                 [0  8  5  2 10  7  4  1  9  6  3]
+                 [0  9  7  5  3  1 10  8  6  4  2]
+                 [0 10  9  8  7  6  5  4  3  2  1]] i) j))
+
+  (defun m13 (i j)
+    "Multiply two nonnegative integers in the Z_13 residue set to produce
+     a product in that set. Error check to ensure the inputs are valid,
+     and use table lookup instead of normal multiplication/mod."
+    (unless (and (integerp i) (integerp j) (<= 0 i) (<= 0 j) (< i 13) (< j 13))
+      (error "bad parameters %s and/or %s" i j))
+    (aref (aref [[0  0  0  0  0  0  0  0  0  0  0  0  0]
+                 [0  1  2  3  4  5  6  7  8  9 10 11 12]
+                 [0  2  4  6  8 10 12  1  3  5  7  9 11]
+                 [0  3  6  9 12  2  5  8 11  1  4  7 10]
+                 [0  4  8 12  3  7 11  2  6 10  1  5  9]
+                 [0  5 10  2  7 12  4  9  1  6 11  3  8]
+                 [0  6 12  5 11  4 10  3  9  2  8  1  7]
+                 [0  7  1  8  2  9  3 10  4 11  5 12  6]
+                 [0  8  3 11  6  1  9  4 12  7  2 10  5]
+                 [0  9  5  1 10  6  2 11  7  3 12  8  4]
+                 [0 10  7  4  1 11  8  5  2 12  9  6  3]
+                 [0 11  9  7  5  3  1 12 10  8  6  4  2]
+                 [0 12 11 10  9  8  7  6  5  4  3  2  1]] i) j))
+#+END_SRC
+
+#+RESULTS:
+: m13
+
+:HINT:
+  - Hint :: For =to-rns= and =from-rns=, =assoc= and =rassoc= are recommended.
+            Thus the creation of an association list (alist) is a prerequisite
+            for using these functions. The challenge is to create this alist
+            without using mod (or %) or loops.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+Functions to use:
+apply
+vconcat
+mapcar*
+vector
+
+(mapcar 'documentation (mapcar 'intern (mapcar 'car funcs)))
+
+apply 'vconcat mapcar* 'vector 
+#+BEGIN_SRC elisp :results silent
+  (defun shuffle (&rest sequences)
+  (apply 'vconcat (apply 'mapcar* 'vector sequences)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (shuffle [A B C] [x y z] '(1 2))
+#+END_SRC
+
+#+RESULTS:
+[A x 1 B y 2]
+[A x 1 B y 2 C z 3]
+[A x B y C z]
+[[A B C] [x y z]]
+
+  (shuffle [A B C] [1 2 3)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun rns (n)
+  (list (mod n 7) (mod n 11) (mod n 13)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (defun from-rns (rns-triple)
+(car (rassoc rns-triple rns-alist)))
+#+END_SRC
+
+#+END_SRC
+#+BEGIN_SRC elisp
+  (setq rns-alist
+  (loop for x from 0 to 1001
+  for y = (rns x)
+  collect (append (list x) y)))
+#+END_SRC
+#+BEGIN_SRC elisp :results raw
+  (from-rns '(0 8 12))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun to-rns (rns-num)
+  (cdr (assoc rns-num rns-alist)))
+#+END_SRC
+#+BEGIN_SRC elisp
+  (to-rns 555)
+#+END_SRC
+For this part, I consulted my roomate Brian!
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun add2 (i j)
+  (list (a7 (nth 0 i) (nth 0 j)) (a11 (nth 1 i) (nth 1 j)) (a13 (nth 2 i) (nth 2 j))))
+    
+
+  (defun mul2 (i j)
+  (list (a7 (nth 0 i) (nth 0 j)) (a11 (nth 1 i) (nth 1 j)) (a13 (nth 2 i) (nth 2 j))))
+#+END_SRC
+#+BEGIN_SRC elisp :results list
+  (add2 '(1 2 3) '(4 5 6))
+#+END_SRC
+
+#+RESULTS:
+- 5
+- 7
+- 9
 
 ** Week 8
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-02-28 Thu 16:57]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *4:35* |
+#+END:
+  Exercise, to be precise.
+** DONE GYN
+   CLOSED: [2019-02-28 Thu 15:31]
+#+begin_note
+  Help Abu and Ila out. This version of =mod-expt= gets a /little/ better
+  mileage than their simplistic one. It keeps the numbers smaller by reducing
+  each partial exponentiation by modding it once every iteration instead of once,
+  period. What fact or facts of modular arithmetic justify this?
+
+#+BEGIN_SRC elisp :results silent
+  (defun a-better-mod-expt (base power modulus)
+    (loop with result = 1
+          for n from 1 to power
+          do (setq result (mod (* result base) modulus))
+          finally return result))
+#+END_SRC
+:HINT:
+  - Hint :: Reread the interchange between Til, Abu and Ila in PQS.
+:END:
+#+end_note
+#+begin_info
+  So this function works by using the modular arithmetic rule that when finding a modulus,
+  you can employ the property taht works as follows: Say you want to find 94 mod 5.  You can
+  split that up into as many seperate problems as you'd like in order to get that answer.  For
+  this example, I'll split it in three.  33 % 5 = 3, so if we take (33%5 + 33%5 + 28%5) % 5, we get
+  the answer of 9 % 5 which is equal to 4.  This is what the above loop does, but at each step of
+  the exponent!  This saves a significant amount of processing power!
+#+end_info
+#+BEGIN_SRC elisp
+  (a-better-mod-expt 2 3 5)
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+  Problem, to be precise.
+** XGG
+#+begin_note
+  Experiment with RSA using the following code. You will need a better modular
+  exponentiation function than =mod-expt= or perhaps even =a-better-mod-expt=.
+  Implement the =pow-mod= function to be this better version. Note the
+  difference between /encoding/ and /encryption/, and between /decryption/ and
+  /decoding/.
+
+  How \ldquo{}big\rdquo a message can you successfully round-trip?
+
+#+BEGIN_SRC elisp :results silent
+  (defun rsa-encrypt (message n e &optional encoder)
+    (let* ((message-encoded (funcall (or encoder 'identity) message))
+           (encrypted (pow-mod message-encoded e n)))
+      encrypted))
+
+  (defun rsa-decrypt (encrypted n d &optional decoder)
+    (let* ((decrypted (pow-mod encrypted d n))
+           (message-decoded (funcall (or decoder 'identity) decrypted)))
+      message-decoded))
+
+  (defun round-trip (message n e d &optional encoder decoder)
+    (equal message
+           (rsa-decrypt (rsa-encrypt message n e encoder)
+                        n d decoder)))
+#+END_SRC
+
+  You will need working =from-base-27= and =to-base-27= functions, as well as a
+  working knowledge of /symbol property lists/ to play with /this/ test code:
+
+#+BEGIN_SRC elisp
+  (defun test-rsa (message-with-spaces)
+    (let* ((message (mapconcat 'identity
+                               (split-string message-with-spaces " ") "@"))
+            (n (get 'rsa-players :n))
+            (e (get 'rsa-players :e))
+            (d (get 'rsa-players :d))
+            (encrypted (rsa-encrypt message n e 'from-base-27))
+            (decrypted (rsa-decrypt encrypted n d 'to-base-27))
+            (decrypted-message-with-spaces
+             (mapconcat 'identity (split-string decrypted "@") " "))
+            (success (string= message-with-spaces
+                              decrypted-message-with-spaces)))
+       (princ (format (concat "\"%s\"\nwas encoded and encrypted as\n%s\n"
+                              "then decrypted and decoded as\n\"%s\"\n")
+                      message-with-spaces
+                      encrypted
+                      decrypted-message-with-spaces))
+       (princ (if success "" "un"))
+       (princ "successfully.\n")
+       success))
+#+END_SRC
+:HINT:
+  - Hint :: This will be discussed in class.
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+
+#+BEGIN_SRC elisp :results silent
+(defun abr (n b)
+  (let ((d (/ n b))
+        (m (mod n b)))
+    (if (zerop d)
+        (list m)
+      (append (abr d b) (list m)))))
+
+  (defun to-base-27 (base-10-num)
+    (mapconcat (lambda (n) (char-to-string (+ ?@ n))) (abr base-10-num 27) ""))
+  (defun reconstruct-number-from-abr (list-of-coeff base)
+   (if (null list-of-coeff)
+      0
+      (+ (car list-of-coeff)
+         (* base (reconstruct-number-from-abr (cdr list-of-coeff) base)))))
+  (defun from-base-27 (base-27-string)
+    (reconstruct-number-from-abr (reverse (mapcar (lambda (n) (- n ?@)) base-27-string)) 27))
+ 
+  (defun pow-mod (base power modulus)
+   (
+
+#+END_SRC
+
+
+#+BEGIN_SRC elisp
+  (from-base-27 "SUPERHOT")
+#+END_SRC
+
+#+RESULTS:
+: 207115141394
+
+#+BEGIN_SRC elisp :results show
+  (to-base-27 207115141394) 
+#+END_SRC
+
+#+RESULTS:
+: SUPERHOT
+
+
+#+BEGIN_SRC elisp :results silent
+  (defun rsa-encrypt (message n e &optional encoder)
+    (let* ((message-encoded (funcall (or encoder 'identity) message))
+           (encrypted (pow-mod message-encoded e n)))
+      encrypted))
+
+  (defun rsa-decrypt (encrypted n d &optional decoder)
+    (let* ((decrypted (pow-mod encrypted d n))
+           (message-decoded (funcall (or decoder 'identity) decrypted)))
+      message-decoded))
+
+  (defun round-trip (message n e d &optional encoder decoder)
+    (equal message
+           (rsa-decrypt (rsa-encrypt message n e encoder)
+                        n d decoder)))
+#+END_SRC
+
+  You will need working =from-base-27= and =to-base-27= functions, as well as a
+  working knowledge of /symbol property lists/ to play with /this/ test code:
+
+#+BEGIN_SRC elisp :results silent
+(setf (get 'rsa-players :p) 11)
+(setf (get 'rsa-players :q) 17)
+(setf (get 'rsa-players :n) (* (get 'rsa-players :p) (get 'rsa-players :q)))
+(setf (get 'rsa-players :t) (* (- (get 'rsa-players :p) 1) (- (get 'rsa-players :q) 1)))
+(setf (get 'rsa-players :e) '13)
+(setf (get 'rsa-players :d) '37)
+
+
+  (defun test-rsa (message-with-spaces)
+    (let* ((message (mapconcat 'identity
+                               (split-string message-with-spaces " ") "@"))
+            (n (get 'rsa-players :n))
+            (e (get 'rsa-players :e))
+            (d (get 'rsa-players :d))
+            (encrypted (rsa-encrypt message n e 'from-base-27))
+            (decrypted (rsa-decrypt encrypted n d 'to-base-27))
+            (decrypted-message-with-spaces
+             (mapconcat 'identity (split-string decrypted "@") " "))
+            (success (string= message-with-spaces
+                              decrypted-message-with-spaces)))
+       (princ (format (concat "\"%s\"\nwas encoded and encrypted as\n%s\n"
+                              "then decrypted and decoded as\n\"%s\"\n")
+                      message-with-spaces
+                      encrypted
+                      decrypted-message-with-spaces))
+       (princ (if success "" "un"))
+       (princ "successfully.\n")
+       success))
+#+END_SRC
+#+BEGIN_SRC elisp :results output
+  (test-rsa "Is")
+#+END_SRC
+
+#+RESULTS:
+: "Is"
+: was encoded and encrypted as
+: 105
+: then decrypted and decoded as
+: "CZ"
+: unsuccessfully.
 
 ** Week 9
 
