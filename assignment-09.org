@@ -186,7 +186,8 @@ nil
 #+RESULTS:
 : 24
 
-** TODO LNR
+** DONE LNR
+   CLOSED: [2019-03-07 Thu 15:55]
 #+begin_note
   How would you write (using map /not/ a loop) another elisp function
   =number-of-factors-alt= that takes the CSF of a positive integer (in
@@ -203,30 +204,67 @@ nil
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO LDO
+#+BEGIN_SRC elisp :results silent
+  (defun number-of-factors-alt (csf)
+  "Takes a CSF like '((2 . 3) (3 . 1) (5 . 2)) and returns 24."
+  ;(mapcar 'car csf))
+  ;(apply '* (mapcar '1+ (mapcar 'cdr csf)))
+  (apply #'* (mapcar (lambda (pair) (+ 1 (car (cdr pair)))) csf))) 
+
+  ;; ... your ONE line of code goes here
+  )
+#+END_SRC
+#+BEGIN_SRC elisp
+  (number-of-factors-alt [(2 3) (3 1) (5 2)])
+#+END_SRC
+
+#+RESULTS:
+: 24
+** DONE LDO
+   CLOSED: [2019-03-07 Thu 16:06]
 #+begin_note
   Investigate what must happen to delete a key from a BST. Is deletion always as
   fast as insertion?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I got my information from http://www.algolist.net/Data_structures/Binary_search_tree/Removal
+  1. If the node has no children, it sets its link to its parent to "null" and disposes of the node
+  2. If the node has one child, the algorithm attaches the child the parent of the node being deleted,
+     then delets the node.
+  3. Final case is when the node being deleted has two children.  What it can do is follow its rightmost 
+     node then the leftmost node, then copy that value into its own, then deleting the bottom node.
+
+     Deletion is not as fast.  It is when a leaf node is being deleted, but when deleting a node with 
+     children is more time complex.
 #+end_info
-** TODO YCF
+** DONE YCF
+   CLOSED: [2019-03-07 Thu 16:10]
 #+begin_note
   Compare and contrast the different nuances in the precise definitions of the
   terms *full*, *complete* and *balanced* used to describe trees.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Full: if the binary search tree has 2 or 0 children
+  2. Complete: Every level is as filled as possible with final nodes residing on the left
+  3. Balanced: If the height of the tree is O(log(n)) where n is the number of nodes. They have
+     very good performance.
+
+  source: https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/
 #+end_info
-** TODO YZU
+** DONE YZU
+   CLOSED: [2019-03-07 Thu 16:19]
 #+begin_note
   Investigate various techniques to rebuild unbalanced BSTs to make them
   balanced. Note that this rebuilding can happen on-the-fly (as items are
   inserted) or at-the-end (after all initial items are inserted).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Traverse the nodes one-by-one and insert them into a AVL tree, which makes
+     sure the the height of the left and right subtree cannot be more than one 
+     for all nodes.  This has a time complexity of O(n log(n)).
+  2. Traverse the BST in order and store teh result in an array, then use recursion
+     to rebuild the tree.  This can be done on the fly, and has a time complexity of 
+     O(n) for insertion into the array, then O(1) for tree rebuilding.
 #+end_info
 * Puzzles
   No puzzles this week.
