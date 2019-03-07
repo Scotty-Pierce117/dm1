@@ -139,7 +139,8 @@ nil
        lightning
 5    
 #+end_info
-** TODO LUM
+** DONE LUM
+   CLOSED: [2019-03-07 Thu 15:40]
 #+begin_note
   Which of the above balanced BSTs is represented by the following list?
 #+BEGIN_SRC elisp :results silent
