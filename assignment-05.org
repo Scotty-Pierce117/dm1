@@ -12,7 +12,7 @@
 #+CAPTION: Clock summary at [2019-03-05 Tue 16:32]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *0:00* |
+| *Total time* | *5:32* |
 #+END:
 
 * Exercises

@@ -12,7 +12,7 @@
 #+CAPTION: Clock summary at [2019-02-14 Thu 16:58]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *3:23* |
+| *Total time* | *6:30* |
 #+END:
 
 * Time Hint

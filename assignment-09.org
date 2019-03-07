@@ -91,7 +91,8 @@
              /
            of
            / 
-       lightning    
+       lightning
+5    
 #+end_info
 ** TODO LUM
 #+begin_note
@@ -105,7 +106,8 @@
 #+end_info
 * Problems
   No optional problems this week.
-** TODO SUF
+** DONE SUF
+   CLOSED: [2019-03-07 Thu 10:50]
 #+begin_note
   How would you write (using map /not/ a loop) an elisp function
   =number-of-factors= that takes the CSF of a positive integer (in
@@ -121,6 +123,23 @@
 #+begin_info
   Your answer goes here.
 #+end_info
+#+BEGIN_SRC elisp :results silent
+  (defun number-of-factors (csf)
+  "Takes a CSF like '((2 . 3) (3 . 1) (5 . 2)) and returns 24."
+  ;(mapcar 'car csf))
+  ;(apply '* (mapcar '1+ (mapcar 'cdr csf)))
+  (apply '* (mapcar (lambda (pair) (1+ (cdr pair))) csf)) 
+
+  ;; ... your ONE line of code goes here
+  )
+#+END_SRC
+#+BEGIN_SRC elisp
+  (number-of-factors '((2 . 3) (3 . 1) (5 . 2)))
+#+END_SRC
+
+#+RESULTS:
+: 24
+
 ** TODO LNR
 #+begin_note
   How would you write (using map /not/ a loop) another elisp function
