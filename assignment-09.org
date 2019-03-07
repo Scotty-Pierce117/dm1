@@ -12,7 +12,7 @@
 #+CAPTION: Clock summary at [2019-03-07 Thu 15:28]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *2:35* |
+| *Total time* | *4:35* |
 #+END:
 
 * Exercises
@@ -71,7 +71,8 @@
 #+RESULTS:
 : t
 
-** TODO LJP
+** DONE LJP
+   CLOSED: [2019-03-07 Thu 16:39]
 #+begin_note
   Use =car=, =cdr=, and =cons= to re-implement the =prime-list-from-rle-list=
   function more efficiently.
@@ -81,7 +82,7 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This question was particularly difficult.  I worked on it in the lab.
 #+end_info
 #+BEGIN_SRC elisp :results raw
   (defun reconstitute-primes (rle-list)
@@ -103,17 +104,29 @@
                                          (make-list x 0)
                                        (list x)))
                                    rle-list))))))
-(setq limit 4
+(setq limit 0
       p100rle (list 1 1 0 1 0 1 3 1 0 1 3 1 0 1 3 1 5 1 0 1 5 1 3 1 0
                     1 3 1 5 1 5 1 0 1 5 1 3 1 0 1 5 1 3 1 5 1 7 1 3)
       got-it-right (equal (reconstitute-primes p100rle)
-                          (prime-list-from-rle-list p100rle limit)))
+                          (prime-list-from-rle-list p100rle 1)))
 #+END_SRC
 
 #+RESULTS:
-nil
-nil
-nil
+#+BEGIN_SRC elisp
+  (defun prime-list-from-rle-list-cons (first rle-list)
+  (cond ((null rle-list) nil)
+        ((zerop (car rle-list))
+          (prime-list-from-rle-list-cons (+ first 1) (cdr rle-list)))
+        ((= 1 (car rle-list)) 
+         (cons (+ first 1) (prime-list-from-rle-list-cons (+ first 1) (cdr rle-list))))
+        ((> (car rle-list) 1) (prime-list-from-rle-list-cons (+ first (car rle-list)) (cdr rle-list)))
+  ))
+  (equal (reconstitute-primes p100rle)
+  (prime-list-from-rle-list-cons 1 p100rle))
+#+END_SRC
+
+#+RESULTS:
+: t
 
 ** DONE YGT
    CLOSED: [2019-03-05 Tue 17:36]
