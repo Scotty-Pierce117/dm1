@@ -195,3 +195,48 @@
 
 #+RESULTS:
 : ((641 . 1) (1877 . 1))
+
+* Who Are My Mentors?
+   There are two mentors from DM2 who are eager and willing to help each of you
+   (and possibly one other of your classmates) with Week 10\rsquo{}s assignment (and
+   with any GPAOs you may want/need help with):
+
+   | Name     | Mentor 1        | Mentor 2             | Email ID 1 | Email ID 2 |
+   |----------+-----------------+----------------------+------------+------------|
+   | Adam     | Grayson Hadley  | Cameron Smith        | had14001   | smi15105   |
+   | Alex     | Zach Newell     | Andrew Payne         | new14008   | pay12008   |
+   | Benjamin | Ashley Loo      | Ronald Munoz         | loo16001   | mun16012   |
+   | Brad     | Paul Land       | Kathryn Hollingshead | lan11011   | hol15009   |
+   | Cameron  | Matt Wyndham    | Dylan Doelling       | wyn15002   | doe15002   |
+   | Chris    | Sean Conley     | Joshua Berensen      | con16002   | ber14019   |
+   | Dallin   | Luke Hagen      | Jonathan Steele      | hag14005   | ste13031   |
+   | David    | Jon Comeau      | Curtis Wakley        | comeauj    | wak13004   |
+   | Durid    | Jon Comeau      | Curtis Wakley        | comeauj    | wak13004   |
+   | Jake     | Paul Land       | Kathryn Hollingshead | lan11011   | hol15009   |
+   | Joaquin  | Ashley Loo      | Ronald Munoz         | loo16001   | mun16012   |
+   | Jonah    | Luke Hagen      | Jonathan Steele      | hag14005   | ste13031   |
+   | Joseph   | Anthony Lasley  | Benj Jaffray         | las17005   | jaf15001   |
+   | Justin   | Joshua Mathews  | Will Mildenhall      | mat13034   | mil16003   |
+   | Mark     | Sam Tew         | Greg De Ligne        | tew14002   | del15027   |
+   | Michael  | Preston Higgins | Madison Sheridan     | hig13007   | she15038   |
+   | Rochak   | Mikah Chapman   | Ty Kennington        | cha15025   | ken15008   |
+   | Sam      | Justin Bengtson | Taylor Matheny       | ben16019   | mat15018   |
+   | Scott    | Grayson Hadley  | Cameron Smith        | had14001   | smi15105   |
+   | Shawn    | Justin Bengtson | Taylor Matheny       | ben16019   | mat15018   |
+   | Steven   | Chase Jacobs    | Michael Capawana     | jac12023   | cap12003   |
+   | Teddy    | Sam Tew         | Greg De Ligne        | tew14002   | del15027   |
+   | Travis   | Justin Chandler | Brenden Welker       | cha16005   | wel15018   |
+   | Wilson   | Jonathan Dawson | Taylor Isaacson      | daw17001   | isa11003   |
+   | Zachary  | Ryan Gewondjan  | Tyler Brundage       | gew11001   | bru14007   |
+
+   They have been instructed to wait until Thursday at 3:15pm for you to contact
+   them. If they haven\rsquo{}t heard from you by then, they will reach out to you.
+
+   What are they going to do for you? Their goal is to be able to self-assess
+   the truth of the following three assertions:
+   
+   - [ ] We taught a DM1 student or two about Huffman trees. 
+   - [ ] We taught said student(s) about Huffman encoding and decoding. 
+   - [ ] We provided some assistance with their GPAOs.
+
+   Please help them succeed and help yourselves learn in the process!
