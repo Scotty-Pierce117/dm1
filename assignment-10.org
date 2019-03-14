@@ -8,15 +8,25 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-03-14 Thu 15:22]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *1:00* |
+#+END:
+
 * Exercises
   Exercise, to be precise:
-** TODO LND
+** DONE LND
+   CLOSED: [2019-03-14 Thu 15:22]
 #+begin_note
   Why do 17 characters require 5 bits per character for a fixed-length encoding?
   What in general is required for /n/ different characters?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Because it focuses on the character that requires the most amount of bits, and applies
+  that number to the rest of the characters.  Because 1111 is only 15, 1 0001 is 17, so 
+  all five bits are required without compression.
 #+end_info
 * Problems
   No optional problems this week.
@@ -32,6 +42,9 @@
   =0001001000111001110101110110110101111001100000101111011000111010111100111=
   and explain the reason for the perhaps surprising result.
 
+#+end_note
+#+begin_info
+#+end_info
 #+BEGIN_SRC elisp :results silent
   (require 'cl)
 
@@ -57,10 +70,7 @@
           (?1 (find-leaf rest-of-encoded (get-right tree)))
           (t "")))))
 #+END_SRC
-#+end_note
-#+begin_info
-  Your answer goes here.
-#+end_info
+
 ** TODO YDQ
 #+begin_note
   What is the tie-breaking rule used when deciding where to insert into the
@@ -168,3 +178,5 @@
 #+end_info
 * Puzzles
   No puzzles this week. Work on GPAOs instead!
+  
+

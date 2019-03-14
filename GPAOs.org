@@ -5,7 +5,7 @@
 #+OPTIONS: H:4 num:nil toc:t \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t ':t |:t
 #+OPTIONS: html-postamble:t
 #+STARTUP: showeverything entitiespretty
-
+* Introduction: The art of Problem Solving
   [[https://firstthreeodds.org/17657741833134731255/creativity.html][Steve Olson]] and [[https://rickneff.github.io/exercises-versus-problems.html][Paul Zietz]] are two kindred spirits. Check out the below
   excerpt from Steve Olson\rsquo{}s book where he introduces Paul Zietz and quotes him
   on his approach to teaching /creative problem solving/, which Paul Zietz
@@ -54,6 +54,7 @@
   fewer than three *current* DM1 students in our class (not the other one).
 
   Enjoy!
+
 
 * ANT
   Watch and discuss a video about Pi, Complex Numbers and Prime Numbers to
