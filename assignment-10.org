@@ -12,7 +12,7 @@
 #+CAPTION: Clock summary at [2019-03-14 Thu 15:22]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *1:00* |
+| *Total time* | *2:00* |
 #+END:
 
 * Exercises
@@ -30,7 +30,8 @@
 #+end_info
 * Problems
   No optional problems this week.
-** TODO LTI
+** DONE LTI
+   CLOSED: [2019-03-14 Thu 15:54]
 #+begin_note
   Use the tree and the code given below to decode the message
   =00010010000111010111011011010111100110000010111101100011101011110=.
@@ -44,8 +45,11 @@
 
 #+end_note
 #+begin_info
+The decoder function uses recursion.  It assigns the variable "leaf-cell" to the 
+first part of the sequnce, and displays it.  It then recurses calling the reaining 
+list using cdr on the same tree.  Once it finishes, aka hits "", it ends.
 #+end_info
-#+BEGIN_SRC elisp :results silent
+#+BEGIN_SRC elisp :results raw
   (require 'cl)
 
   (defvar tree
@@ -69,9 +73,19 @@
           (?0 (find-leaf rest-of-encoded (get-left tree)))
           (?1 (find-leaf rest-of-encoded (get-right tree)))
           (t "")))))
+  (defun decoder (encoded tree)
+  (if (equal encoded "")
+    ""
+    (let ((leaf-cell (find-leaf encoded tree)))
+  (cons (car leaf-cell) (decoder (cdr leaf-cell) tree)))))
+  (decoder "00010010000111010111011011010111100110000010111101100011101011110" tree)
+  ;(find-leaf "000" tree)
 #+END_SRC
 
-** TODO YDQ
+#+RESULTS:
+(n e i t h e r   h e r e   n o r   t h e r e . )
+
+** YDQ
 #+begin_note
   What is the tie-breaking rule used when deciding where to insert into the
   queue in this Huffman tree construction? Implement this rule in elisp code,
@@ -79,9 +93,13 @@
   rule you use? Why or why not?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It sorts first by the weight of the tree, then by alphabet.  If multiple letters
+  have the same weight, the tie breaker puts them in order by alphabet.  It does matter what
+  tie breaking rule you use, becuase it can change the number of bits associated with each
+  character.
 #+end_info
-** TODO YTR
+** DONE YTR
+   CLOSED: [2019-03-14 Thu 16:28]
 #+begin_note
   Construct the Huffman tree for and build the bitstring encoding the string
   "cookbooknook".
@@ -92,17 +110,56 @@
   the string?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  B 1    B 1
+  C 1    C 1
+  K 3 -> N 1
+  N 1    K 3
+  O 6    O 6 
+
+   12
+ 0/  \1
+O 6   6
+    0/ \1
+   K 3  3
+      0/ \1
+     N 1  2
+        1/ \0
+       C 1 B 1
+O: 0
+K: 10
+N: 110
+C: 1111
+B: 1110
+
+Average: 2.8
+Ratio: 70%
 #+end_info
-** TODO LGO
+#+BEGIN_SRC elisp :results code
+(let ((O "0")
+      (K "10")
+      (N "110")
+      (C "1111")
+      (B "1110"))
+  (list C O O K B O O K N O O K))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src elisp
+("1111" "0" "0" "10" "1110" "0" "0" "10" "110" "0" "0" "10")
+#+end_src
+
+** DONE LGO
+   CLOSED: [2019-03-14 Thu 16:45]
 #+begin_note
   Using the "cookbooknook" encoding, the bitstring =1011001110= decodes into one
   English word. What word is it?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  K - N - O - B
+  10-110-0-1110
 #+end_info
-** TODO YIV
+** DONE YIV
+   CLOSED: [2019-03-14 Thu 17:02]
 #+begin_note
   Context from STK (with one minor change in the code):
 
@@ -176,6 +233,19 @@
 #+begin_info
   Your answer goes here.
 #+end_info
+#+BEGIN_SRC elisp
+  (build-tree 9)
+#+END_SRC
+
+#+RESULTS:
+: n2115
+#+BEGIN_SRC elisp
+  (try-it-out)
+#+END_SRC
+
+#+RESULTS:
+| 1 | (:right b :left c) |
+
 * Puzzles
   No puzzles this week. Work on GPAOs instead!
   
