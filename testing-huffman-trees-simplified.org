@@ -1,0 +1,36 @@
+#+TITLE: Testing Huffman Trees Simplified
+#+OPTIONS: H:4 num:nil toc:t \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t ':t |:t
+#+STARTUP: showeverything entitiespretty
+
+#+BEGIN_SRC elisp :results code
+  (org-sbe huffman-trees-simplified.org:code)
+
+  (get-codes (make-huffman-tree "ereweweretherewewereattaras"))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results code
+  ;; if tree = (27 (10 (5 . "r") 5 (2 (1 . "h") 1 . "s") 3 . "a") 17 (7 (3 . "t") 4 . "w") 10 . "e")
+  tree
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (add-function :filter-return
+                (symbol-function 'make-huffman-tree)
+                (lambda (x) (setq tree x)))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (huffman-encode-decode "cookbooknook") 
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (huffman-decode tree "1011001110")
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (huffman-encode-decode "ereweweretherewewereattaras")
+#+END_SRC
+
+#+BEGIN_SRC elisp :results code
+ (listify-tree tree) 
+#+END_SRC
