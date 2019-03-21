@@ -4,65 +4,94 @@
 #+OPTIONS: html-postamble:nil
 #+STARTUP: showeverything entitiespretty
 #+SETUPFILE: theme-bigblow.setup
-
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-03-21 Thu 15:48]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *3:10* |
+#+END:
+
 * Exercises
-** TODO HST
+** DONE HST
+   CLOSED: [2019-03-21 Thu 15:10]
 #+begin_note
   How does allowing cycles imply the existence of more than one path from one
   graph node to another?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Cycles imply that to return back to a node, it does not take a "there and back" solution, rather
+  that it makes some sort of circular solution.  If there is a cycle, that means that that node
+  can either be gotten back to through following the cycle or by backstepping.
 #+end_info
-** TODO HTC
+** DONE HTC
+   CLOSED: [2019-03-21 Thu 15:15]
 #+begin_note
   Which node in the directed graph below represents Abu in the ping-pong
   tournament he was in?
   [[file:../img/fig-tournament-graph.png]]
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Probably node A.  Becuase it is connected to each and every other node on the graph,
+  that is why.  It could also possibly be represented with G, becuase each and every node
+  on the graph points to it.
 #+end_info
-** TODO KPS
+** DONE KPS
+   CLOSED: [2019-03-21 Thu 15:18]
 #+begin_note
   Do some research and figure out where graphs are used in your major, and describe
   how a knowledge of graph theory can be beneficial to you in the future.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  One very important place they are used is in state machines.  State machines show relationships
+  between different states while showing a finite number of them.  The state changes from one to 
+  another through input, and the input determines the next state.
 #+end_info
-** TODO KWD
+** DONE KWD
+   CLOSED: [2019-03-21 Thu 15:20]
 #+begin_note
   What is the degree sequence of a *perfect*, full, complete, level-3 binary tree?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  In 2D format, that would be [2 2 2 1 1 1 1]
 #+end_info
-** TODO KOV
+** DONE KOV
+   CLOSED: [2019-03-21 Thu 15:28]
 #+begin_note
   Choose a link in the directed (tournament) graph above (figure 51 in HTC). Use
   all of the /directed adjacency/ vocabulary to describe it.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I pick C.
+  C is adjacent to D, E, F and G.
+  C is adjacent from A and B
+  k, i, j, and l come from C.
+  k i j l go to D, E, F, G
+  k i j l connect C to D E F G
+  k i j l go from C to D E F G
+  C is the initial node of k i j l
+  D E F G are terminal nodes of k i j l
 #+end_info
-** TODO AGA
+** DONE AGA
+   CLOSED: [2019-03-21 Thu 15:30]
 #+begin_note
   What can you say about /K_0/?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Since K starts at 1, it has no nodes or links
 #+end_info
-** TODO KNF
+** DONE KNF
+   CLOSED: [2019-03-21 Thu 15:32]
 #+begin_note
   What is the degree sequence of the wheel graph W_5? What is it in general for a
   W_n?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It has 5 nodes with 3 links each.  [5 3 3 3 3 3 ]
+  
+  N is simmilar, with n at the front followed by n 3's.
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
@@ -104,7 +133,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO HRR
+** DONE HRR
+   CLOSED: [2019-03-21 Thu 15:39]
 #+begin_note
   In another multigraph example, what is the connection between this graph and
   the \ldquo{}birth of graph theory\rdquo?
@@ -117,17 +147,22 @@
   necessary and sufficient conditions for a graph to be Eulerian.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The graph displayed is the same graph as described with the bridges.  Nodes represent
+  land, links represent bridges.  [3 3 3 3].  It is not a Eulerian graph, becuase it can't 
+  be traversed from one vertex and come back to that same vertex without re-trversing others.
 #+end_info
-** TODO KEO
+** DONE KEO
+   CLOSED: [2019-03-21 Thu 15:41]
 #+begin_note
   Explore the question: Does a graph\rsquo{}s degree sequence alone contain enough
   information to reconstruct the graph?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  A graph can be constructed from a degree sequence alone, however, different graphs
+  can have the same dgree sequence.
 #+end_info
-** TODO HMO
+** DONE HMO
+   CLOSED: [2019-03-21 Thu 15:46]
 #+begin_note
   Draw the graphs of these ten 2d degree sequences:
 
@@ -146,7 +181,7 @@
   |   | 1 |   |   |   | 2 | 2 |   |   | 2 | 2 |   |   | 0 |
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Look at you! See picture in CS 237 folder
 #+end_info
 ** TODO HIJ *
 #+begin_note
@@ -169,13 +204,17 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO HAB
+** DONE HAB
+   CLOSED: [2019-03-21 Thu 15:48]
 #+begin_note
   Is there (can there exist) a simple graph with degree sequence =[3 2 1 0]=?
   Justify your answer.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  No,  because in order for the first node to have three connections, and since there are
+  only 3 other nodes, all of them would have to be connected to it.  Since one of the nodes
+  has zero connections, it cannot be connected to that first node, therefore this graph does
+  not exist!
 #+end_info
 ** TODO HBT *
 #+begin_note
