@@ -1,0 +1,107 @@
+#+TITLE: Graphs R Us
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t d:(not "HINT")
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: theme-bigblow.setup
+
+* An Implementation/Representation of a Simple Graph
+
+#+BEGIN_SRC elisp :results silent
+  (defun make-graph (symbol &optional directed)
+    (unless (fboundp symbol)
+      (fset symbol `(lambda nil (symbol-plist (quote ,symbol)))))
+    (put symbol :directed directed)
+    symbol)
+
+  (defun is-directed (graph)
+    (and (symbolp graph)
+         (get graph :directed)))
+
+  (defun unmake-graph (symbol)
+    (fmakunbound symbol)
+    (setf (symbol-plist symbol) nil))
+#+END_SRC 
+
+#+BEGIN_SRC elisp :results silent
+  (unmake-graph 'graph-1)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (make-graph 'graph-1 t)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (graph-1)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun add-link (graph node1 node2)
+    (and (symbolp graph)
+         (pushnew (cons node1 node2) (get graph :links)
+                  :test 'equal)
+         (pushnew node1 (get graph :nodes))
+         (pushnew node2 (get graph :nodes))))
+
+  (defun get-links (graph)
+    (and (symbolp graph) (get graph :links)))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (add-link 'graph-1 1 2)
+#+END_SRC
+#+
+#+BEGIN_SRC elisp :results raw
+  (add-link 'graph-1 2 3)
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (get-links 'graph-1)
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (graph-1)
+#+END_SRC
+
+#+RESULTS:
+(:directed t :links ((2 . 3) (1 . 2)) :nodes (3 2 1))
+
+
+#+BEGIN_SRC elisp :results silent
+  (defun dotify (graph)
+    (and (symbolp graph)
+         (let ((directed (is-directed graph)))
+           (concat (format "%sgraph {\n   node [shape=circle]\n"
+                           (if directed "di" ""))
+                   (mapconcat (lambda (node)
+                                (format "   %d\n" node))
+                              (get graph :nodes) "")
+                   (mapconcat (lambda (link)
+                                (format "   %d -%c %d\n"
+                                        (car link)
+                                        (if directed ?> ?-)
+                                        (cdr link)))
+                              (get graph :links) "")
+                   "}\n"))))
+
+  (defun make-picture (graph)
+    (let* ((dot-contents (dotify graph))
+           (type "png")
+           (dot-command "dot")
+           (layout-engine "circo")
+           (graph-name (symbol-name graph))
+           (ifilename (concat graph-name ".gv"))
+           (ofilename (concat graph-name "." type)))
+      (write-region dot-contents 0 ifilename)
+      (when (zerop (call-process dot-command nil nil nil
+                                 (concat "-K" layout-engine) (concat "-T" type)
+                                 (concat "-o" ofilename) ifilename))
+        (delete-file ifilename)
+        (insert (concat "[[file:" ofilename "]]\n")))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (make-picture 'graph-1)
+#+END_SRC
+
+
