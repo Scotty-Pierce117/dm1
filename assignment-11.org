@@ -8,6 +8,13 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-03-21 Thu 10:24]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *2:00* |
+#+END:
+
 * Exercises
 ** TODO HST
 #+begin_note
@@ -146,7 +153,7 @@
   |   | 1 |   |   |   | 2 | 2 |   |   | 2 | 2 |   |   | 0 |
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Look at you!
 #+end_info
 ** TODO HIJ *
 #+begin_note
