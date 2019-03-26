@@ -1,0 +1,230 @@
+#+TITLE: VWX Graphs I
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: theme-bigblow.setup
+[[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
+[[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
+[[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-03-21 Thu 15:48]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *3:10* |
+#+END:
+
+* Exercises
+** DONE HST
+   CLOSED: [2019-03-21 Thu 15:10]
+#+begin_note
+  How does allowing cycles imply the existence of more than one path from one
+  graph node to another?
+#+end_note
+#+begin_info
+  Cycles imply that to return back to a node, it does not take a "there and back" solution, rather
+  that it makes some sort of circular solution.  If there is a cycle, that means that that node
+  can either be gotten back to through following the cycle or by backstepping.
+#+end_info
+** DONE HTC
+   CLOSED: [2019-03-21 Thu 15:15]
+#+begin_note
+  Which node in the directed graph below represents Abu in the ping-pong
+  tournament he was in?
+  [[file:../img/fig-tournament-graph.png]]
+#+end_note
+#+begin_info
+  Probably node A.  Becuase it is connected to each and every other node on the graph,
+  that is why.  It could also possibly be represented with G, becuase each and every node
+  on the graph points to it.
+#+end_info
+** DONE KPS
+   CLOSED: [2019-03-21 Thu 15:18]
+#+begin_note
+  Do some research and figure out where graphs are used in your major, and describe
+  how a knowledge of graph theory can be beneficial to you in the future.
+#+end_note
+#+begin_info
+  One very important place they are used is in state machines.  State machines show relationships
+  between different states while showing a finite number of them.  The state changes from one to 
+  another through input, and the input determines the next state.
+#+end_info
+** DONE KWD
+   CLOSED: [2019-03-21 Thu 15:20]
+#+begin_note
+  What is the degree sequence of a *perfect*, full, complete, level-3 binary tree?
+#+end_note
+#+begin_info
+  In 2D format, that would be [2 2 2 1 1 1 1]
+#+end_info
+** DONE KOV
+   CLOSED: [2019-03-21 Thu 15:28]
+#+begin_note
+  Choose a link in the directed (tournament) graph above (figure 51 in HTC). Use
+  all of the /directed adjacency/ vocabulary to describe it.
+#+end_note
+#+begin_info
+  I pick C.
+  C is adjacent to D, E, F and G.
+  C is adjacent from A and B
+  k, i, j, and l come from C.
+  k i j l go to D, E, F, G
+  k i j l connect C to D E F G
+  k i j l go from C to D E F G
+  C is the initial node of k i j l
+  D E F G are terminal nodes of k i j l
+#+end_info
+** DONE AGA
+   CLOSED: [2019-03-21 Thu 15:30]
+#+begin_note
+  What can you say about /K_0/?
+#+end_note
+#+begin_info
+  Since K starts at 1, it has no nodes or links
+#+end_info
+** DONE KNF
+   CLOSED: [2019-03-21 Thu 15:32]
+#+begin_note
+  What is the degree sequence of the wheel graph W_5? What is it in general for a
+  W_n?
+#+end_note
+#+begin_info
+  It has 5 nodes with 3 links each.  [5 3 3 3 3 3 ]
+  
+  N is simmilar, with n at the front followed by n 3's.
+#+end_info
+* Problems
+  Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
+** TODO KDB *
+#+begin_note
+  List in lisp form all the simple paths (in both representations) from =MT= to
+  =NM=, identifying the shortest path(s) and the longest path(s).
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** TODO ABR *
+#+begin_note
+  Directed graphs (/digraphs/ for short) can represent binary relations. Make a
+  connection between the four relation types and the existence or non-existence
+  of certain features in the graph of the relation.
+
+  - Reflexive = /every/ node has a link that is a loop.
+  - Symmetric = there are /no/ single link arrows (one-way trips) --- every link
+    arrow is a double one (roundtrip).
+  - Antisymmetric = there is /no/ double arrow (going both ways) /unless/ it is
+    a loop.
+  - Transitive = there is /no/ two-leg journey (think flight with a layover)
+    without a shortcut (non-stop flight).
+
+  It is helpful to draw a graph of a relation that is described more abstractly.
+  For an example of an abstract description, here is the relation on the set [1
+  2 3] given by this vector of \ldquo{}conses\rdquo (another way to say /dotted pairs/)
+  representing the ordered pairs:
+
+  [(1 . 1) (1 . 2) (2 . 2) (3 . 3)]
+
+  And here is the three-node four-link graph of that relation:
+  [[file:../img/fig-digraph-of-binary-relation.png]]
+
+  Identify which features listed above this graph has. Draw the digraphs of some
+  other abstract binary relations, with and without the four features.
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** DONE HRR
+   CLOSED: [2019-03-21 Thu 15:39]
+#+begin_note
+  In another multigraph example, what is the connection between this graph and
+  the \ldquo{}birth of graph theory\rdquo?
+
+  [[file:../img/fig-four-nodes-seven-links.png]]
+
+  What do its nodes and links represent? What is its degree sequence?
+
+  Explore the graph property \ldquo{}Eulerian\rdquo. Does this graph have it? Describe
+  necessary and sufficient conditions for a graph to be Eulerian.
+#+end_note
+#+begin_info
+  The graph displayed is the same graph as described with the bridges.  Nodes represent
+  land, links represent bridges.  [3 3 3 3].  It is not a Eulerian graph, becuase it can't 
+  be traversed from one vertex and come back to that same vertex without re-trversing others.
+#+end_info
+** DONE KEO
+   CLOSED: [2019-03-21 Thu 15:41]
+#+begin_note
+  Explore the question: Does a graph\rsquo{}s degree sequence alone contain enough
+  information to reconstruct the graph?
+#+end_note
+#+begin_info
+  A graph can be constructed from a degree sequence alone, however, different graphs
+  can have the same dgree sequence.
+#+end_info
+** DONE HMO
+   CLOSED: [2019-03-21 Thu 15:46]
+#+begin_note
+  Draw the graphs of these ten 2d degree sequences:
+
+  | 1 |   |   |   | 2 | 2 |   |   | 2 | 2 |   |   | 1 | 1 |
+  |   |   |   |   |   |   |   |   |   |   |   |   | 4 |   |
+  | 2 | 1 |   |   | 2 | 2 |   |   | 2 | 2 |   |   | 1 | 1 |
+  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+  | 2 | 2 |   |   | 1 | 3 | 1 |   |   |   |   |   |   |   |
+  | 3 | 3 |   |   |   |   |   |   |   |   |   |   |   |   |
+  | 1 | 1 |   |   |   | 1 |   |   |   |   |   |   |   |   |
+  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+  | 1 |   | 1 |   |   | 2 | 2 |   |   | 1 | 1 |   |   | 1 |
+  |   | 3 |   |   |   |   |   |   |   |   |   |   |   | 1 |
+  |   | 1 |   |   |   | 2 | 2 |   |   | 2 | 2 |   |   | 0 |
+#+end_note
+#+begin_info
+  Look at you! See picture in CS 237 folder
+#+end_info
+** TODO HIJ *
+#+begin_note
+   Why is that? Give a succinct argument justifying that the degrees of all the
+   nodes add up to twice the number of links.
+:HINT:
+ - Hint :: What does /handshaking/ signify?
+:END:
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** TODO KLE *
+#+begin_note
+  Investigate this *corollary* (immediately inferable follow-on theorem) to the
+  handshaking theorem:
+
+  /Any undirected graph has an even number of nodes of odd degree./
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+** DONE HAB
+   CLOSED: [2019-03-21 Thu 15:48]
+#+begin_note
+  Is there (can there exist) a simple graph with degree sequence =[3 2 1 0]=?
+  Justify your answer.
+#+end_note
+#+begin_info
+  No,  because in order for the first node to have three connections, and since there are
+  only 3 other nodes, all of them would have to be connected to it.  Since one of the nodes
+  has zero connections, it cannot be connected to that first node, therefore this graph does
+  not exist!
+#+end_info
+** TODO HBT *
+#+begin_note
+  List in lisp form (using the shorter representation) all the directed paths in
+  the tournament graph from node =A= to node =F=. How many of these paths
+  include node =G=?
+#+end_note
+#+begin_info
+  Your answer goes here.
+#+end_info
+* Puzzles
+  No puzzles again this week. Next week!
+ 
