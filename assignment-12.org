@@ -282,3 +282,7 @@
 *** Approach
 *** Solution
 *** Proof
+#+BEGIN_SRC elisp
+  (require 'bigal)
+  (setq size-of-base-
+#+END_SRC
