@@ -8,31 +8,45 @@
 [[elisp:(find-file-other-window%20"generic-instructions.org")][Read Instructions]]
 [[elisp:(progn%20(save-buffer)%20(browse-url-of-file%20(org-html-export-to-html)))][Export to HTML and Browse]]
 [[elisp:(progn%20(save-buffer)%20(org-clock-report%201)%20(save-buffer))][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2019-03-28 Thu 19:27]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *4:56* |
+#+END:
+
 * Exercises
-** TODO HAX
+** DONE HAX
+   CLOSED: [2019-03-28 Thu 19:29]
 #+begin_note
   What are /m/ and /n/ for the three /K_{m,n}/ graphs in figures 87, 88 and 89,
   in VWQ?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  M is the nodes on top, N is the nodes on bottom.
 #+end_info
-** TODO HKE
+** DONE HKE
+   CLOSED: [2019-03-28 Thu 19:30]
 #+begin_note
   Investigate bipartite graphs and complete bipartite graphs. What kinds of
   applications fit these types of graphs?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Bipartite graphs are good for displaying data. Data is searched through M,
+  and stored in N.
 #+end_info
-** TODO KBB
+** DONE KBB
+   CLOSED: [2019-03-28 Thu 19:31]
 #+begin_note
   What would a /tri/-partite graph look like? An /n/-partite graph?
 #+end_note
 #+begin_info
-  Your answer goes here.
+   They would have three layers, with no nodes in each layer conneted to
+   the node directly adjacent to it.  N partite would be similar as well,
+   just with N layers.
 #+end_info
-** TODO HRL
+** DONE HRL
+   CLOSED: [2019-03-28 Thu 19:40]
 #+begin_note
   Draw this small graph having 8 nodes and 13 links:
 
@@ -42,9 +56,11 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+DOWNLOADED: file:X%3A/Mega%20Sync/Semester%204/CS%20237/HRL.png @ 2019-03-28 19:40:15
+[[file:Exercises/HRL_2019-03-28_19-40-15.png]].
 #+end_info
-** TODO KHO
+** DONE KHO
+   CLOSED: [2019-03-28 Thu 19:43]
 #+begin_note
   Describe /H/ in terms of subsets of /G/ if /G/ = =[[a b c d e f g h i j]
              [[a b] [a c] [a g] [b d] [b f] [b e] [c d] [c f] [c g] [c h]=
@@ -53,17 +69,33 @@
   Graph /H/ is shown in figure 93 in VWS.
 #+end_note
 #+begin_info
-  Your answer goes here.
+[ei] [gh] [abcdegh] [de] [dh] [ab] [ac] [ag] [bd] [be] [cd] [ch]
+
 #+end_info
-** TODO HLX
+** DONE HLX
+   CLOSED: [2019-03-28 Thu 19:46]
 #+begin_note
   Since graphs are defined in terms of sets, define *graph intersection*
   accordingly. Give an example.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It is where graphs keep their simmilarities when compared to one another.
+  graph A:
+      a
+    /   \
+   x      b - s
+  
+  graph B:
+      a
+    /   \
+ q-x     b
+  intersection:
+      a
+    /   \
+  x      b
 #+end_info
-** TODO HBE
+** DONE HBE
+   CLOSED: [2019-03-28 Thu 19:47]
 #+begin_note
   A *planar graph* is a graph that can be embedded in the plane, i.e., it can be
   drawn on the plane in such a way that its links intersect only at their
@@ -78,7 +110,7 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  False.  It cannot be drawn without curved lines!
 #+end_info
 
 #+BEGIN_SRC dot :file rsa.png
@@ -100,7 +132,8 @@
 
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO HJS
+** DONE HJS
+   CLOSED: [2019-03-28 Thu 19:49]
 #+begin_note
   /Q_n/ graphs have /2^n/ nodes. How many links do /Q_n/ graphs have?
 :HINT:
@@ -108,9 +141,10 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It would have N(2^(n-1)) lines.
 #+end_info
-** TODO KHQ
+** DONE KHQ
+   CLOSED: [2019-03-28 Thu 19:50]
 #+begin_note
   In what sense is a /K_{3,3}/ like a /K_5/?
 :HINT:
@@ -119,7 +153,7 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  K5 has no lines.  I guess they are technically both complte!
 #+end_info
 ** TODO AGD *
 #+begin_note
@@ -236,7 +270,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO KSQ
+** DONE KSQ
+   CLOSED: [2019-03-28 Thu 19:56]
 #+begin_note
   Construct a graph using the following list of eight words as node labels:
 
@@ -251,7 +286,7 @@
   a link between those two nodes?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  We did this one in class!
 #+end_info
 ** TODO KSC *
 #+begin_note
@@ -272,13 +307,18 @@
 #+end_info
 * Puzzles
   Puzzle, to be precise.
-** TODO HTR
+** DONE HTR
+   CLOSED: [2019-03-28 Thu 19:55]
 #+begin_note
   What does it mean to say that \({\sf VWX}\) has
 : ([2 1 1] [2 2 2 1 1] [4 1 1 1 1])
   as its list of degree sequences?
 #+end_note
 *** Rephrase
+    What does this degree sequence have to do with VWX?
 *** Approach
+    I will draw these graphs.
 *** Solution
+    The grphs represent the letters VWX!
 *** Proof
+    We were shown the solution in class, and it all works out.

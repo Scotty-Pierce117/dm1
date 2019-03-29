@@ -227,3 +227,4 @@
 #+end_info
 * Puzzles
   No puzzles again this week. Next week!
+ 
