@@ -35,6 +35,9 @@
   (graph-1)
 #+END_SRC
 
+#+RESULTS:
+(:directed t)
+
 #+BEGIN_SRC elisp :results silent
   (defun add-link (graph node1 node2)
     (and (symbolp graph)
@@ -50,20 +53,31 @@
 #+BEGIN_SRC elisp :results raw
   (add-link 'graph-1 1 2)
 #+END_SRC
+
+#+RESULTS:
+(2 1)
+
 #+
 #+BEGIN_SRC elisp :results raw
   (add-link 'graph-1 2 3)
 #+END_SRC
 
+#+RESULTS:
+(3 2 1)
+
 #+BEGIN_SRC elisp
   (get-links 'graph-1)
 #+END_SRC
+
+#+RESULTS:
+: ((2 . 3) (1 . 2))
 
 #+BEGIN_SRC elisp :results raw
   (graph-1)
 #+END_SRC
 
 #+RESULTS:
+(:directed t :links ((2 . 3) (1 . 2)) :nodes (3 2 1))
 (:directed t :links ((2 . 3) (1 . 2)) :nodes (3 2 1))
 
 

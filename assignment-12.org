@@ -321,4 +321,11 @@
 *** Solution
     The grphs represent the letters VWX!
 *** Proof
+<<<<<<< HEAD
     We were shown the solution in class, and it all works out.
+=======
+#+BEGIN_SRC elisp
+  (require 'bigal)
+  (setq size-of-base-
+#+END_SRC
+>>>>>>> ed81ecb3eedd5b91238ef61dac4936e1967b82a2
