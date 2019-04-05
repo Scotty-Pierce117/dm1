@@ -83,43 +83,88 @@
   (remove-function (symbol-function 'random) 'interactive-random)
 #+END_SRC
 
-#+BEGIN_SRC elisp
+#+BEGIN_SRC elisp :results raw
   (find-derivation 'SENTENCE)
 #+END_SRC
 
 #+RESULTS:
-: the dog runs quickly
+the cat runs slowly the sleepy dog
+ hungry cat chases slowly the hungry dog
+the sleepy cat chases quickly
+ cat runs
+the sleepy cat runs slowly
+the sleepy dog chases
+the cat chases slowly
+ hungry dog chases quickly  dog
 
-** TODO BAO
+** DONE BAO
+   CLOSED: [2019-04-04 Thu 19:08]
 #+begin_note
    Derive-verify =the sleepy cat runs slowly=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+    SENTENCE \rarr NOUN-PHRASE VERB-PHRASE
+    SENTENCE \rarr ARTICLE ADJECTIVE NOUN VERB PHRASE
+    SENTENCE \rarr ARTICLE ADJECTIVE NOUN VERB ADVERB
+    the ADJECTIVE NOUN VERB ADVERB
+    the sleepy NOUN VERB ADVERB
+    the sleepy cat VERB ADVERB
+    the sleepy cat runs ADVERB
+    the sleepy cat runs slowly.
+
+    [1 0 0 0 0 1 1 1 0 1 1 1 0]
+
 #+end_info
-** TODO NCO
+** DONE NCO
+   CLOSED: [2019-04-04 Thu 19:13]
 #+begin_note
    Derive-verify =the hungry dog runs quickly=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+    SENTENCE \rarr NOUN-PHRASE VERB-PHRASE
+    SENTENCE \rarr ARTICLE ADJECTIVE NOUN VERB-PHRASE
+    SENTENCE \rarr ARTICLE ADJECTIVE NOUN VERB ADVER
+        the ADJECTRIVE NOUN VERV ADVERB
+        the hungry NOUN VERB ADVERB
+        the hungry dog runs ADVERB
+        the hungry dog runs quickly
+[0 0 1 0 0 0 0 0 1 1 1 1 1 1]
+
 #+end_info
-** TODO PDQ
+** DONE PDQ
+   CLOSED: [2019-04-04 Thu 19:14]
 #+begin_note
    Derive-verify =the hungry dog chases the sleepy cat=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+    SENTENCE \rightarrow NOUN-PHRASE VERB-PHRASE NOUN-PHRASE
+    ARTICLE ADJECTIVE NOUN VERB-PHRASE NOUN-PHRASE
+    ARTICLE ADJECTIVE NOUN VERB NOUN-PHRASE
+    ARTICLE ADJECTIVE NOUN VERB ARTICLE ADJECTIVE NOUN
+    the ADJECTIVE NOUN VERB ARTICLE ADJECTIVE NOUN
+    the hungry NOUN VERB ARTICLE ADJECTIVE NOUN
+    the hungry dog VERB ARTICLE ADJECTIVE NOUN
+    the hungry dog chases ARTICLE ADJECTIVE NOUN
+    the hungry dog chases ARTICLE ADJECTIVE NOUN
+    the hungry dog chases the ADJECTIVE NOUN
+    the hungry dog chases the sleepy NOUN
+    the hungry dog chases the sleepy cat.
+
+    [0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0]
+
+
 #+end_info
-** TODO NTC
+** DONE NTC
+   CLOSED: [2019-04-04 Thu 19:15]
 #+begin_note
    Combinatorially speaking, how many different sentences can be derived by
    repeated evaluations of =(find-derivation 'SENTENCE)=?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I got help on this one. There are 288 combinations.
 #+end_info
-** TODO PTW
+** DONE PTW
+   CLOSED: [2019-04-04 Thu 19:19]
 #+begin_note
    See YZI for context for this and the next four exercises.
 
@@ -127,55 +172,78 @@
    over the lazy dog=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  SENTENCE
+  NP VP PP
+  ART ADJ ADJ N V PREP NP
+  ART ADJ ADJ N V PREP ART ADJ NOUN
+  the quick brown fox jumps over the lazy dog
 #+end_info
-** TODO NTM
+** DONE NTM
+   CLOSED: [2019-04-04 Thu 19:22]
 #+begin_note
    Build a parse tree for =the cat runs=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  SENTENCE
+  NP VP 
+  ART N V
+  the cat runs
 #+end_info
-** TODO PMV
+** DONE PMV
+   CLOSED: [2019-04-04 Thu 19:23]
 #+begin_note
    Build a parse tree for =the cat chases the hungry dog=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  SENTENCE
+  NP VP NP
+  ART N V ART ADJ N
+  the cat chases the hungry dog
 #+end_info
-** TODO NES
+** DONE NES
+   CLOSED: [2019-04-04 Thu 19:25]
 #+begin_note
    Build a parse tree for =the dog runs quickly=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  SENTENCE
+  NP VP
+  ART N V ADV
+  the dog runs quickly
 #+end_info
-** TODO BRZ
+** DONE BRZ
+   CLOSED: [2019-04-04 Thu 19:31]
 #+begin_note
    Build a parse tree for =the sleepy dog chases quickly the hungry cat=.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  SENTENCE
+  NP VP NP
+  ART ADJ N V ADV ART ADJ N
+  the sleepy dog chases quickly the hungry cat
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO BRE
+** DONE BRE
+   CLOSED: [2019-04-04 Thu 20:48]
 #+begin_note
    See Figure 123 in YZM for context.
 
    Add a state and the necessary transitions to make this a valid state machine.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Add a reject state, then S -> R is zero, indicating rejection. 
 #+end_info
-** TODO NGP
+** DONE NGP
+   CLOSED: [2019-04-04 Thu 20:49]
 #+begin_note
    Compare/contrast the 1(0 \cup 1)^{\star} machine with the (0 \cup 1)^{\star}1 machine.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Both of these can't get stuck becuase they can accept infinite values of 1 or 0.
 #+end_info
-** TODO BRQ
+** DONE BRQ
+   CLOSED: [2019-04-04 Thu 20:52]
 #+begin_note
   The three-production grammar
 
@@ -189,9 +257,10 @@
   Build a simple three-state machine to model it.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I'll just explain it becuase I suck at ASCII art.  If S0 produces a 0, it will refer to itself. 
+  If it produces a 1, it will move on to S2.
 #+end_info
-** TODO PIQ
+** PIQ
 #+begin_note
   The following machine recognizes which language?
 
@@ -211,9 +280,10 @@
 [[file:fig-single-state-with-01-transitions.png]]
 #+end_note
 #+begin_info
-  Your answer goes here.
+  All bitstrings that are 1 or 0.
 #+end_info
-** TODO PRK
+** DONE PRK
+   CLOSED: [2019-04-04 Thu 20:56]
 #+begin_note
     See YZP for context for this and the next four problems.
     
@@ -227,7 +297,7 @@
     B \rightarrow 11
 #+end_note
 #+begin_info
-  Your answer goes here.
+  [0 1 1 1]
 #+end_info
 ** TODO NIO *
 #+begin_note
@@ -245,7 +315,8 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO PFA
+** DONE PFA
+   CLOSED: [2019-04-04 Thu 20:59]
 #+begin_note
     Let N = [S A B] and T = [0 1]. Find the language generated by each grammar
     [N T S P] when the set P of productions consists of:
@@ -261,7 +332,7 @@
     B \rightarrow 1
 #+end_note
 #+begin_info
-  Your answer goes here.
+  [011 0101]
 #+end_info
 ** TODO BGT *
 #+begin_note
