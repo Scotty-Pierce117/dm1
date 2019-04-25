@@ -67,7 +67,7 @@
 #+begin_info
   I was trying to think of words with few syllables, because typically there are multiple vowels when 
   there are multiple syllables.  Then I searched single-syllable words with the most consonants, and I 
-  found the word “strengths”, which has 8:1 consonant to vowel ratio.
+  found the word “strengths”, which has 8:1 consonant to vowel ratio. You suck at cooking.
 #+end_info
 ** DONE DZB
    CLOSED: [2019-01-31 Thu 10:38]
@@ -122,3 +122,4 @@
 *** Approach
 *** Solution
 *** Proof
+hi
